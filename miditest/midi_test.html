@@ -52,9 +52,9 @@ a.visited {
 
 <body link="#0000FF" vlink="#0000FF">
 
-3 x 4 with 5 onsets - loop6
+3 x 4 with 5 onsets - loop7
 
-<midi-player loop=true
+<midi-player loop
     src="https://brentcody.github.io/miditest/3-4-torus-5-onsets-no-1.mid"
     sound-font visualizer="#myPianoRollVisualizer" id="player1">
 </midi-player>
@@ -63,7 +63,20 @@ a.visited {
     src="https://brentcody.github.io/miditest/3-4-torus-5-onsets-no-1.mid">
   </midi-visualizer>
 
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        for (const player of document.querySelectorAll('midi-player')) {
+          for (const event of ['load', 'start', 'stop', 'loop']) {
+            player.addEventListener(event, console.log);
+          }
+        }
 
+        const waterfallVisualizer = document.querySelector('#waterfallVisualizer');
+        waterfallVisualizer.config = {
+          showOnlyOctavesUsed: true
+        };
+      });
+    </script>
     
 </body>
 </html>
