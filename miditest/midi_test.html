@@ -1,0 +1,66 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+
+    <title>Brent Cody</title>  
+
+    <link rel="icon" type="image/png" href="icon.png"/>
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+      
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
+
+
+<style>
+
+/*
+html {
+    color:beige;
+    background-color:darkslategray;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+a {
+    color:paleturquoise;
+}
+
+a.visited {
+    color:coral;
+}
+*/
+
+
+.image_container {
+    padding: 0.5em;
+}
+
+
+
+</style>
+
+</head>
+
+
+<body link="#0000FF" vlink="#0000FF">
+
+
+
+    <midi-player
+    src="Untitled/Users/bmcody/Documents/midi_html_test/major-scale.mid"
+    sound-font visualizer="#myPianoRollVisualizer">
+  </midi-player>
+  
+  <midi-visualizer type="piano-roll" id="myPianoRollVisualizer" 
+    src="Untitled/Users/bmcody/Documents/midi_html_test/major-scale.mid">
+  </midi-visualizer>
+
+
+</body>
+</html>
