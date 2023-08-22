@@ -14,9 +14,9 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
     </script>
 
-    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0">
-        player.loop = true;
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0">
     </script>
+
 
 
 <style>
@@ -52,7 +52,7 @@ a.visited {
 
 <body link="#0000FF" vlink="#0000FF">
 
-3 x 4 with 5 onsets - loop7
+3 x 4 with 5 onsets - loop8
 
 <midi-player loop
     src="https://brentcody.github.io/miditest/3-4-torus-5-onsets-no-1.mid"
@@ -62,21 +62,6 @@ a.visited {
   <midi-visualizer type="piano-roll" id="myPianoRollVisualizer" 
     src="https://brentcody.github.io/miditest/3-4-torus-5-onsets-no-1.mid">
   </midi-visualizer>
-
-    <script>
-      window.addEventListener('DOMContentLoaded', function() {
-        for (const player of document.querySelectorAll('midi-player')) {
-          for (const event of ['load', 'start', 'stop', 'loop']) {
-            player.addEventListener(event, console.log);
-          }
-        }
-
-        const waterfallVisualizer = document.querySelector('#waterfallVisualizer');
-        waterfallVisualizer.config = {
-          showOnlyOctavesUsed: true
-        };
-      });
-    </script>
     
 </body>
 </html>
