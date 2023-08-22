@@ -56,13 +56,16 @@ a.visited {
 
     <midi-player loop
     src="https://brentcody.github.io/miditest/3-4-torus-5-onsets-no-1.mid"
-    sound-font visualizer="#myPianoRollVisualizer">
+    sound-font visualizer="#myPianoRollVisualizer" id="player1">
   </midi-player>
   
   <midi-visualizer type="piano-roll" id="myPianoRollVisualizer" 
     src="https://brentcody.github.io/miditest/3-4-torus-5-onsets-no-1.mid">
   </midi-visualizer>
 
-
+<script>
+    player1.loop = true;
+</script>
+    
 </body>
 </html>
