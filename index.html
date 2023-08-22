@@ -1,8 +1,491 @@
-<!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<p>Test</p>
+
+
+
+
+
+
+<head>
+    
+    <title>Brent Cody</title>  
+
+    <link rel="icon" type="image/png" href="icon.png"/>
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+      
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
+    </script>
+
+<style>
+
+
+
+/* Color variables */
+:root {
+    --tab-color: rgb(255, 255, 255); /* rgb(107,58,47);*/
+    --tab-content-color: rgb(0, 0, 0);
+    --tab-text-color: ;
+    --link-color: #0000EE;
+    --link-hover-color: #134d84;
+}
+
+
+.page {
+    margin-left:0;        
+    margin-top:0;
+    margin-right:0;
+    padding-top:0%;
+    padding-left:0%;
+    padding-right:0%;
+    padding-bottom:0%;
+    text-justify: inter-word;    
+    color: black;
+    font-size: 1.5vmax;
+    max-width: 110ch;
+    
+
+
+    }
+
+
+
+.section_title{
+    font-size:1em;
+    font-style: bold;
+    font-weight: 400;
+    }
+
+a {font-style: italic;}
+a:link { color: var(--link-color); text-decoration: none}
+a:visited { color: #bb47ff; text-decoration: none}
+a:hover { color: #3366CC; text-decoration: underline}
+a:active { color: #23be30; text-decoration: none}
+
+
+
+
+
+
+    
+    
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: none;
+    font-family:'Times New Roman', Times, serif;
+}
+    
+/* Style the button container */
+.buttoncontainer {
+    margin-right:0%;
+    margin-left:0%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.5em;
+    color:var(--link-color);
+    font-family:'Times New Roman', Times, serif;
+    text-decoration: underline;
+    padding:0.5em;
+    text-decoration: none;
+    font-style:italic;
+}
+    
+/* Style the main heading */
+.tab mainheading {
+    cursor: pointer;
+    transition: 5.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+}
+
+.tablinks {
+    color:var(--link-color);
+    font-size: 1em;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    border: 1px solid black;
+    text-decoration:underline;
+
+}
+
+/* Style the tab content */
+.tabcontent {
+
+
+}
+    
+/* Fade the tab content in */
+    
+    .tabcontent {
+  	animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+
+</style>
+</head>
+
+
+<body style="margin:1em;padding:1em">
+
+
+<div class="page">
+
+
+<!-- Tab links -->
+<div class="tab">
+    <div class="buttoncontainer">
+
+
+
+<p>
+    <img style="width:15em; float:right;" src="brent_2022_2.JPG"><br>
+
+    <b style="font-size:2.5em">Brent Cody</b> <br>
+    
+    <br>
+
+    <br>
+
+    <br>
+
+    Associate Professor<br>
+
+
+    Department of Mathematics and Applied Mathematics<br>
+
+
+    Virginia Commonwealth University<br>
+    </p>
+
+    
+    <button class="tablinks" onclick="openCity(event, 'About')">About</button> / 
+    <button class="tablinks" onclick="openCity(event, 'Teaching')">Teaching</button> / 
+    <button class="tablinks" onclick="openCity(event, 'Research')" id="defaultOpen">Research</button> 
+    <button class="tablinks" onclick="openCity(event, 'Music')">Music</button>
+        
+
+        
+    </div>
+    </div>
+
+
+
+
+
+<div id="About" class="tabcontent">
+<p>I was born in Richmond, VA, obtained an undergraduate degrees in Mathematics at VCU, finished my PhD at the City University of New York 
+    with Joel David Hamkins in 2012, and now I am an associate professor at VCU.</p>
+
+<p>Previously I held visiting positions at the Fields Institute, University of 
+    Prince Edward Island and VCU.</p>
+</div>
+
+
+
+
+
+<div id="Research" class="tabcontent">
+
+    <p>
+        My research is in the area of <a href="https://en.wikipedia.org/wiki/Set_theory">set theory</a>. 
+        Most of my recent work is on ideals associated to 
+        <a href="https://en.wikipedia.org/wiki/Large_cardinal">large cardinals</a>. 
+        For example, I've done work on combinatorial principles and 
+        <a href="https://en.wikipedia.org/wiki/Forcing_(mathematics)">forcing</a> 
+        constructions related to the large cardinal properties 
+        of <a href="https://en.wikipedia.org/wiki/Ramsey_cardinal">Ramseyness</a>, 
+        <a href="https://en.wikipedia.org/wiki/Ineffable_cardinal">ineffability</a> and 
+        <a href="https://en.wikipedia.org/wiki/Indescribable_cardinal">indescribability</a>. 
+        I've also worked on strong properties of successor cardinals that hold after collapsing 
+        large cardinals and on preserving large cardinals through Easton-support forcing iterations.
+        </p>
+
+        
+        <p>
+
+            <ol reversed class="o">
+
+                <li>Two-cardinal ideal operators and indescribability. (with Philip White) <i>Submitted.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2206.06170.pdf">pdf</a>)</li>
+                
+                <li>Sparse analytic systems. (with Sean Cox and Kayla Lee) <i>Accepted at Forum of Mathematics, Sigma.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2208.13725.pdf">pdf</a>)</li>
+                                    				
+                <li>Higher indescribability and derived topologies. <i>Accepted at Journal of Mathematical Logic.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2102.09598.pdf">pdf</a>)</li>
+                    
+                <li>Large cardinal ideals. <i>Accepted chapter for Research Trends in Contemporary Logic, 49 pages.</i> (<a class="u" target="_blank" class="u" class="u" target="_blank" href="https://arxiv.org/pdf/2102.09591.pdf">pdf</a>)</li>
+                
+		<li>Ideal operators and higher indescribability. (with Peter Holy) <i>Journal of Symbolic Logic</i>, 88 (2):835-873, 2023. (<a class="u" target="_blank" href="https://arxiv.org/pdf/2105.01776.pdf">pdf</a>)</li>
+
+                <li>Forcing a \(\square(\kappa)\)-like principle to hold at a weakly compact cardinal. (with Victoria Gitman and Chris Lambie-Hanson) <i>Annals of Pure and Applied Logic</i>, 172 (7):102960, 26 pp., 2021. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1902.04146.pdf">pdf</a>)</li>
+                
+                <li>A refinement of the Ramsey hierarchy via indescribability. <i>Journal of Symbolic Logic</i>, 85 (2):773-808, 2020. (<a class="u" target="_blank" class="u" class="u" target="_blank" href="https://arxiv.org/pdf/1907.13540.pdf">pdf</a>)</li>
+                    
+                <li>Characterizations of the weakly compact ideal on \(P_\kappa\lambda\). <i>Annals of Pure and Applied Logic</i>, 171 (6):23 pages, 2020. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1807.11896.pdf">pdf</a>)</li>	
+                    
+                <li>The weakly compact reflection principle need not imply a high order of weak compactness. (with Hiroshi Sakai) <i>Archive for Mathematical Logic</i>, 59 (1):179-196, 2020. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1707.08506.pdf">pdf</a>)</li>
+                    
+                <li>Adding a non-reflecting weakly compact set. <i>Notre Dame Journal of Formal Logic</i>, 60 (3):503-521, 2019. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1701.04358.pdf">pdf</a>)</li>	
+                    
+                    
+                <!-- <li>(with Sean Cox, Joel Hamkins and Thomas Johnstone) The weakly compact embedding property. (<i>in preparation</i>)</li>
+                -->
+                    
+                <li>Rigid ideals. (with Monroe Eskew) <i>Israel Journal of Mathematics</i>, 224 (1):343-366, 2018. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1606.00040.pdf">pdf</a>) 
+                        
+                        
+                <li>Indestructibility of generically strong cardinals. (with Sean Cox) <i>Fundamenta Mathematicae</i>, 232 (2):131-149, 2016. (<a class="u" target="_blank" href="Cody-Cox-5-28-2015.pdf">pdf</a>)</li>
+                
+                <li>The least weakly compact cardinal can be unfoldable, weakly measurable and nearly \(\theta\)-supercompact. (with Moti Gitik, Joel David Hamkins, and Jason Schanker) <i>Archive for Mathematical Logic</i>, 54 (5-6):491-510, 2015. (<a class="u" target="_blank" href="Cody-Gitik-Hamkins-Schanker.pdf">pdf</a>)
+                </li>
+                
+                <li>Easton's theorem for Ramsey and strongly Ramsey cardinals. (with Victoria Gitman) <i>Annals of Pure and Applied Logic</i>, 166 (9):934-952, 2015. (<a class="u" target="_blank" href="Cody-Gitman-1-28-2013.pdf">pdf</a>)</li>
+                
+                
+                
+                <li>Easton functions and supercompactness. (with Sy Friedman and Radek Honzik) <i>Fundamenta Mathematicae</i>, 226 (3):279-296, 2014. (<a class="u" target="_blank" href="CodyFriedmanHonzik-11-1-2013.pdf">pdf</a>)</li>
+                
+                
+                <li>On Supercompactness and the continuum function. (with Menachem Magidor) <i>Annals of Pure and Applied Logic</i>, 165 (2):620-630, 2014. (<a class="u" target="_blank" href="Cody-Magidor-5-20-2013.pdf">pdf</a>)</li>
+                
+                <li>Easton's Theorem in the presence of Woodin cardinals, <i>Archive for Mathematical Logic</i>, 52 (5-6):569-591, 2013. (<a class="u" target="_blank" href="CodyEaWo-3-11-2013.pdf">pdf</a>)</li>
+                
+                <li>Consecutive singular cardinals and the continuum function. (with A. W. Apter) <i>Notre Dame Journal of Formal Logic</i>, 54 (2):125-136, 2013. (<a class="u" target="_blank" href="apco01.pdf">pdf</a>)</li>
+                
+                <li>The failure of GCH at a degree of supercompactness. <i>Mathematical Logic Quarterly</i>, 58 (1-2):83-94, 2012. (<a class="u" target="_blank" href="Cody-Supercompactness.pdf">pdf</a>) </li>
+                </ol>
+    
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="Teaching" class="tabcontent">
+
+    
+    <p>
+
+<div id="smallcaps">Fall 2022</div>
+
+<ul>
+    <li>Math 310 - Linear Algebra</li>
+</ul>
+
+<div id="smallcaps">Spring 2022</div>
+
+<ul>
+    <li>Math 201 - Calculus with Analytic Geometry II</li>
+    <li>Math 310 - Linear Algebra</li>
+</ul>
+
+    <div id="smallcaps">Fall 2021</div>
+
+<ul>
+    <li>Math 310 - Linear Algebra</li>
+    <li>Math 407 - Advanced Calculus</li>
+</ul>
+    
+    <div id="smallcaps">Spring 2021</div>
+
+<ul>
+    <li>Math 201 - Calculus with Analytic Geometry I</li>
+    <li>Math 490 - Mathematical Expositions</li>
+</ul>
+    
+    <div id="smallcaps">Fall 2020</div>
+
+<ul>
+    <li>Math 201 - Calculus with Analytic Geometry I</li>
+    <li>Math 490 - Mathematical Expositions</li>
+</ul>
+    
+    
+    <div id="smallcaps">Spring 2020</div>
+
+<ul>
+    <li>Math 602 - Abstract Algebra II</li>
+</ul>
+    
+    <div id="smallcaps">Fall 2019</div>
+
+<ul>
+    <li>Math 409 - Topology</li>
+    <li>Math 502 - Abstract Algebra I</li>
+</ul>
+    
+    <div id="smallcaps">Spring 2019</div>
+
+<ul>
+    <li>Math 301 - Differential Equations</li>
+    <li>Math 310 - Linear Algebra</li>
+</ul>
+    
+    <div id="smallcaps">Fall 2018</div>
+
+<ul>
+    <li>Math 697 - Directed Research (Set Theory: Forcing)</li>
+    <li>Math 310 - Linear Algebra</li>
+    <li>Math 409 - Topology</li>
+</ul>    
+
+    <div id="smallcaps">Spring 2018</div>
+
+<ul>
+    <li>Math 697 - Directed Research (Set Theory: Forcing)</li>
+    <li>Math 490 - Mathematical Expositions</li>
+    <li>Math 602 - Abstract Algebra II</li>
+</ul>
+    
+    
+    <div id="smallcaps">Fall 2017</div>
+
+<ul>
+    <li>Math 409 - Topology</li>
+    <li>Math 490 - Mathematical Expositions</li>
+</ul>
+    
+    
+	<div id="smallcaps">Spring 2017</div>
+
+<ul>
+    <li>Math 591 - Ultrafilters and Applications</li>
+</ul>
+	
+	
+	
+    <div id="smallcaps">Fall 2016</div>
+
+<ul>
+    <li>Math 300 - Introduction to Mathematical Reasoning</li>
+    <li>Math 409 - Topology</li>
+</ul>	
+	
+    <div id="smallcaps">Spring 2016</div>
+
+<ul>
+    <li>Math 310 - Linear Algebra</li>
+    <li>Math 490 - Mathematical Expositions</li>
+</ul>
+    
+
+<div id="smallcaps">Fall 2015</div>
+
+<ul>
+    <li>Math 201 - Calculus II</li>
+    <li>Math 300 - Intro. to Mathematical Reasoning</li>
+</ul>
+
+<div id="smallcaps">Spring 2015</div>
+    
+<ul>
+    <li>Math 201 - Calculus II</li>
+    <li>Math 490 - Mathematical Expositions</li>
+    <li>Math 492 - Independent Study (Computability Theory and G&ouml;del's Incompleteness Theorems)</li>
+</ul>
+
+
+<div id="smallcaps">Fall 2014</div>
+
+<ul>
+    <li>Math 201 - Calculus II</li>
+    <li>Math 490 - Mathematical Expositions</li>
+    <li>Math 492 - Independent Study (Set Theory)</li>
+</ul>
+    
+
+<div id="smallcaps">Spring 2014</div>
+
+<ul>
+    <li>Math 201 - Calculus II</li>
+    <li>Math 490 - Mathematical Expositions (taught jointly with Sean Cox)</li>
+    <li>Math 591 - Topics Course: Logic and Mathematical Structures (taught jointly with Sean Cox) (<a href="Compactness-Notes.pdf">notes</a>)</li>
+    <li>Math 492 - Independent Study (Set Theory)</li>
+</ul>
+
+<div id="smallcaps">Fall 2013</div>
+
+<ul>
+    <li>Math 201 - Calculus II</li>
+    <li>Math 300 - Introduction to Mathematical Reasoning</li>
+</ul>
+</p>
+
+
+    
+    
+    </div>
+    
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    
+    function openCity(evt, cityName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+    
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+    
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    
+    </script>
+
+
+
+
+
+
+
+
+>>>>>>> b24e7d82b71a25363bfc33caac09608206b2177b
 </body>
 </html>
