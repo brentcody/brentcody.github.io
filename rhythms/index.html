@@ -1,0 +1,105 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+
+    <title>Brent Cody</title>  
+
+    <link rel="icon" type="image/png" href="icon.png"/>
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+      
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
+    </script>
+
+<script
+src="https://code.jquery.com/jquery-3.7.0.min.js"
+integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+crossorigin="anonymous"></script>
+
+
+<style>
+
+/*
+html {
+    color:beige;
+    background-color:darkslategray;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+a {
+    color:paleturquoise;
+}
+
+a.visited {
+    color:coral;
+}
+*/
+
+
+.image_container {
+    float:left;
+}
+
+
+
+</style>
+
+</head>
+
+
+<body link="#0000FF" vlink="#0000FF">
+
+
+
+<a href="#" class="list-group-item" id="unf">Update UNF</a>  
+<a href="#" class="list-group-item" id="ui">Update UI</a>  
+<a href="#" class="list-group-item" id="ut">Update UT</a>  
+
+<section class="unf" style="display:none;">
+    UNF SECTION
+</section>
+
+<section class="ut" style="display:none;">
+    UI SECTION
+</section>
+
+<section class="ui" style="display:none;">
+    UT SECTION
+</section>
+
+
+<script>
+
+
+for (var k = 0; k <= 60; k += 1) {
+    var html = '<div class="image_container"><img width=250em src="' + k + '.png"></div>' ;
+    document.write(html);
+}
+
+
+// On clicking any of the side bar links
+$('.list-group-item').click(function(event){
+
+// Preventing the default action which may mess up the view
+event.preventDefault();
+
+$('a.list-group-item').removeClass('active');
+$(this).addClass('active');
+$('section').css('display', 'none');
+$('section.' + $(this).attr('id')).css('display', '');
+
+});
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+
+    <title>Brent Cody</title>  
+
+    <link rel="icon" type="image/png" href="icon.png"/>
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+      
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
+    </script>
+
+<script
+src="https://code.jquery.com/jquery-3.7.0.min.js"
+integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+crossorigin="anonymous"></script>
+
+
+<style>
+
+/*
+html {
+    color:beige;
+    background-color:darkslategray;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+a {
+    color:paleturquoise;
+}
+
+a.visited {
+    color:coral;
+}
+*/
+
+
+.image_container {
+    float:left;
+}
+
+.navbar {
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  background-color: #FFF;
+  font-size: 1.5em;
+}
+
+.content {
+  margin-top: 5em; /* Add a top margin to avoid content overlay */
+}
+
+
+</style>
+
+</head>
+
+
+<body link="#0000FF" vlink="#0000FF">
+
+<div class="navbar">
+The red sets are the "classical" maximally even sets. Try to find musical connections with the new sets that are either blue or green.<br>
+Click on the number of vertices you want to see:<br>
+
+<a href="#" class="list-group-item" id="5">5</a>
+<a href="#" class="list-group-item" id="6">6</a>  
+<a href="#" class="list-group-item" id="7">7</a>  
+<a href="#" class="list-group-item" id="8">8</a>  
+<a href="#" class="list-group-item" id="9">9</a>  
+<a href="#" class="list-group-item" id="10">10</a>  
+<a href="#" class="list-group-item" id="11">11</a>  
+<a href="#" class="list-group-item" id="12">12</a>  
+<a href="#" class="list-group-item" id="16">16</a>  
+
+</div>
+
+
+<div class="content" id="log">  </div>
+
+
+
+<script>
+
+
+const numbers = [5, 6, 7, 8, 9, 10, 11, 12, 16];
+const numpics = [60, 71, 93, 114, 149, 154, 191, 243, 657];
+
+for (var k = 0; k < numbers.length; k += 1) {
+    for (var i = 0; i < numpics[k]; i += 1){
+        document.getElementById('log').innerHTML += '<section class="' + numbers[k] + '" style="display:none;"><div class="image_container"><img width=250em src="' + numbers[k] + '_pictures/' + i + '.png"></div></section>';
+        /* document.write(html); */
+    }
+}
+
+
+
+
+// On clicking any of the side bar links
+$('.list-group-item').click(function(event){
+
+// Preventing the default action which may mess up the view
+event.preventDefault();
+
+$('a.list-group-item').removeClass('active');
+$(this).addClass('active');
+$('section').css('display', 'none');
+$('section.' + $(this).attr('id')).css('display', '');
+
+});
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
