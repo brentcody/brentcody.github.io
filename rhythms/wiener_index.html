@@ -48,7 +48,7 @@ a.visited {
   overflow: hidden;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
-  width: 95%; /* Full width */
+  width: 95vw; /* Full width */
   background-color: #FFF;
   font-size: 1em;
   padding:1vh;
@@ -72,13 +72,21 @@ position:fixed;
 top:25vh;
 padding:1vh;
   margin:1vh;
-  width:95%;
+  width:95vw;
   height: 70vh;
   overflow: auto;
   border:1px solid black;
   border-radius:10px;
   background-color: #FFF;
 
+}
+
+img {
+    width:20vw;
+}
+
+.image_container {
+    width:20vw;
 }
 
 
@@ -169,7 +177,7 @@ const numpics = [9, 12, 15, 20, 25, 33, 41, 63, 73, 122, 141, 260];
 
 for (var k = 0; k < numbers.length; k += 1) {
     for (var i = 0; i < numpics[k]; i += 1){
-        document.getElementById('log').innerHTML += '<section class="' + numbers[k] + '" style="display:none;"><div class="image_container"><img width=250em src="' + numbers[k] + '_Wiener_index_maximizers/' + i + '.png"></div></section>';
+        document.getElementById('log').innerHTML += '<section class="' + numbers[k] + '" style="display:none;"><div class="image_container"><img src="' + numbers[k] + '_Wiener_index_maximizers/' + i + '.png"></div></section>';
         /* document.write(html); */
     }
 }
