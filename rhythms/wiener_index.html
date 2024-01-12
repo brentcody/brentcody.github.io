@@ -50,8 +50,13 @@ a.visited {
   top: 0; /* Position the navbar at the top of the page */
   width: 95%; /* Full width */
   background-color: #FFF;
-  font-size: 0.8em;
-  padding:1em;
+  font-size: 1em;
+  padding:1vh;
+  margin:1vh;
+  height: 20vh;
+  overflow: auto;
+  border:1px solid black;
+border-radius:10px;
 }
 
 .side {
@@ -63,10 +68,16 @@ overflow: auto;
 }
 
 .content {
-  margin-top:15em;
+position:fixed;
+top:25vh;
+padding:1vh;
+  margin:1vh;
   width:95%;
-  height: 100vh;
+  height: 70vh;
   overflow: auto;
+  border:1px solid black;
+  border-radius:10px;
+  background-color: #FFF;
 
 }
 
@@ -76,13 +87,34 @@ overflow: auto;
 </head>
 
 
-<body link="#0000FF" vlink="#0000FF">
+<body link="#0000FF" vlink="#0000FF" style="background-color: black;">
+
+
 
 <div class="navbar">
 <p>
 MAXIMIZERS OF THE WIENER INDEX<br>
 
-<br>
+
+<p>
+    Click on the number of vertices you want to see:<br>
+    
+    
+    <a href="#" class="list-group-item" id="5">5</a>
+    <a href="#" class="list-group-item" id="6">6</a>  
+    <a href="#" class="list-group-item" id="7">7</a>  
+    <a href="#" class="list-group-item" id="8">8</a>  
+    <a href="#" class="list-group-item" id="9">9</a>  
+    <a href="#" class="list-group-item" id="10">10</a>  
+    <a href="#" class="list-group-item" id="11">11</a>  
+    <a href="#" class="list-group-item" id="12">12</a>  
+    <a href="#" class="list-group-item" id="13">13</a>  
+    <a href="#" class="list-group-item" id="14">14</a>  
+    <a href="#" class="list-group-item" id="15">15</a>  
+    <a href="#" class="list-group-item" id="16">16</a>  
+    </p>
+
+
 
 These green sets are maximizers of the Wiener index, or equivalently, 
 minimizers of the ``sum of negative distances'' potential energy.
@@ -111,24 +143,10 @@ The set "12_7_cycle_Wiener_index_10" corresponds to the Harmonic major scale
 <b>What other scales can we find here? What rhythms do these sets correspond to? Focus on the "12_7_XXXX" pictures.</b><br>
 
 <br>
-
-Click on the number of vertices you want to see:<br>
 </p>
 
-<p>
-<a href="#" class="list-group-item" id="5">5</a>
-<a href="#" class="list-group-item" id="6">6</a>  
-<a href="#" class="list-group-item" id="7">7</a>  
-<a href="#" class="list-group-item" id="8">8</a>  
-<a href="#" class="list-group-item" id="9">9</a>  
-<a href="#" class="list-group-item" id="10">10</a>  
-<a href="#" class="list-group-item" id="11">11</a>  
-<a href="#" class="list-group-item" id="12">12</a>  
-<a href="#" class="list-group-item" id="13">13</a>  
-<a href="#" class="list-group-item" id="14">14</a>  
-<a href="#" class="list-group-item" id="15">15</a>  
-<a href="#" class="list-group-item" id="16">16</a>  
-</p>
+
+
 </div>
 
 
