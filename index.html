@@ -1,12 +1,9 @@
 <html>
 
-
-
-
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
-    
+
     <title>Brent Cody</title>  
 
     <link rel="icon" type="image/png" href="icon.png"/>
@@ -17,432 +14,268 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
     </script>
 
+<script
+src="https://code.jquery.com/jquery-3.7.0.min.js"
+integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+crossorigin="anonymous"></script>
+
+
 <style>
 
-
-
-/* Color variables */
-:root {
-    --tab-color: rgb(255, 255, 255); /* rgb(107,58,47);*/
-    --tab-content-color: rgb(0, 0, 0);
-    --tab-text-color: ;
-    --link-color: #0000EE;
-    --link-hover-color: #134d84;
+/*
+html {
+    color:beige;
+    background-color:darkslategray;
+    font-family: 'Courier New', Courier, monospace;
+    
 }
 
+a {
+    color:paleturquoise;
+}
+
+a.visited {
+    color:coral;
+}
+*/
 
 .page {
-    margin-left:0;        
-    margin-top:0;
-    margin-right:0;
-    padding-top:0%;
-    padding-left:0%;
-    padding-right:0%;
-    padding-bottom:0%;
-    text-justify: inter-word;    
-    color: black;
-    font-size: 1.5vmax;
-    max-width: 110ch;
+    padding-top:3vmin;
+    padding-left:3vmin;
+    padding-right:10vmin;
+    max-width: 40em;
+    font-size: calc(15px + 0.390625vw);
+}
+
+
+.top_child {
+    display:contents;
+    margin-top:1em;
+    margin-bottom:1em;
     
-
-
-    }
-
-
-
-.section_title{
-    font-size:1em;
-    font-style: bold;
-    font-weight: 400;
-    }
-
-a {font-style: italic;}
-a:link { color: var(--link-color); text-decoration: none}
-a:visited { color: #bb47ff; text-decoration: none}
-a:hover { color: #3366CC; text-decoration: underline}
-a:active { color: #23be30; text-decoration: none}
-
-
-
-
-
-
-    
-    
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border: none;
-    font-family:'Times New Roman', Times, serif;
-}
-    
-/* Style the button container */
-.buttoncontainer {
-    margin-right:0%;
-    margin-left:0%;
 }
 
-/* Style the buttons that are used to open the tab content */
-.tab button {
-    background-color: inherit;
-    border: 1px solid white;
-    outline: none;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 1.5em;
-    color:var(--link-color);
-    font-family:'Times New Roman', Times, serif;
-    text-decoration: underline;
-    padding:0.5em;
-    text-decoration: none;
-    font-style:italic;
-}
-    
-/* Style the main heading */
-.tab mainheading {
-    cursor: pointer;
-    transition: 5.3s;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-}
-
-.tablinks {
-    color:var(--link-color);
-    font-size: 1em;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-    border: 1px solid black;
-    text-decoration:underline;
+.top_parent {
+    padding:0em;
 
 }
 
-/* Style the tab content */
-.tabcontent {
-
-
-}
-    
-/* Fade the tab content in */
-    
-    .tabcontent {
-  	animation: fadeEffect 1s; /* Fading effect takes 1 second */
+.navbar {
+    margin-top:0em;
+    margin-bottom:1em;
 }
 
-/* Go from zero to full opacity */
-@keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
+
+.content{
+
 }
+
 
 
 
 </style>
+
 </head>
 
 
-<body style="margin:1em;padding:1em">
-
+<body link="#0000FF" vlink="#0000FF">
 
 <div class="page">
 
 
-<!-- Tab links -->
-<div class="tab">
-    <div class="buttoncontainer">
 
+    <div class="navbar">    BRENT CODY<br>
 
+            <a href="#" class="list-group-item" id="about">About me</a> | 
+            <a href="#" class="list-group-item" id="papers">Papers</a> | 
+            <a href="#" class="list-group-item" id="teaching">Teaching</a> 
+            <img style="margin-top:1em; width:100%;" src="bu.gif">
 
-<p>
-    <img style="width:15em; float:right;" src="brent_2022_2.JPG"><br>
-
-    <b style="font-size:2.5em">Brent Cody</b> <br>
-    
-    <br>
-
-    <br>
-
-    <br>
-
-    Associate Professor<br>
-
-
-    Department of Mathematics and Applied Mathematics<br>
-
-
-    Virginia Commonwealth University<br>
-    </p>
-
-    
-    <button class="tablinks" onclick="openCity(event, 'About')">About</button> / 
-    <button class="tablinks" onclick="openCity(event, 'Teaching')">Teaching</button> / 
-    <button class="tablinks" onclick="openCity(event, 'Research')" id="defaultOpen">Research</button> 
-    <button class="tablinks" onclick="openCity(event, 'Music')">Music</button>
+    </div>
+        
         
 
-        
+
+
+
+
+<div class="content">
+
+
+
+
+<section class="about" style="display:none;">
+
+
+
+    <div class="top_parent">
+        <div class="top_child">
+            Associate Professor<br>
+            Department of Mathematics and Applied Mathematics<br>
+            Virginia Commonwealth University<br>
+            bmcody@vcu.edu<br>
+            <br>
+           
+            <!-- <b style="font-size:2em">Brent Cody</b> <br> -->
+        </div>
+
+    <div class="top_child">
+        <img width=200em src="brent_2022_2.JPG">
     </div>
-    </div>
-
-
-
-
-
-<div id="About" class="tabcontent">
-<p>I was born in Richmond, VA, obtained an undergraduate degrees in Mathematics at VCU, finished my PhD at the City University of New York 
-    with Joel David Hamkins in 2012, and now I am an associate professor at VCU.</p>
-
-<p>Previously I held visiting positions at the Fields Institute, University of 
-    Prince Edward Island and VCU.</p>
-</div>
-
-
-
-
-
-<div id="Research" class="tabcontent">
-
+    
+    <br>
     <p>
-        My research is in the area of <a href="https://en.wikipedia.org/wiki/Set_theory">set theory</a>. 
-        Most of my recent work is on ideals associated to 
-        <a href="https://en.wikipedia.org/wiki/Large_cardinal">large cardinals</a>. 
-        For example, I've done work on combinatorial principles and 
-        <a href="https://en.wikipedia.org/wiki/Forcing_(mathematics)">forcing</a> 
+        Welcome to my website! I am an associate professor at Virginia Commonwealth University. 
+        I do research in mathematics, teach math courses, serve on various math-related
+        committees, referee and review math research articles and I organize conferences and workshops 
+        (see <a target="_blank" href="mamls/index.html">MAMLS at VCU</a>, Idealfest, Stationary sets in algebra).
+        </p>
+        
+        <p>
+        My main line of research is in <a target="_blank" href="https://en.wikipedia.org/wiki/Set_theory">set theory</a> 
+        and involves <a target="_blank" href="https://en.wikipedia.org/wiki/Large_cardinal">large cardinals</a>. 
+        I've done work on combinatorial principles and 
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Forcing_(mathematics)">forcing</a> 
         constructions related to the large cardinal properties 
-        of <a href="https://en.wikipedia.org/wiki/Ramsey_cardinal">Ramseyness</a>, 
-        <a href="https://en.wikipedia.org/wiki/Ineffable_cardinal">ineffability</a> and 
-        <a href="https://en.wikipedia.org/wiki/Indescribable_cardinal">indescribability</a>. 
+        of <a target="_blank" href="https://en.wikipedia.org/wiki/Ramsey_cardinal">Ramseyness</a>, 
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Ineffable_cardinal">ineffability</a> and 
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Indescribable_cardinal">indescribability</a>. 
         I've also worked on strong properties of successor cardinals that hold after collapsing 
         large cardinals and on preserving large cardinals through Easton-support forcing iterations.
         </p>
-
         
         <p>
-
-            <ol reversed class="o">
-
-                <li>Two-cardinal ideal operators and indescribability. (with Philip White) <i>Submitted.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2206.06170.pdf">pdf</a>)</li>
-                
-                <li>Sparse analytic systems. (with Sean Cox and Kayla Lee) <i>Accepted at Forum of Mathematics, Sigma.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2208.13725.pdf">pdf</a>)</li>
-                                    				
-                <li>Higher indescribability and derived topologies. <i>Accepted at Journal of Mathematical Logic.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2102.09598.pdf">pdf</a>)</li>
-                    
-                <li>Large cardinal ideals. <i>Accepted chapter for Research Trends in Contemporary Logic, 49 pages.</i> (<a class="u" target="_blank" class="u" class="u" target="_blank" href="https://arxiv.org/pdf/2102.09591.pdf">pdf</a>)</li>
-                
-		<li>Ideal operators and higher indescribability. (with Peter Holy) <i>Journal of Symbolic Logic</i>, 88 (2):835-873, 2023. (<a class="u" target="_blank" href="https://arxiv.org/pdf/2105.01776.pdf">pdf</a>)</li>
-
-                <li>Forcing a \(\square(\kappa)\)-like principle to hold at a weakly compact cardinal. (with Victoria Gitman and Chris Lambie-Hanson) <i>Annals of Pure and Applied Logic</i>, 172 (7):102960, 26 pp., 2021. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1902.04146.pdf">pdf</a>)</li>
-                
-                <li>A refinement of the Ramsey hierarchy via indescribability. <i>Journal of Symbolic Logic</i>, 85 (2):773-808, 2020. (<a class="u" target="_blank" class="u" class="u" target="_blank" href="https://arxiv.org/pdf/1907.13540.pdf">pdf</a>)</li>
-                    
-                <li>Characterizations of the weakly compact ideal on \(P_\kappa\lambda\). <i>Annals of Pure and Applied Logic</i>, 171 (6):23 pages, 2020. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1807.11896.pdf">pdf</a>)</li>	
-                    
-                <li>The weakly compact reflection principle need not imply a high order of weak compactness. (with Hiroshi Sakai) <i>Archive for Mathematical Logic</i>, 59 (1):179-196, 2020. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1707.08506.pdf">pdf</a>)</li>
-                    
-                <li>Adding a non-reflecting weakly compact set. <i>Notre Dame Journal of Formal Logic</i>, 60 (3):503-521, 2019. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1701.04358.pdf">pdf</a>)</li>	
-                    
-                    
-                <!-- <li>(with Sean Cox, Joel Hamkins and Thomas Johnstone) The weakly compact embedding property. (<i>in preparation</i>)</li>
-                -->
-                    
-                <li>Rigid ideals. (with Monroe Eskew) <i>Israel Journal of Mathematics</i>, 224 (1):343-366, 2018. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1606.00040.pdf">pdf</a>) 
-                        
-                        
-                <li>Indestructibility of generically strong cardinals. (with Sean Cox) <i>Fundamenta Mathematicae</i>, 232 (2):131-149, 2016. (<a class="u" target="_blank" href="Cody-Cox-5-28-2015.pdf">pdf</a>)</li>
-                
-                <li>The least weakly compact cardinal can be unfoldable, weakly measurable and nearly \(\theta\)-supercompact. (with Moti Gitik, Joel David Hamkins, and Jason Schanker) <i>Archive for Mathematical Logic</i>, 54 (5-6):491-510, 2015. (<a class="u" target="_blank" href="Cody-Gitik-Hamkins-Schanker.pdf">pdf</a>)
-                </li>
-                
-                <li>Easton's theorem for Ramsey and strongly Ramsey cardinals. (with Victoria Gitman) <i>Annals of Pure and Applied Logic</i>, 166 (9):934-952, 2015. (<a class="u" target="_blank" href="Cody-Gitman-1-28-2013.pdf">pdf</a>)</li>
-                
-                
-                
-                <li>Easton functions and supercompactness. (with Sy Friedman and Radek Honzik) <i>Fundamenta Mathematicae</i>, 226 (3):279-296, 2014. (<a class="u" target="_blank" href="CodyFriedmanHonzik-11-1-2013.pdf">pdf</a>)</li>
-                
-                
-                <li>On Supercompactness and the continuum function. (with Menachem Magidor) <i>Annals of Pure and Applied Logic</i>, 165 (2):620-630, 2014. (<a class="u" target="_blank" href="Cody-Magidor-5-20-2013.pdf">pdf</a>)</li>
-                
-                <li>Easton's Theorem in the presence of Woodin cardinals, <i>Archive for Mathematical Logic</i>, 52 (5-6):569-591, 2013. (<a class="u" target="_blank" href="CodyEaWo-3-11-2013.pdf">pdf</a>)</li>
-                
-                <li>Consecutive singular cardinals and the continuum function. (with A. W. Apter) <i>Notre Dame Journal of Formal Logic</i>, 54 (2):125-136, 2013. (<a class="u" target="_blank" href="apco01.pdf">pdf</a>)</li>
-                
-                <li>The failure of GCH at a degree of supercompactness. <i>Mathematical Logic Quarterly</i>, 58 (1-2):83-94, 2012. (<a class="u" target="_blank" href="Cody-Supercompactness.pdf">pdf</a>) </li>
-                </ol>
-    
-</p>
-
+        I also have
+        an emerging interest in problems involving graph theory, finite combinatorics, discrete
+        optimization and connections with music via maximal evenness.
+        </p>
 
 
 </div>
 
 
+</section>
+
+    
+<section class="papers" style="display:none;">
 
 
-
-
-
-<div id="Teaching" class="tabcontent">
 
     
     <p>
 
-<div id="smallcaps">Fall 2022</div>
+        <ol reversed class="o">
 
-<ul>
-    <li>Math 310 - Linear Algebra</li>
-</ul>
+            <li>Two-cardinal derived topologies, indescribability and Ramseyness. (with Chris Lambie-Hanson and Jing Zhang) <i>Submitted.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2401.00266.pdf">pdf</a>)</li>
 
-<div id="smallcaps">Spring 2022</div>
+            <li>Two-cardinal ideal operators and indescribability. (with Philip White) <i>Submitted.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2206.06170.pdf">pdf</a>)</li>
+            
+            <li>Sparse analytic systems. (with Sean Cox and Kayla Lee) <i>Forum of Mathematics, Sigma</i>, Paper No. e58, 9 pp., 2023. (<a class="u" target="_blank" href="https://arxiv.org/pdf/2208.13725.pdf">pdf</a>)</li>
+                                                
+            <li>Higher indescribability and derived topologies. <i>Accepted at Journal of Mathematical Logic.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2102.09598.pdf">pdf</a>)</li>
+                
+            <li>Large cardinal ideals. <i>Accepted chapter for Research Trends in Contemporary Logic, 49 pages.</i> (<a class="u" target="_blank" class="u" class="u" target="_blank" href="https://arxiv.org/pdf/2102.09591.pdf">pdf</a>)</li>
+            
+    <li>Ideal operators and higher indescribability. (with Peter Holy) <i>Journal of Symbolic Logic</i>, 88 (2):835-873, 2023. (<a class="u" target="_blank" href="https://arxiv.org/pdf/2105.01776.pdf">pdf</a>)</li>
 
-<ul>
-    <li>Math 201 - Calculus with Analytic Geometry II</li>
-    <li>Math 310 - Linear Algebra</li>
-</ul>
+            <li>Forcing a \(\square(\kappa)\)-like principle to hold at a weakly compact cardinal. (with Victoria Gitman and Chris Lambie-Hanson) <i>Annals of Pure and Applied Logic</i>, 172 (7):102960, 26 pp., 2021. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1902.04146.pdf">pdf</a>)</li>
+            
+            <li>A refinement of the Ramsey hierarchy via indescribability. <i>Journal of Symbolic Logic</i>, 85 (2):773-808, 2020. (<a class="u" target="_blank" class="u" class="u" target="_blank" href="https://arxiv.org/pdf/1907.13540.pdf">pdf</a>)</li>
+                
+            <li>Characterizations of the weakly compact ideal on \(P_\kappa\lambda\). <i>Annals of Pure and Applied Logic</i>, 171 (6):23 pages, 2020. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1807.11896.pdf">pdf</a>)</li>	
+                
+            <li>The weakly compact reflection principle need not imply a high order of weak compactness. (with Hiroshi Sakai) <i>Archive for Mathematical Logic</i>, 59 (1):179-196, 2020. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1707.08506.pdf">pdf</a>)</li>
+                
+            <li>Adding a non-reflecting weakly compact set. <i>Notre Dame Journal of Formal Logic</i>, 60 (3):503-521, 2019. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1701.04358.pdf">pdf</a>)</li>	
+                
+                
+            <!-- <li>(with Sean Cox, Joel Hamkins and Thomas Johnstone) The weakly compact embedding property. (<i>in preparation</i>)</li>
+            -->
+                
+            <li>Rigid ideals. (with Monroe Eskew) <i>Israel Journal of Mathematics</i>, 224 (1):343-366, 2018. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1606.00040.pdf">pdf</a>) 
+                    
+                    
+            <li>Indestructibility of generically strong cardinals. (with Sean Cox) <i>Fundamenta Mathematicae</i>, 232 (2):131-149, 2016. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1403.6398.pdf">pdf</a>)</li>
+            
+            <li>The least weakly compact cardinal can be unfoldable, weakly measurable and nearly \(\theta\)-supercompact. (with Moti Gitik, Joel David Hamkins, and Jason Schanker) <i>Archive for Mathematical Logic</i>, 54 (5-6):491-510, 2015. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1305.5961.pdf">pdf</a>)
+            </li>
+            
+            <li>Easton's theorem for Ramsey and strongly Ramsey cardinals. (with Victoria Gitman) <i>Annals of Pure and Applied Logic</i>, 166 (9):934-952, 2015. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1209.1133.pdf">pdf</a>)</li>
+            
+            
+            
+            <li>Easton functions and supercompactness. (with Sy Friedman and Radek Honzik) <i>Fundamenta Mathematicae</i>, 226 (3):279-296, 2014. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1311.0303.pdf">pdf</a>)</li>
+            
+            
+            <li>On Supercompactness and the continuum function. (with Menachem Magidor) <i>Annals of Pure and Applied Logic</i>, 165 (2):620-630, 2014. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1306.0449.pdf">pdf</a>)</li>
+            
+            <li>Easton's Theorem in the presence of Woodin cardinals, <i>Archive for Mathematical Logic</i>, 52 (5-6):569-591, 2013. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1207.5822.pdf">pdf</a>)</li>
+            
+            <li>Consecutive singular cardinals and the continuum function. (with A. W. Apter) <i>Notre Dame Journal of Formal Logic</i>, 54 (2):125-136, 2013. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1112.1890.pdf">pdf</a>)</li>
+            
+            <li>The failure of GCH at a degree of supercompactness. <i>Mathematical Logic Quarterly</i>, 58 (1-2):83-94, 2012. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1110.5365.pdf">pdf</a>) </li>
+            </ol>
 
-    <div id="smallcaps">Fall 2021</div>
-
-<ul>
-    <li>Math 310 - Linear Algebra</li>
-    <li>Math 407 - Advanced Calculus</li>
-</ul>
-    
-    <div id="smallcaps">Spring 2021</div>
-
-<ul>
-    <li>Math 201 - Calculus with Analytic Geometry I</li>
-    <li>Math 490 - Mathematical Expositions</li>
-</ul>
-    
-    <div id="smallcaps">Fall 2020</div>
-
-<ul>
-    <li>Math 201 - Calculus with Analytic Geometry I</li>
-    <li>Math 490 - Mathematical Expositions</li>
-</ul>
-    
-    
-    <div id="smallcaps">Spring 2020</div>
-
-<ul>
-    <li>Math 602 - Abstract Algebra II</li>
-</ul>
-    
-    <div id="smallcaps">Fall 2019</div>
-
-<ul>
-    <li>Math 409 - Topology</li>
-    <li>Math 502 - Abstract Algebra I</li>
-</ul>
-    
-    <div id="smallcaps">Spring 2019</div>
-
-<ul>
-    <li>Math 301 - Differential Equations</li>
-    <li>Math 310 - Linear Algebra</li>
-</ul>
-    
-    <div id="smallcaps">Fall 2018</div>
-
-<ul>
-    <li>Math 697 - Directed Research (Set Theory: Forcing)</li>
-    <li>Math 310 - Linear Algebra</li>
-    <li>Math 409 - Topology</li>
-</ul>    
-
-    <div id="smallcaps">Spring 2018</div>
-
-<ul>
-    <li>Math 697 - Directed Research (Set Theory: Forcing)</li>
-    <li>Math 490 - Mathematical Expositions</li>
-    <li>Math 602 - Abstract Algebra II</li>
-</ul>
-    
-    
-    <div id="smallcaps">Fall 2017</div>
-
-<ul>
-    <li>Math 409 - Topology</li>
-    <li>Math 490 - Mathematical Expositions</li>
-</ul>
-    
-    
-	<div id="smallcaps">Spring 2017</div>
-
-<ul>
-    <li>Math 591 - Ultrafilters and Applications</li>
-</ul>
-	
-	
-	
-    <div id="smallcaps">Fall 2016</div>
-
-<ul>
-    <li>Math 300 - Introduction to Mathematical Reasoning</li>
-    <li>Math 409 - Topology</li>
-</ul>	
-	
-    <div id="smallcaps">Spring 2016</div>
-
-<ul>
-    <li>Math 310 - Linear Algebra</li>
-    <li>Math 490 - Mathematical Expositions</li>
-</ul>
-    
-
-<div id="smallcaps">Fall 2015</div>
-
-<ul>
-    <li>Math 201 - Calculus II</li>
-    <li>Math 300 - Intro. to Mathematical Reasoning</li>
-</ul>
-
-<div id="smallcaps">Spring 2015</div>
-    
-<ul>
-    <li>Math 201 - Calculus II</li>
-    <li>Math 490 - Mathematical Expositions</li>
-    <li>Math 492 - Independent Study (Computability Theory and G&ouml;del's Incompleteness Theorems)</li>
-</ul>
-
-
-<div id="smallcaps">Fall 2014</div>
-
-<ul>
-    <li>Math 201 - Calculus II</li>
-    <li>Math 490 - Mathematical Expositions</li>
-    <li>Math 492 - Independent Study (Set Theory)</li>
-</ul>
-    
-
-<div id="smallcaps">Spring 2014</div>
-
-<ul>
-    <li>Math 201 - Calculus II</li>
-    <li>Math 490 - Mathematical Expositions (taught jointly with Sean Cox)</li>
-    <li>Math 591 - Topics Course: Logic and Mathematical Structures (taught jointly with Sean Cox) (<a href="Compactness-Notes.pdf">notes</a>)</li>
-    <li>Math 492 - Independent Study (Set Theory)</li>
-</ul>
-
-<div id="smallcaps">Fall 2013</div>
-
-<ul>
-    <li>Math 201 - Calculus II</li>
-    <li>Math 300 - Introduction to Mathematical Reasoning</li>
-</ul>
 </p>
 
 
-    
-    
-    </div>
-    
 
 
 
-</div>
+
+
+
+
+
+</section>
+
+
+
+<section class="maximal" style="display:none;">
+    MAXIMAL EVENNESS IN GRAPHS
+</section>
+
+
+<section class="teaching" style="display:none;">
+
+<ul>
+<li>    MATH 201: Calculus with Analytic Geometry II (syllabi: <a target="_blank" href="syllabi/201_s22_os.pdf">spring 2022</a>, <a target="_blank" href="syllabi/201_f20_ip.pdf">fall 2020</a>)</li>
+<li>    MATH 300: Introduction to Mathematical Reasoning (syllabus: <a target="_blank" href="syllabi/300_f23_ip.pdf">fall 2023</a>)</li>
+<li>    MATH 301: Differential Equations (syllabus: <a target="_blank" href="syllabi/301_s19_ip.pdf">spring 2019</a>)</li>
+<li>    MATH 310: Linear Algebra (syllabi: <a target="_blank" href="syllabi/310_s22_os.pdf">spring 2022</a>, <a target="_blank" href="syllabi/310_s19_ip.pdf">spring 2019</a>)</li>
+<li>    MATH 407: Advanced Calculus (syllabus: <a target="_blank" href="syllabi/407_f21_os.pdf">fall 2021</a>)</li>
+<li>    MATH 409: General Topology (syllabus: <a target="_blank" href="syllabi/409_f19_ip.pdf">fall 2019</a>)</li>
+<li>    MATH 490: Mathematical Expositions (syllabi: <a target="_blank" href="syllabi/490_f20_os.pdf">fall 2020</a>, <a target="_blank" href="syllabi/490_s18_ip.pdf">spring 2018</a>)</li>
+<li>    MATH 492: Independent Study (Spring 2015 computability theory and G ̈odel’s Incompleteness Theorems with Philip White; Fall 2014 forcing with Samuel Dworetzky; Spring 2014 set theory with Samuel Dworetzky</li>
+<li>    MATH 493: Mathematical Sciences Internship (Spring 2016 with Lynh Tran, Spring 2018 with Tobechi Okoli)</li>
+<li>    MATH 502: Abstract Algebra I (syllabus: <a target="_blank" href="syllabi/502_f23_ip.pdf">fall 2023</a>)</li>
+<li>    MATH 591: Topics - Filters, ultrafilters and application (spring 2017, taught jointly with Sean Cox and Monroe Eskew)</li>
+<li>    MATH 591: Topics - Logic and Mathematical Structures (spring 2014, taught jointly with Sean Cox, <a target="_blank" href="syllabi/compactness_notes_4-8-2014.pdf">notes</a>)</li>
+<li>    MATH 602: Abstract Algebra II (syllabus: <a target="_blank" href="syllabi/602_s20_ip.pdf">spring 2020</a>)</li>
+<li>    MATH 697: Directed Research (forcing and large cardinals with Philip White)</li>
+<li>    MATH 698: Thesis (Philip White's <a target="_blank" href="syllabi/white_thesis_2019.pdf">thesis</a> has been cited by <a target="_blank" href="https://arxiv.org/pdf/1909.05474.pdf">Buhagiar and Dz̆amonja</a>)</li>
+</ul>
+
+
+
+</section>
+
+
+
+
+<section class="music" style="display:none;">
+Part 1
+<a href="#" class="music-item" id="music1">music 1</a> | 
+
+    <section class="music1" style = "display:none;">
+        Part 2
+    </section>
+
+
+</section>
+
+
+
 
 
 </div>
@@ -452,40 +285,33 @@ a:active { color: #23be30; text-decoration: none}
 
 
 <script>
-    
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-    
-    function openCity(evt, cityName) {
-      // Declare all variables
-      var i, tabcontent, tablinks;
-    
-      // Get all elements with class="tabcontent" and hide them
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-    
-      // Get all elements with class="tablinks" and remove the class "active"
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-    
-      // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    
-    </script>
 
 
 
 
+// On clicking any of the side bar links
+$('.list-group-item').click(function(event){
+
+// Preventing the default action which may mess up the view
+event.preventDefault();
+
+$('.list-group-item').css("color","blue");
+$(this).css("color","black");
+
+$('a.list-group-item').removeClass('active');
+$(this).addClass('active');
+$('section').css('display', 'none');
+$('section.' + $(this).attr('id')).css('display', '');
 
 
+});
 
 
->>>>>>> b24e7d82b71a25363bfc33caac09608206b2177b
+</script>
+
+
+</div>
+
+
 </body>
 </html>

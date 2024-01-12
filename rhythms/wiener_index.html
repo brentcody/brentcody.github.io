@@ -1,0 +1,178 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+
+    <title>Brent Cody</title>  
+
+    <link rel="icon" type="image/png" href="icon.png"/>
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+      
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
+    </script>
+
+<script
+src="https://code.jquery.com/jquery-3.7.0.min.js"
+integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+crossorigin="anonymous"></script>
+
+
+<style>
+
+/*
+html {
+    color:beige;
+    background-color:darkslategray;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+a {
+    color:paleturquoise;
+}
+
+a.visited {
+    color:coral;
+}
+*/
+
+
+.image_container {
+    float:left;
+}
+
+.navbar {
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 90%; /* Full width */
+  background-color: #FFF;
+  font-size: 1em;
+  padding:1em;
+}
+
+.side {
+    float:left;
+    position: fixed; /* Set the navbar to fixed position */
+  top: 10em; /* Position the navbar at the top of the page */
+  width: 20%; /* Full width */
+  background-color: #FFF;
+  font-size: 1em;    
+}
+
+.content {
+  margin-top: 18em; /* Add a top margin to avoid content overlay */
+}
+
+
+</style>
+
+</head>
+
+
+<body link="#0000FF" vlink="#0000FF">
+
+<div class="navbar">
+<p>
+MAXIMIZERS OF THE WIENER INDEX<br>
+
+<br>
+
+These green sets are maximizers of the Wiener index, or equivalently, 
+minimizers of the ``sum of negative distances'' potential energy.
+The red sets are the "classical" maximally even sets. Try to 
+find musical connections with the green sets that are different 
+from the red sets. 
+For example, the set labeled "12_7_cycle_Wiener_index_12" is 
+maximally even, and it corresponds to the 
+<a target="_blank" href="https://en.wikipedia.org/wiki/Major_scale">major scale</a> 
+WWHWWWH (W = whole step, H = half step). This set and its 
+rotations correspond to the 
+<a target="_blank" href="https://en.wikipedia.org/wiki/Heptatonic_scale">Heptatonia prima scales</a>, 
+in which the half steps (semi tones) are maximally separated. These are also known as the diatonic modes. 
+
+Whereas, if we look at 
+a set which is close to "12_7_cycle_Wiener_index_12," like
+"12_7_cycle_Wiener_index_11," it corresponds to WHWWWWH. This set and its 
+rotations are the <a href="https://en.wikipedia.org/wiki/Heptatonic_scale">Heptatonia secunda scales</a>, 
+in which each half step has one and four whole steps on either side. These are called melodic scalse.
+
+The set "12_7_cycle_Wiener_index_6," corresponds to HWWWWWH with two adjacent half steps. 
+This set and its rotations are the 
+<a href="https://en.wikipedia.org/wiki/Heptatonic_scale">Heptatonia tertia scales</a>.
+The set "12_7_cycle_Wiener_index_10" corresponds to the Harmonic major scale
+(<a href="https://en.wikipedia.org/wiki/Heptatonic_scale#/media/File:Ancohemitonic_heptatonic_scales.svg">see picture</a>).
+<b>What other scales can we find here? What rhythms do these sets correspond to? Focus on the "12_7_XXXX" pictures.</b><br>
+
+<br>
+
+Click on the number of vertices you want to see:<br>
+</p>
+
+<p>
+<a href="#" class="list-group-item" id="5">5</a>
+<a href="#" class="list-group-item" id="6">6</a>  
+<a href="#" class="list-group-item" id="7">7</a>  
+<a href="#" class="list-group-item" id="8">8</a>  
+<a href="#" class="list-group-item" id="9">9</a>  
+<a href="#" class="list-group-item" id="10">10</a>  
+<a href="#" class="list-group-item" id="11">11</a>  
+<a href="#" class="list-group-item" id="12">12</a>  
+<a href="#" class="list-group-item" id="13">13</a>  
+<a href="#" class="list-group-item" id="14">14</a>  
+<a href="#" class="list-group-item" id="15">15</a>  
+<a href="#" class="list-group-item" id="16">16</a>  
+</p>
+</div>
+
+
+
+
+    
+
+
+<div class="content" id="log">  </div>
+
+
+
+<script>
+
+
+const numbers = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+const numpics = [9, 12, 15, 20, 25, 33, 41, 63, 73, 122, 141, 260];
+
+for (var k = 0; k < numbers.length; k += 1) {
+    for (var i = 0; i < numpics[k]; i += 1){
+        document.getElementById('log').innerHTML += '<section class="' + numbers[k] + '" style="display:none;"><div class="image_container"><img width=250em src="' + numbers[k] + '_Wiener_index_maximizers/' + i + '.png"></div></section>';
+        /* document.write(html); */
+    }
+}
+
+
+
+
+// On clicking any of the side bar links
+$('.list-group-item').click(function(event){
+
+// Preventing the default action which may mess up the view
+event.preventDefault();
+
+$('a.list-group-item').removeClass('active');
+$(this).addClass('active');
+$('section').css('display', 'none');
+$('section.' + $(this).attr('id')).css('display', '');
+
+});
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
