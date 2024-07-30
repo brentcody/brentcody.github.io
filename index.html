@@ -39,6 +39,8 @@ a.visited {
 }
 */
 
+
+
 .page {
     padding-top:3vmin;
     padding-left:3vmin;
@@ -48,10 +50,15 @@ a.visited {
 }
 
 
-.top_child {
-    display:contents;
-    margin-top:1em;
-    margin-bottom:1em;
+.top_first {
+    float:left;
+    width:50%;
+    
+}
+
+.top_second {
+    float:right;
+    
     
 }
 
@@ -82,18 +89,7 @@ a.visited {
 
 <div class="page">
 
-
-
-    <div class="navbar">    BRENT CODY<br>
-
-            <a href="#" class="list-group-item" id="about">About me</a> | 
-            <a href="#" class="list-group-item" id="papers">Papers</a> | 
-            <a href="#" class="list-group-item" id="teaching">Teaching</a> 
-            <img style="margin-top:1em; width:100%;" src="bu.gif">
-
-    </div>
-        
-        
+      
 
 
 
@@ -104,12 +100,12 @@ a.visited {
 
 
 
-<section class="about">
 
 
 
     <div class="top_parent">
-        <div class="top_child">
+        <div class="top_first">
+            <h2>BRENT CODY</h2>
             Associate Professor<br>
             Department of Mathematics and Applied Mathematics<br>
             Virginia Commonwealth University<br>
@@ -118,19 +114,20 @@ a.visited {
            
             <!-- <b style="font-size:2em">Brent Cody</b> <br> -->
         </div>
+        <div class="top_second">
+            <img width=200em src="brent_2022_2.JPG">
+        </div><br>
 
-    <div class="top_child">
-        <img width=200em src="brent_2022_2.JPG">
-    </div>
+    <img style="margin-top:1em; width:100%;" src="bu.gif">
     
     <br>
+
     <p>
-        Welcome to my website! I am an associate professor at Virginia Commonwealth University. 
-        I do research in mathematics, teach math courses, serve on various math-related
-        committees, referee math research articles and I organize conferences 
-        (see <a target="_blank" href="mamls/index.html">MAMLS at VCU</a>, Idealfest, Stationary sets in algebra).
+        Welcome to my website!
         </p>
-        
+    
+<h3>Research Overview</h3>
+
         <p>
         My main line of research is in <a target="_blank" href="https://en.wikipedia.org/wiki/Set_theory">set theory</a> 
         and involves <a target="_blank" href="https://en.wikipedia.org/wiki/Large_cardinal">large cardinals</a>. 
@@ -146,19 +143,17 @@ a.visited {
         
         <p>
         I also have
-        an emerging interest in problems involving graph theory, finite combinatorics, discrete
-        optimization and connections with music via maximal evenness.
+        an emerging interest in problems involving <a target="_blank" href="https://en.wikipedia.org/wiki/Graph_theory">graph theory</a>, finite combinatorics, discrete
+        optimization and connections with music via maximal evenness and Euclidean rhythms (see [20] and [22] below).
         </p>
 
 
 </div>
 
 
-</section>
 
     
-<section class="papers" style="display:none;">
-
+<h3>Papers</h3>
 
 
     
@@ -166,15 +161,17 @@ a.visited {
 
         <ol reversed class="o">
 
-
-            <li>Two-cardinal ideal operators and indescribability. (with Philip White) <i>Submitted.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2206.06170.pdf">pdf</a>)</li>
-            
+            <li>Maximal evenness in graphs. (with Neal Bushaw and Chris Leffler) <i>Submitted.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2407.18785">pdf</a>)</li>
+          
             <li>Large cardinal ideals. <i>Accepted chapter for Research Trends in Contemporary Logic, 49 pages.</i> (<a class="u" target="_blank" class="u" class="u" target="_blank" href="https://arxiv.org/pdf/2102.09591.pdf">pdf</a>)</li>
+
+            <li>The Music and Mathematics of Maximally Even Sets. (with Neal Bushaw, Luke Freeman and Tobias Whitaker) <i>Proceedings of Bridges 2024: Mathematics, Art, Music, Architecture, Culture:</i> pp. 61-68. (<a class="u" target="_blank" href="https://arxiv.org/pdf/2206.06170.pdf">pdf</a>)</li>
 
             <li>Two-cardinal derived topologies, indescribability and Ramseyness. (with Chris Lambie-Hanson and Jing Zhang) <i>Accepted at Journal of Symbolic Logic.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2401.00266.pdf">pdf</a>)</li>
 
 
-           
+             <li>Two-cardinal ideal operators and indescribability. (with Philip White) <i>Annals of Pure and Applied Logic</i>, 175 (8): Paper No. 103463, 17 pp., 2024. (<a class="u" target="_blank" href="https://arxiv.org/pdf/2206.06170.pdf">pdf</a>)</li>
+            
                                                 
             <li>Higher indescribability and derived topologies. <i>Journal of Mathematical Logic</i> 24 (1): Paper No. 2350001, 48 pp., 2024. (<a class="u" target="_blank" href="https://arxiv.org/pdf/2102.09598.pdf">pdf</a>)</li>
                 
@@ -231,18 +228,10 @@ a.visited {
 
 
 
-
-
-</section>
+<h3>Teaching</h3>
 
 
 
-<section class="maximal" style="display:none;">
-    MAXIMAL EVENNESS IN GRAPHS
-</section>
-
-
-<section class="teaching" style="display:none;">
 
 <ul>
 <li>    MATH 201: Calculus with Analytic Geometry II (syllabi: <a target="_blank" href="syllabi/201_s22_os.pdf">spring 2022</a>, <a target="_blank" href="syllabi/201_f20_ip.pdf">fall 2020</a>)</li>
@@ -264,21 +253,6 @@ a.visited {
 
 
 
-</section>
-
-
-
-
-<section class="music" style="display:none;">
-Part 1
-<a href="#" class="music-item" id="music1">music 1</a> | 
-
-    <section class="music1" style = "display:none;">
-        Part 2
-    </section>
-
-
-</section>
 
 
 
