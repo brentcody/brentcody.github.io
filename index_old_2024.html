@@ -43,29 +43,14 @@ a.visited {
 
 .page {
 
-    
-
-    
     padding-top:3vmin;
     padding-left:3vmin;
     padding-right:10vmin;
-    
-    
-    
-    /*
-    font-size: calc(15px + 0.390625vw); 
     max-width: 40em;
+    font-size: calc(15px + 0.390625vw);
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
-    background: rgb(35,42,51);
-    color: rgb(204,214,228);
-
-    */
-
-    text-align: left;
-    
-    
-    
 }
 
 
@@ -130,25 +115,28 @@ a.visited {
 
 
     <div class="top_parent">
-            
+        <div class="top_first">
             <img width=200em src="brent_2022_2.JPG">
-
             
-            <br>
-
-            <br>
-
-            Brent Cody<br>
+           
+            <!-- <b style="font-size:2em">Brent Cody</b> <br> -->
+        </div>
+        <div class="top_second">
+            <h2>BRENT CODY</h2>
             Associate Professor<br>
             Department of Mathematics<br> 
                 &nbsp; &nbsp; and Applied Mathematics<br>
             Virginia Commonwealth University<br>
             bmcody@vcu.edu<br>
             <br>
+        </div><br>
 
+    <img style="margin-top:1em; width:100%;" src="bu.gif">
+    
     </div>
 
-<img style="margin-top:1em; width:100%;" src="bu.gif">
+    <br>
+
     <p>
         Welcome to my website!
         </p>
@@ -283,29 +271,25 @@ a.visited {
 
 <h3>Some Diagrams + Audio</h3>
 
-Here are some examples from [<a target="_blank" href="https://arxiv.org/pdf/2206.06170">20</a>] (joint work with Bushaw, Freeman and Whitaker).
+<img class="center" width=50% src="mobius.png">
 
-<img class="center" width=300px src="mobius.png">
-
-Bomba is one of the oldest Puerto Rican musical traditions of African origin. In the following diagram taken from [<a target="_blank" href="https://arxiv.org/pdf/2206.06170">20</a>], we see some popular bomba rhythms that correspond to minimal energy subsets of M&ouml;bius ladders.
+Bomba is one of the oldest Puerto Rican musical traditions of African origin. In the following diagram taken from [<a target="_blank" href="https://arxiv.org/pdf/2206.06170">20</a>] (joint work with Bushaw, Freeman and Whitaker), we see some popular bomba rhythms that correspond to minimal energy subsets of M&ouml;bius ladders.
 
 <br>
 
-
-<img class="center" width=400px src="bomba.png">
-
 <br>
 
+<img class="center" width=60% src="bomba.png">
+
+<div class="blurb">
 The bomba yub&aacute; is shown in (a); it is the unique minimal energy subset of size four of the M&ouml;bius ladder on six vertices. Listen to the bomba yub&aacute; here:<br>
-<audio controls="controls"><source src="samples/bomba_yuba.mp3" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="samples/bomba_yuba.mp3" type="audio/x-wav" /></audio><br>
+</div>
 
-<br>
-
-
+<div class="blurb">
 The bomba sic&aacute; is shown in (b); it is the unique minimal energy subset of size four of the M&ouml;bius ladder on eight vertices. Listen to the bomba sic&aacute; here:<br>
-<audio controls="controls"><source src="samples/bomba_sica.mp3" type="audio/x-wav" /></audio>
-
-<br>
+<audio controls="controls"><source src="samples/bomba_sica.mp3" type="audio/x-wav" /></audio><br>
+</div>
 
 <br>
 
@@ -322,12 +306,9 @@ In the following diagram taken from [<a target="_blank" href="https://arxiv.org/
 
 <br>
 
-<img width=700px src="scales.png">
+<img width=100% src="scales.png">
 
 <br>
-
-
-<div class="top_parrent">
 
 <div class="top_first">
 Major scale<br>
@@ -389,7 +370,6 @@ Jhalavarali<br>
 <audio controls="controls"><source src="samples/jhalavarali.wav" type="audio/x-wav" /></audio><br>
 </div>
 
-</div>
 
 &nbsp;<br>
 
@@ -404,11 +384,7 @@ In the next diagram, taken from [<a target="_blank" href="https://arxiv.org/pdf/
 <br>
 
 
-<img width=700px src="triads.png">
-
-<br>
-
-<div class="top_parrent">
+<img width=100% src="triads.png">
 
 <div class="top_first">
 Augmented Triad<br>
@@ -440,26 +416,21 @@ Tritone Add Minor 2nd<br>
 <audio controls="controls"><source src="samples/tritone triad.wav" type="audio/x-wav" /></audio><br>
 </div>
 
+
 </div>
 
 
 <br>
 
-<br>
-
-&nbsp;<br>
-
 <div class="top_first">
-
 <h3>Local minimizers can be found by gradient descent</h3>
 
 <a target="_blank" href="https://drive.google.com/file/d/1bHe3nWBjZdzj97EY6Uct4u2FdKwp5lPn/view">Gradient descent with 28 vertices on \(C_{64}\)</a>.<br>
 <a target="_blank" href="https://drive.google.com/file/d/1bSXqfZV7o2f5GlkMO2FoC8Vf8wrCCEkn/view">Gradient descent with 30 vertices on \(C_{20}\Box C_{20}\)</a>.
-
-<br>
-
+</div>
 
 
+<div class="top_first">
 <h3>Minimizers on a 4-cube and toroidal graphs</h3>
 
 <a target="_blank" href="cube_and_torus_minimizers/4_cube.html">4-cube</a><br>
@@ -471,8 +442,9 @@ Tritone Add Minor 2nd<br>
 <a target="_blank" href="cube_and_torus_minimizers/4_4_torus.html">4 x 4 torus</a><br>
 
 <a target="_blank" href="cube_and_torus_minimizers/5_5_torus.html">5 x 5 torus</a><br>
-
 </div>
+
+
 
 
 <script>
