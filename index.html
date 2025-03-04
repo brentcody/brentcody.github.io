@@ -1,195 +1,146 @@
-<html>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-    <title>Brent Cody</title>  
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brent Cody</title>
     <link rel="icon" type="image/png" href="icon.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-      
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
-    </script>
+    <!-- MathJax -->
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-<script
-src="https://code.jquery.com/jquery-3.7.0.min.js"
-integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-crossorigin="anonymous"></script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
 
-<style>
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
 
-/*
-html {
-    color:beige;
-    background-color:darkslategray;
-    font-family: 'Courier New', Courier, monospace;
-    
-}
+        a:hover {
+            text-decoration: underline;
+        }
 
-a {
-    color:paleturquoise;
-}
+        /* Main Page Layout */
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-a.visited {
-    color:coral;
-}
-*/
+        .content {
+            text-align: left;
+        }
 
+        .top_parent {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
 
+        .top_parent img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
 
-.page {
+        .top_parent h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
 
-    
+        .top_parent p {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
 
-    
-    padding-top:3vmin;
-    padding-left:3vmin;
-    padding-right:10vmin;
-    
-    
-    
-    /*
-    font-size: calc(15px + 0.390625vw); 
-    max-width: 40em;
-    margin-left: auto;
-    margin-right: auto;
-    background: rgb(35,42,51);
-    color: rgb(204,214,228);
+        /* Section Styling */
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
 
-    */
+        .blurb, .papers, .teaching {
+            margin-bottom: 30px;
+        }
 
-    text-align: left;
-    
-    
-    
-}
+        .papers ol {
+            list-style-position: inside;
+        }
 
+        .papers li {
+            margin-bottom: 10px;
+        }
 
-.top_first {
-    float:left;  
-        padding:1em;
-  
-}
+        .audio-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
 
-.top_second {
-    float:left;
-}
+        .audio-list div {
+            text-align: center;
+        }
 
-.blurb {
-    float:left;
-    width:40%;
-    margin-right:10%;
-}
-
-
-.top_parent {
-    padding:0em;
-    max-width: 40em;
-    min-width: 30em;
-}
-
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.content{
-
-}
-
-
-
-
-</style>
-
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
 </head>
-
-
-<body link="#0000FF" vlink="#0000FF" style="text-align: center;">
+<body>
 
 <div class="page">
+    <div class="content">
 
-      
-
-
-
-
-
-<div class="content">
-
-
-
+        <div class="top_parent">
+            <img src="brent_2022_2.JPG" alt="Brent Cody">
+            <h1>Brent Cody</h1>
+            <p>Associate Professor, Department of Mathematics and Applied Mathematics</p>
+            <p>Virginia Commonwealth University</p>
+            <p>Email: <a href="mailto:bmcody@vcu.edu">bmcody@vcu.edu</a></p>
+        </div>
 
 
+        <h3>Research Overview</h3>
+        <p>My primary area of research is <a href="https://en.wikipedia.org/wiki/Set_theory" target="_blank">set theory</a> and involves <a href="https://en.wikipedia.org/wiki/Large_cardinal" target="_blank">large cardinals</a>. 
+        I've done work on combinatorial principles and <a href="https://en.wikipedia.org/wiki/Forcing_(mathematics)" target="_blank">forcing</a> constructions related to the large cardinal properties of <a href="https://en.wikipedia.org/wiki/Ramsey_cardinal" target="_blank">Ramseyness</a>, 
+        <a href="https://en.wikipedia.org/wiki/Ineffable_cardinal" target="_blank">ineffability</a> and <a href="https://en.wikipedia.org/wiki/Indescribable_cardinal" target="_blank">indescribability</a>.</p>
 
+        <p>I also have an emerging interest in problems involving <a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank">graph theory</a>, finite combinatorics, discrete
+        optimization, and connections with music via maximal evenness and Euclidean rhythms.</p>
 
-    <div class="top_parent">
-            
-            <img width=200em src="brent_2022_2.JPG">
+        <h3>Papers</h3>
+        <div class="papers">
+            <ol reversed class="o">
 
-            
-            <br>
+            <li>The \(k\)-general \(d\)-position problem for graphs. (with Garrett Moore) <i>Discrete Applied Mathematics</i> 366: 135–151, 2025. (<a class="u" target="_blank" href="https://arxiv.org/pdf/2409.05644">pdf</a>)</li>
 
-            <br>
-
-            Brent Cody<br>
-            Associate Professor<br>
-            Department of Mathematics<br> 
-                &nbsp; &nbsp; and Applied Mathematics<br>
-            Virginia Commonwealth University<br>
-            bmcody@vcu.edu<br>
-            <br>
-
-    </div>
-
-<img style="margin-top:1em; width:100%;" src="bu.gif">
-    <p>
-        Welcome to my website!
-        </p>
-    
-<h3>Research Overview</h3>
-
-        <p>
-        My main line of research is in <a target="_blank" href="https://en.wikipedia.org/wiki/Set_theory">set theory</a> 
-        and involves <a target="_blank" href="https://en.wikipedia.org/wiki/Large_cardinal">large cardinals</a>. 
-        I've done work on combinatorial principles and 
-        <a target="_blank" href="https://en.wikipedia.org/wiki/Forcing_(mathematics)">forcing</a> 
-        constructions related to the large cardinal properties 
-        of <a target="_blank" href="https://en.wikipedia.org/wiki/Ramsey_cardinal">Ramseyness</a>, 
-        <a target="_blank" href="https://en.wikipedia.org/wiki/Ineffable_cardinal">ineffability</a> and 
-        <a target="_blank" href="https://en.wikipedia.org/wiki/Indescribable_cardinal">indescribability</a>. 
-        I've also worked on strong properties of successor cardinals that hold after collapsing 
-        large cardinals and on preserving large cardinals through Easton-support forcing iterations.
-        </p>
-        
-        <p>
-        I also have
-        an emerging interest in problems involving <a target="_blank" href="https://en.wikipedia.org/wiki/Graph_theory">graph theory</a>, finite combinatorics, discrete
-        optimization and connections with music via maximal evenness and Euclidean rhythms (see [<a target="_blank" href="https://arxiv.org/pdf/2206.06170">20</a>]  and [<a target="_blank" href="https://arxiv.org/pdf/2407.18785">22</a>]  below).
-        </p>
-
-
-
-
-
-    
-<h3>Papers</h3>
-
-
-    
-    <p>
-
-        <ol reversed class="o">
-
-            <li>The \(k\)-general \(d\)-position problem for graphs. (with Garrett Moore) <i>Submitted.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2409.05644">pdf</a>)</li>
-
-            <li>Maximal evenness in graphs. (with Neal Bushaw and Chris Leffler) <i>Submitted.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2407.18785">pdf</a>)</li>
+            <li>Sets of vertices with extremal energy. (with Neal Bushaw and Chris Leffler) <i>Accepted at Discrete Mathematics.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2407.18785">pdf</a>)</li>
           
             <li>Large cardinal ideals. <i>Accepted chapter for Research Trends in Contemporary Logic, 49 pages.</i> (<a class="u" target="_blank" class="u" class="u" target="_blank" href="https://arxiv.org/pdf/2102.09591.pdf">pdf</a>)</li>
 
@@ -213,17 +164,17 @@ a.visited {
             
             <li>A refinement of the Ramsey hierarchy via indescribability. <i>Journal of Symbolic Logic</i>, 85 (2):773-808, 2020. (<a class="u" target="_blank" class="u" class="u" target="_blank" href="https://arxiv.org/pdf/1907.13540.pdf">pdf</a>)</li>
                 
-            <li>Characterizations of the weakly compact ideal on \(P_\kappa\lambda\). <i>Annals of Pure and Applied Logic</i>, 171 (6):23 pages, 2020. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1807.11896.pdf">pdf</a>)</li>	
+            <li>Characterizations of the weakly compact ideal on \(P_\kappa\lambda\). <i>Annals of Pure and Applied Logic</i>, 171 (6):23 pages, 2020. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1807.11896.pdf">pdf</a>)</li>  
                 
             <li>The weakly compact reflection principle need not imply a high order of weak compactness. (with Hiroshi Sakai) <i>Archive for Mathematical Logic</i>, 59 (1):179-196, 2020. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1707.08506.pdf">pdf</a>)</li>
                 
-            <li>Adding a non-reflecting weakly compact set. <i>Notre Dame Journal of Formal Logic</i>, 60 (3):503-521, 2019. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1701.04358.pdf">pdf</a>)</li>	
+            <li>Adding a non-reflecting weakly compact set. <i>Notre Dame Journal of Formal Logic</i>, 60 (3):503-521, 2019. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1701.04358.pdf">pdf</a>)</li>    
                 
                 
             <!-- <li>(with Sean Cox, Joel Hamkins and Thomas Johnstone) The weakly compact embedding property. (<i>in preparation</i>)</li>
             -->
                 
-            <li>Rigid ideals. (with Monroe Eskew) <i>Israel Journal of Mathematics</i>, 224 (1):343-366, 2018. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1606.00040.pdf">pdf</a>) 
+            <li>Rigid ideals. (with Monroe Eskew) <i>Israel Journal of Mathematics</i>, 224 (1):343-366, 2018. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1606.00040.pdf">pdf</a>)</li>
                     
                     
             <li>Indestructibility of generically strong cardinals. (with Sean Cox) <i>Fundamenta Mathematicae</i>, 232 (2):131-149, 2016. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1403.6398.pdf">pdf</a>)</li>
@@ -246,22 +197,10 @@ a.visited {
             
             <li>The failure of GCH at a degree of supercompactness. <i>Mathematical Logic Quarterly</i>, 58 (1-2):83-94, 2012. (<a class="u" target="_blank" href="https://arxiv.org/pdf/1110.5365.pdf">pdf</a>) </li>
             </ol>
+        </div>
 
-</p>
-
-
-
-
-
-
-
-
-<h3>Teaching</h3>
-
-
-
-
-<ul>
+        <h3>Teaching</h3>
+        <ul>
 <li>    MATH 201: Calculus with Analytic Geometry II (syllabi: <a target="_blank" href="syllabi/201_s22_os.pdf">spring 2022</a>, <a target="_blank" href="syllabi/201_f20_ip.pdf">fall 2020</a>)</li>
 <li>    MATH 300: Introduction to Mathematical Reasoning (syllabus: <a target="_blank" href="syllabi/300_f23_ip.pdf">fall 2023</a>)</li>
 <li>    MATH 301: Differential Equations (syllabus: <a target="_blank" href="syllabi/301_s19_ip.pdf">spring 2019</a>)</li>
@@ -279,230 +218,24 @@ a.visited {
 <li>    MATH 698: Thesis (Philip White's <a target="_blank" href="syllabi/white_thesis_2019.pdf">thesis</a> has been cited by <a target="_blank" href="https://arxiv.org/pdf/1909.05474.pdf">Buhagiar and Dz̆amonja</a>)</li>
 </ul>
 
+        <h3>Some Diagrams + Audio</h3>
+        <div class="audio-list">
+            <div>
+                <img src="mobius.png" width="200" alt="Mobius Ladder">
+                <p>Mobius Ladder Diagram</p>
+            </div>
+            <div>
+                <audio controls><source src="samples/bomba_yuba.mp3" type="audio/x-wav"></audio>
+                <p>Bomba Yubá</p>
+            </div>
+            <!-- Add other audio and diagrams here -->
+        </div>
 
-
-<h3>Some Diagrams + Audio</h3>
-
-Here are some examples from [<a target="_blank" href="https://arxiv.org/pdf/2206.06170">20</a>] (joint work with Bushaw, Freeman and Whitaker).
-
-<img class="center" width=300px src="mobius.png">
-
-Bomba is one of the oldest Puerto Rican musical traditions of African origin. In the following diagram taken from [<a target="_blank" href="https://arxiv.org/pdf/2206.06170">20</a>], we see some popular bomba rhythms that correspond to minimal energy subsets of M&ouml;bius ladders.
-
-<br>
-
-
-<img class="center" width=400px src="bomba.png">
-
-<br>
-
-The bomba yub&aacute; is shown in (a); it is the unique minimal energy subset of size four of the M&ouml;bius ladder on six vertices. Listen to the bomba yub&aacute; here:<br>
-<audio controls="controls"><source src="samples/bomba_yuba.mp3" type="audio/x-wav" /></audio>
-
-<br>
-
-
-The bomba sic&aacute; is shown in (b); it is the unique minimal energy subset of size four of the M&ouml;bius ladder on eight vertices. Listen to the bomba sic&aacute; here:<br>
-<audio controls="controls"><source src="samples/bomba_sica.mp3" type="audio/x-wav" /></audio>
-
-<br>
-
-<br>
-
-&nbsp;<br>
-
-<br>
-
-&nbsp;<br>
-
-
-In the following diagram taken from [<a target="_blank" href="https://arxiv.org/pdf/2206.06170">20</a>] (joint work with Bushaw, Freeman and Whitaker), some <a target="_blank" href="https://en.wikipedia.org/wiki/Heptatonic_scale">heptatonic</a> (i.e. seven note) scales are arranged in order of increasing energy from left to right. You can listen to the scales by clicking on the links below.
-
-<br>
-
-<br>
-
-<img width=700px src="scales.png">
-
-<br>
-
-
-<div class="top_parrent">
-
-<div class="top_first">
-Major scale<br>
-<audio controls="controls"><source src="samples/major.wav" type="audio/x-wav" /></audio><br>
+        <footer>
+            <p>&copy; 2025 Brent Cody. All rights reserved.</p>
+        </footer>
+    </div>
 </div>
-
-<div class="top_first">
-Melodic Minor<br>
-<audio controls="controls"><source src="samples/melodic minor.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Major Neapolitan<br>
-<audio controls="controls"><source src="samples/major neapolitan.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Harmonic Minor<br>
-<audio controls="controls"><source src="samples/harmonic minor.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Hungarian Major<br>
-<audio controls="controls"><source src="samples/hungarian major.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Minor Neapolitan<br>
-<audio controls="controls"><source src="samples/minor neapolitan.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Gamanashrama<br>
-<audio controls="controls"><source src="samples/gamanashrama.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Marwa<br>
-<audio controls="controls"><source src="samples/marwa.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Double Harmonic<br>
-<audio controls="controls"><source src="samples/double harmonic.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Todi<br>
-<audio controls="controls"><source src="samples/todi.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Jalavarnam<br>
-<audio controls="controls"><source src="samples/jalavarnam.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Jhalavarali<br>
-<audio controls="controls"><source src="samples/jhalavarali.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-</div>
-
-&nbsp;<br>
-
-
-
-
-
-<div class="top_first">
-In the next diagram, taken from [<a target="_blank" href="https://arxiv.org/pdf/2206.06170">20</a>] (joint work with Bushaw, Freeman and Whitaker), triads are arranged in order of increasing energy from left to right. You can listen to the triads using the links below.
-</div>
-
-<br>
-
-
-<img width=700px src="triads.png">
-
-<br>
-
-<div class="top_parrent">
-
-<div class="top_first">
-Augmented Triad<br>
-<audio controls="controls"><source src="samples/augmented triad.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Minor Triad<br>
-<audio controls="controls"><source src="samples/minor triad.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Diminished Triad<br>
-<audio controls="controls"><source src="samples/diminished triad.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Sus. 4 Triad<br>
-<audio controls="controls"><source src="samples/sus 4 triad.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Italian Augmented 6th Chord<br>
-<audio controls="controls"><source src="samples/italian triad.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-<div class="top_first">
-Tritone Add Minor 2nd<br>
-<audio controls="controls"><source src="samples/tritone triad.wav" type="audio/x-wav" /></audio><br>
-</div>
-
-</div>
-
-
-<br>
-
-<br>
-
-&nbsp;<br>
-
-<div class="top_first">
-
-<h3>Local minimizers can be found by gradient descent</h3>
-
-<a target="_blank" href="https://drive.google.com/file/d/1bHe3nWBjZdzj97EY6Uct4u2FdKwp5lPn/view">Gradient descent with 28 vertices on \(C_{64}\)</a>.<br>
-<a target="_blank" href="https://drive.google.com/file/d/1bSXqfZV7o2f5GlkMO2FoC8Vf8wrCCEkn/view">Gradient descent with 30 vertices on \(C_{20}\Box C_{20}\)</a>.
-
-<br>
-
-
-
-<h3>Minimizers on a 4-cube and toroidal graphs</h3>
-
-<a target="_blank" href="cube_and_torus_minimizers/4_cube.html">4-cube</a><br>
-
-<a target="_blank" href="cube_and_torus_minimizers/1_8_torus.html">1 x 8 torus</a><br>
-
-<a target="_blank" href="cube_and_torus_minimizers/2_8_torus.html">2 x 8 torus</a><br>
-
-<a target="_blank" href="cube_and_torus_minimizers/4_4_torus.html">4 x 4 torus</a><br>
-
-<a target="_blank" href="cube_and_torus_minimizers/5_5_torus.html">5 x 5 torus</a><br>
-
-</div>
-
-
-<script>
-
-
-
-
-// On clicking any of the side bar links
-$('.list-group-item').click(function(event){
-
-// Preventing the default action which may mess up the view
-event.preventDefault();
-
-$('.list-group-item').css("color","blue");
-$(this).css("color","black");
-
-$('a.list-group-item').removeClass('active');
-$(this).addClass('active');
-$('section').css('display', 'none');
-$('section.' + $(this).attr('id')).css('display', '');
-
-
-});
-
-
-</script>
-
-
-</div>
-
 
 </body>
 </html>
