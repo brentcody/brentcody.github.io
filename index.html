@@ -111,14 +111,21 @@
   /* ---------- Header ---------- */
   header.intro { padding: 64px 0 40px; }
   .intro-grid { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: center; }
-  figure.portrait { margin: 0; }
-  figure.portrait img {
-    display: block; width: 200px; height: 240px; object-fit: cover; object-position: center 25%;
+  figure.portrait { margin: 0; width: 200px; }
+  .frame {
+    position: relative; width: 200px; height: 290px;
     border: 1px solid var(--ink);
     box-shadow: 6px 6px 0 var(--shadow);      /* hard, un-blurred, 1999 drop shadow */
-    background: var(--chip);
+    background: var(--chip); overflow: hidden;
   }
-  figure.portrait figcaption { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 14px; }
+  .frame img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    opacity: 0; transition: opacity 3.2s ease-in-out;
+  }
+  .frame img.on { opacity: 1; }
+  .frame.instant img { transition: none; }
+  figure.portrait figcaption span { transition: opacity 1.6s ease; }
+  figure.portrait figcaption { font-family: var(--mono); font-size: 12px; line-height: 1.5; color: var(--muted); margin-top: 14px; height: 3em; overflow: hidden; }
   h1 {
     font-size: clamp(44px, 7vw, 64px); line-height: 1.02; letter-spacing: -0.02em;
     font-weight: 700; margin: 0 0 16px;
@@ -301,7 +308,8 @@
     nav li + li::before { margin: 0 6px; }
     header.intro { padding: 40px 0 24px; }
     .intro-grid { grid-template-columns: 1fr; gap: 28px; }
-    figure.portrait img { width: 160px; height: 192px; }
+    .frame { width: 160px; height: 232px; }
+    figure.portrait { width: 160px; }
     .lede { font-size: 18px; }
     .cols { grid-template-columns: 1fr; }
     ul.plain.twocol { grid-template-columns: 1fr; }
@@ -341,7 +349,7 @@
     box-shadow: inset 0 0 160px rgba(0,0,0,.85);
   }
   html.crt figure.plate img { filter: invert(1) sepia(1) hue-rotate(70deg) saturate(4) brightness(.95) !important; mix-blend-mode: screen !important; }
-  html.crt figure.portrait img { filter: grayscale(1) sepia(1) hue-rotate(70deg) saturate(3) brightness(.85); }
+  html.crt .frame img { filter: grayscale(1) sepia(1) hue-rotate(70deg) saturate(3) brightness(.85); }
   html.crt .cursor { background: #39ff6a; box-shadow: 0 0 6px #39ff6a; }
 </style>
 </head>
@@ -366,8 +374,21 @@
   <header class="intro">
     <div class="wrap intro-grid">
       <figure class="portrait">
-        <img src="images/brent_2022_2_small.jpg" alt="Photo of Brent Cody">
-        <figcaption>fig. 1 &mdash; the author</figcaption>
+        <div class="frame" id="portrait">
+          <img class="on" src="images/brent_2022_2_small.jpg" style="object-position: center 25%" data-cap="the author" alt="Photo of Brent Cody">
+          <img src="images/brent_by_amanda.jpg" style="object-position: 52% center" data-cap="painting by Amanda Blackmon" alt="Painting of Brent Cody by Amanda Blackmon: he stands on a pink planet under a starry sky, surrounded by surreal companions" aria-hidden="true">
+          <img src="images/brent_headshot.jpg" style="object-position: center 30%" data-cap="the author" alt="Black-and-white headshot of Brent Cody" aria-hidden="true">
+          <img src="images/brent_lights.jpg" style="object-position: center 12%" data-cap="the author" alt="Brent Cody, seen from behind in silhouette, walking into a burst of blue laser light" aria-hidden="true">
+        </div>
+        <figcaption>fig. 1 &mdash; <span id="portraitCap">the author</span></figcaption>
+        <script>
+          (function () { /* pick a random starting image before the page first paints */
+            var f = document.getElementById('portrait'), im = f.querySelectorAll('img'), j = Math.floor(Math.random() * im.length);
+            f.classList.add('instant');
+            im.forEach(function (x, k) { x.classList.toggle('on', k === j); if (k === j) x.removeAttribute('aria-hidden'); else x.setAttribute('aria-hidden', 'true'); });
+            document.getElementById('portraitCap').textContent = im[j].getAttribute('data-cap');
+          })();
+        </script>
       </figure>
       <div>
         <h1>Brent Cody<span class="cursor" aria-hidden="true"></span></h1>
@@ -551,7 +572,6 @@
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 Brent Cody. All rights reserved.</span>
     <span>Erd&#337;s number 2 (via Menachem Magidor <a href="#p4">[4]</a>)</span>
     <span>last modified: <span id="lastmod">&mdash;</span></span>
     <a href="#top">&uarr; back to top</a>
@@ -630,6 +650,31 @@
       pos = (k === code[pos]) ? pos + 1 : (k === code[0] ? 1 : 0);
       if (pos === code.length) { root.classList.toggle('crt'); pos = 0; }
     });
+  })();
+
+  // Portrait: start on a random image, then cross-fade slowly in a fixed cycle
+  (function () {
+    var frame = document.getElementById('portrait'), cap = document.getElementById('portraitCap');
+    var imgs = frame.querySelectorAll('img');
+    if (imgs.length < 2) return;
+    function show(j) {
+      imgs.forEach(function (im, k) {
+        im.classList.toggle('on', k === j);
+        if (k === j) im.removeAttribute('aria-hidden'); else im.setAttribute('aria-hidden', 'true');
+      });
+    }
+    var i = Math.max(0, Array.prototype.findIndex.call(imgs, function (im) { return im.classList.contains('on'); }));
+    void frame.offsetWidth; frame.classList.remove('instant');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    setInterval(function () {
+      if (document.hidden) return;
+      i = (i + 1) % imgs.length; show(i);
+      var t = imgs[i].getAttribute('data-cap');
+      if (cap.textContent !== t) {
+        cap.style.opacity = 0;
+        setTimeout(function () { cap.textContent = t; cap.style.opacity = 1; }, 1600);
+      }
+    }, 9000);
   })();
 
   // Gentle reveal + active nav link
