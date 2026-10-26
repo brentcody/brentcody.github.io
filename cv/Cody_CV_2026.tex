@@ -1,0 +1,700 @@
+\documentclass[11pt,a4paper]{moderncv}
+
+%-------------------------------------------------------------------------------
+% STYLE AND COLOR
+%-------------------------------------------------------------------------------
+\moderncvstyle{classic} % options: casual, classic, banking, oldstyle, fancy
+\moderncvcolor{blue}
+
+%-------------------------------------------------------------------------------
+% FONTS: enforce Computer Modern serif everywhere
+%-------------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{comment}
+\renewcommand{\familydefault}{\rmdefault} % use Computer Modern serif
+\AtBeginDocument{\renewcommand{\sfdefault}{cmr}} % override moderncv's sans font
+
+% The line above forces moderncv (which uses \sffamily internally)
+% to actually render text in Computer Modern Roman (serif).
+
+
+\usepackage{etoolbox}
+% ensure we are using Computer Modern/Latin Modern as main font:
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\rmdefault}
+
+% Patch moderncv macros to prefer \rmfamily where they set \sffamily
+\AtBeginDocument{%
+  \patchcmd{\makecvtitle}{\sffamily}{\rmfamily}{}{}%
+  \patchcmd{\cventry}{\sffamily}{\rmfamily}{}{}%
+  \patchcmd{\cvitem}{\sffamily}{\rmfamily}{}{}%
+  \patchcmd{\social}{\sffamily}{\rmfamily}{}{}% if social icons use sffamily
+}
+
+
+
+%-------------------------------------------------------------------------------
+% PAGE SETUP
+%-------------------------------------------------------------------------------
+\usepackage[scale=0.78]{geometry}
+\setlength{\hintscolumnwidth}{2.8cm}
+
+%-------------------------------------------------------------------------------
+% SECTION HEADING STYLE
+%-------------------------------------------------------------------------------
+\makeatletter
+\renewcommand*{\sectionfont}{\Large\bfseries}
+\renewcommand*{\subsectionfont}{\large\bfseries}
+\makeatother
+
+
+
+
+%-------------------------------------------------------------------------------
+% PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+\name{Brent}{Cody}
+\title{Associate Professor}
+\address{Department of Mathematics and Applied Mathematics}{Virginia Commonwealth University}{Richmond, VA 23284, USA}
+\phone[mobile]{(804)~334--3921}
+\email{bmcody@vcu.edu}
+\homepage{https://brentcody.github.io/}
+
+%-------------------------------------------------------------------------------
+% DOCUMENT
+%-------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+
+
+
+
+
+
+\section{Education}
+\cventry{2012}{Ph.D.\ in Mathematics}{The Graduate Center of the City University of New York}{}{}{
+Advisor: Joel David Hamkins
+}
+
+\cventry{2004}{M.S.\ in Mathematics}{University of Virginia}{}{}{}
+
+\cventry{2002}{B.S.\ in Mathematics; B.S.\ in Physics}{Virginia Commonwealth University}{}{}{
+Graduated \emph{Magna Cum Laude}, with honors
+}
+
+
+
+
+
+\section{Professional Positions}
+
+\cventry{2022--Present}{Associate Professor}{Virginia Commonwealth University}{Richmond, VA}{}{}
+
+\cventry{2016--2022}{Assistant Professor}{Virginia Commonwealth University}{Richmond, VA}{}{}
+
+\cventry{2013--2016}{Visiting Assistant Professor}{Virginia Commonwealth University}{Richmond, VA}{}{}
+
+\cventry{2012--2013}{Postdoctoral Fellow}{}{}{}{
+Fall 2012: The Fields Institute for Research in Mathematical Sciences, Toronto, Ontario\\
+Spring 2013: University of Prince Edward Island, Charlottetown, Prince Edward Island (mentor: Maxim Burke)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Publications}
+
+\cvitem{}{\small Student coauthors are marked: \textsuperscript{*}\,undergraduate, \textsuperscript{\dag}\,graduate.}
+
+
+\subsection{Papers in preparation}
+
+\cvitem{}{J.~Bagaria and B.~Cody. Diagonal hypersquares, \emph{in preparation}.}
+
+\cvitem{}{B.~Cody and Rose Detore\textsuperscript{*}. Metric general position graph invariants and graph powers, \emph{in preparation}.}
+
+
+\subsection{Papers submitted for publication}
+
+\cvitem{25}{B.~Cody and Rose Detore\textsuperscript{*}. Metric general position extensions of classical graph invariants and perfection, \emph{submitted}, 2025.}
+
+\cvitem{24}{Viktoriya Bardenova\textsuperscript{\dag}, Neal Bushaw, B.~Cody, Paul Fay\textsuperscript{\dag} and Maya Tennant\textsuperscript{\dag}. The Wiener index of vertex colorings, \emph{submitted}, 2025.}
+
+
+\subsection{Published and accepted papers}
+
+\cvitem{23}{B.~Cody, C.~Lambie-Hanson, and J.~Zhang.
+Two-cardinal derived topologies, indescribability, and Ramseyness. \emph{Journal of Symbolic Logic}, \textbf{91}(3):1260--1288, 2026. doi:10.1017/jsl.2024.16.}
+
+\cvitem{22}{B.~Cody and Garrett Moore\textsuperscript{*}. The $k$-general $d$-position problem for graphs. \emph{Discrete Applied Mathematics}, \textbf{366}: 135-151, 2025.}
+
+\cvitem{21}{Neal Bushaw, B.~Cody and Chris Leffler\textsuperscript{*}. Sets of vertices with extremal energy. \emph{Discrete Mathematics}, \textbf{348}(7): Paper no. 114466, 2025.}
+
+\cvitem{20}{Neal Bushaw, B.~Cody, Luke Freeman\textsuperscript{*} and Tobias Whitaker. The music and mathematics of maximally even sets. \emph{Bridges Proceedings}, 2024.}
+
+\cvitem{19}{B.~Cody and P.~White\textsuperscript{\dag}.
+Two-cardinal ideal operators and indescribability. \emph{Annals of Pure and Applied Logic}, \textbf{175}(8): Paper No. 103463, 17pp., 2024.}
+
+\cvitem{18}{B.~Cody. Higher indescribability and derived topologies. \emph{Journal of Mathematical Logic}, \textbf{24}(1): Paper No. 2350001, 48pp., 2024.}
+
+\cvitem{17}{B.~Cody. Large cardinal ideals.
+Peer-reviewed book chapter, accepted 2020, in \emph{Research Trends in Contemporary Logic}
+(College Publications); volume forthcoming. Preprint: arXiv:2102.09591.}
+
+\cvitem{16}{B.~Cody, S.~Cox, and K.~Lee\textsuperscript{*}.
+Sparse analytic systems. \emph{Forum of Mathematics, Sigma}, Paper No.~e58, 9~pp., 2023.}
+
+\cvitem{15}{B.~Cody and P.~Holy.
+Higher indescribability and ideal operators. \emph{Journal of Symbolic Logic},
+\textbf{88}(2):835--873, 2023.}
+
+\cvitem{14}{B.~Cody, V.~Gitman, and C.~Lambie-Hanson.
+A $\Box(\kappa)$-like principle consistent with weak compactness.
+\emph{Annals of Pure and Applied Logic}, \textbf{172}(7):102960, 26~pp., 2021.}
+
+\cvitem{13}{B.~Cody. A refinement of the Ramsey hierarchy via indescribability.
+\emph{Journal of Symbolic Logic}, \textbf{85}(2):773--808, 2020.}
+
+\cvitem{12}{B.~Cody. Characterizations of the weakly compact ideal on $P_\kappa\lambda$.
+\emph{Annals of Pure and Applied Logic}, \textbf{171}(6):23~pp., 2020.}
+
+\cvitem{11}{B.~Cody and H.~Sakai.
+The weakly compact reflection principle need not imply a high order of weak compactness.
+\emph{Archive for Mathematical Logic}, \textbf{59}(1–2):179--196, 2020.}
+
+\cvitem{10}{B.~Cody. Adding a non-reflecting weakly compact set.
+\emph{Notre Dame Journal of Formal Logic}, \textbf{60}(3):503--521, 2019.}
+
+\cvitem{9}{B.~Cody and M.~Eskew. Rigid Ideals.
+\emph{Israel Journal of Mathematics}, \textbf{224}(1):343--366, 2018.}
+
+\cvitem{8}{B.~Cody and S.~Cox. Indestructibility of generically strong cardinals.
+\emph{Fundamenta Mathematicae}, \textbf{232}(2):131--149, 2016.}
+
+\cvitem{7}{B.~Cody, M.~Gitik, J.~D.~Hamkins, and J.~Schanker.
+The least weakly compact cardinal can be unfoldable, weakly measurable, and nearly $\theta$-supercompact.
+\emph{Archive for Mathematical Logic}, \textbf{54}(5--6):491--510, 2015.}
+
+\cvitem{6}{B.~Cody and V.~Gitman. Easton's theorem for Ramsey and strongly Ramsey cardinals.
+\emph{Annals of Pure and Applied Logic}, \textbf{166}(9):934--952, 2015.}
+
+\cvitem{5}{B.~Cody, S.-D.~Friedman, and R.~Honzik.
+Easton functions and supercompactness.
+\emph{Fundamenta Mathematicae}, \textbf{226}(3):279--296, 2014.}
+
+\cvitem{4}{B.~Cody and M.~Magidor. On supercompactness and the continuum function.
+\emph{Annals of Pure and Applied Logic}, \textbf{165}(2):620--630, 2014.}
+
+\cvitem{3}{B.~Cody. Easton's theorem in the presence of Woodin cardinals.
+\emph{Archive for Mathematical Logic}, \textbf{52}(5--6):569--591, 2013.}
+
+\cvitem{2}{A.~W.~Apter and B.~Cody.
+Consecutive singular cardinals and the continuum function.
+\emph{Notre Dame Journal of Formal Logic}, \textbf{54}(3):125--136, 2013.}
+
+\cvitem{1}{B.~Cody. The failure of GCH at a degree of supercompactness.
+\emph{Mathematical Logic Quarterly}, \textbf{58}(1--2):83--94, 2012.}
+
+
+
+
+
+
+
+\section{Grants and Fellowships}
+
+\cventry{Fall 2025}{VCU CHS Dean's Research Grant}
+{\emph{Graph Coloring}}{}{}{
+PI. \$4,226 for student and faculty support; funded summer 2026 research for undergraduates Rose Detore and Garrett Moore and for the PI.
+}
+
+\cventry{Summer 2025}{VCU Undergraduate Research Opportunities Program (UROP)}
+{\emph{Mutual Visibility Chromatic Numbers of Graphs}}{}{}{
+Mentor to Rose Detore. \$1,500 for student and \$500 for faculty professional development.
+}
+
+\cventry{Fall 2023--Spring 2024}{Seed Award, College of Humanities and Sciences, VCU}
+{\emph{The Mathematics and Music of Maximally Even Sets}}{}{}{
+PI. Neal Bushaw (co-PI, VCU Mathematics) and Tobias Whitaker (co-PI, VCU Music). \$5,000.
+}
+
+\cventry{Spring 2023}{The Fields Institute for Research in Mathematical Sciences, Toronto}
+{\emph{Long-term Visitor}}{}{}{
+Three months of support (\$12,000 USD) to participate in the Thematic Program on Set-Theoretic Methods in Algebra, Dynamics, and Geometry.
+}
+
+\cventry{Fall 2016--Spring 2017}{Presidential Research Quest Fund, VCU}
+{\emph{Open Problems in the Foundations of Mathematics}}{}{}{
+Co-PI with Sean Cox (PI) and Monroe Eskew (co-PI). \$\textasciitilde30,000.\\[0.3em]
+\textbullet\; Co-organized \emph{Idealfest}.\\
+\textbullet\; Co-taught MATH 591: \emph{Filters, Ultrafilters and Applications.}
+}
+
+\cventry{Fall 2010--Spring 2012}{Doctoral Student Travel Grant, CUNY Graduate Center}{}{}{}{
+\$2,000.
+}
+
+
+
+
+
+
+\begin{comment}
+
+\section{Awards and Honors}
+
+
+
+\cventry{Fall 2006--Spring 2008}{\emph{Science Fellowship}}{The Graduate Center of the City University of New York}{}{}{
+Fellowship awarded to distinguished graduate students.
+}
+
+\cventry{Fall 2007}{\emph{Albert Bowker Award for Outstanding Achievement}}{The Graduate Center of the City University of New York}{}{}{
+Awarded for performance on qualifying exams.
+}
+
+\cventry{Fall 2002--Spring 2004}{\emph{Edwin E. Floyd Fellowship}}{University of Virginia}{}{}{
+Awarded to distinguished first- and second-year graduate students.
+}
+
+\cventry{Fall 2002--Spring 2004}{\emph{Teaching Fellowship}}{University of Virginia}{}{}{}
+
+\end{comment}
+
+
+
+
+
+
+\section{Research Presentations}
+
+\cvitem{Summary}{%
+\small
+\begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}cccccc@{}}
+ & \shortstack{Invited\\conference} & \shortstack{Invited\\seminar} & \shortstack{\strut\\Contributed} & \shortstack{\strut\\Expository} & \shortstack{Home\\institution} & \textbf{Total}\\
+\hline
+2022--present & 3 & 4 & 2 & 1 & 8 & \textbf{18}\\
+Career & 6 & 19 & 5 & 1 & 16 & \textbf{47}\\
+\end{tabular*}%
+}
+
+\subsection{Invited Conference Talks}
+
+\cvitem{Mar 8, 2026}{\emph{Diagonal indescribability, reflection and squares in $L$}. 2026 Spring AMS Western Sectional Meeting, Boise State University.}
+
+\cvitem{May 20, 2024}{\emph{Ideal-support products}. Workshop on Stationary Sets and Algebra, Virginia Commonwealth University.}
+
+\cvitem{Apr 6, 2024}{\emph{Higher derived topologies}. AMS Sectional Meeting, Howard University.}
+
+\cvitem{Oct 21, 2018}{\emph{Characterizations of the weakly compact ideal on $P_\kappa\lambda$}. AMS Special Session, University of Michigan, Ann Arbor.}
+
+\cvitem{Aug 17, 2017}{\emph{Adding a non-reflecting weakly compact set}. ASL Logic Colloquium 2017, Stockholm, Sweden.}
+
+\cvitem{Mar 11, 2016}{\emph{Rigid ideals}. Set Theory Day at CUNY (Conference for Joel Hamkins’ 50th birthday).}
+
+\subsection{Invited Seminar Talks}
+
+\cvitem{Feb 12, 2025}{\emph{The Wiener index of vertex colorings}. Open University, Discrete Mathematics Seminar.}
+
+\cvitem{Nov 18, 2024}{\emph{Two-cardinal derived topologies}. Rutgers Logic Seminar.}
+
+\cvitem{Nov 28, 2023}{\emph{Derived topologies on ordinals and uncountable products of the integers}. William \& Mary Groups, Analysis, Geometry Seminar.}
+\cvitem{Nov 18, 2022}{\emph{Sparse analytic systems}. City University of New York Set Theory Seminar.}
+\cvitem{Nov 11, 2021}{\emph{Higher derived topologies}. George Washington University Logic Seminar.}
+\cvitem{Feb 24, 2021}{\emph{Higher indescribability and ideal operators}. University of Barcelona Set Theory Seminar.}
+\cvitem{Aug 7, 2020}{\emph{Higher indescribability and derived topologies}. City University of New York Set Theory Seminar.}
+\cvitem{Nov 22, 2019}{\emph{A refinement of the Ramsey hierarchy}. City University of New York Set Theory Seminar.}
+\cvitem{Sep 20, 2019}{\emph{Characterizations of the two-cardinal weakly compact ideal}. City University of New York Set Theory Seminar.}
+\cvitem{Mar 8, 2019}{\emph{Large cardinal ideals and generic embeddings}. City University of New York Logic Workshop.}
+\cvitem{Mar 9, 2018}{\emph{The weakly compact reflection principle, Part II}. City University of New York Set Theory Seminar.}
+\cvitem{Sep 8, 2017}{\emph{The weakly compact reflection principle}. City University of New York Set Theory Seminar.}
+\cvitem{Mar 2, 2017}{\emph{Rigid ideals}. Kurt Gödel Research Center Seminar, Vienna, Austria.}
+\cvitem{Feb 13, 2013}{\emph{Supercompactness and Easton’s Theorem}. University of Prince Edward Island Colloquium, PEI, Canada.}
+\cvitem{Jan 22, 2013}{\emph{Supercompactness and Easton’s Theorem}. University of Bristol, Bristol, England.}
+\cvitem{Dec 2012}{\emph{Strong axioms of infinity and the continuum function}. Fudan University Logic Colloquium, Shanghai, China.}
+\cvitem{Dec 2012}{\emph{What are strong axioms of infinity and why are they useful in mathematics?} Fudan University, Shanghai, China.}
+\cvitem{Jul 6, 2012}{\emph{Easton’s theorem in the presence of Woodin cardinals}. The Fields Institute Set Theory Seminar, Toronto, ON.}
+\cvitem{Nov 14, 2011}{\emph{Some results on large cardinals and the continuum function}. Rutgers Logic Seminar, New Brunswick, NJ.}
+
+\subsection{Contributed Conference Talks}
+
+\cvitem{Oct 25, 2025}{\emph{Two-cardinal derived topologies}. Fall 2025 Eastern Virtual AMS Sectional Meeting.}
+
+\cvitem{May 22, 2025}{\emph{Some connections between music theory and graph theory}. Virginia Academy of Sciences Annual Meeting, University of Virginia.}
+
+\cvitem{May 21, 2019}{\emph{A $\Box(\kappa)$-like principle consistent with weak compactness}. ASL North American Annual Meeting, CUNY.}
+\cvitem{Jun 2015}{\emph{The weakly compact embedding property}. BLAST 2015, University of North Texas.}
+\cvitem{May 2014}{\emph{Indestructibility of generically strong cardinals}. ASL North American Annual Meeting, University of Colorado Boulder.}
+
+\subsection{Expository and Outreach Talks}
+
+\cvitem{Nov 6, 2023}{\emph{The mathematics and music of maximally even sets}. Virginia Tech Math Club.}
+
+\subsection{Talks at Home Institution}
+
+\cvitem{Apr 8, 2026}{\emph{Metric general position generalizations of classical graph invariants}. Discrete Mathematics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Dec 3, 2025}{\emph{Energies of vertex colorings on paths and cycles}. Discrete Mathematics Seminar, Virginia Commonwealth University.}
+
+
+\cvitem{Oct 1, 2024}{\emph{The $k$-general $d$-position problem for graphs}. Discrete Mathematics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Sep 13, 2024}{\emph{Maximal evenness in graphs}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Dec 1, 2023}{\emph{On some subgroups of uncountable products of the integers}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Nov 15, 2023}{\emph{Maximally even subsets of graphs}. Discrete Mathematics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Mar 17, 2023}{\emph{Cohomology of derived topologies}. VCU Student Geometry Seminar.}
+
+\cvitem{Oct 14, 2022}{\emph{Sparse analytic systems}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Mar 26, 2021}{\emph{Higher indescribability and derived topologies}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Feb 7, 2020}{\emph{A refinement of the Ramsey hierarchy}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Sep 21, 2018}{\emph{Indescribability}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Sep 15, 2017}{\emph{The weakly compact ideal}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Fall 2016}{\emph{Ultrafilters and Applications: Nonstandard Analysis}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Fall 2014}{\emph{Introduction to Set Theory}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Sep 6, 2013}{\emph{Ultraproducts and Applications II}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+\cvitem{Aug 30, 2013}{\emph{Ultraproducts and Applications I}. Analysis, Logic and Physics Seminar, Virginia Commonwealth University.}
+
+
+
+
+
+\section{Teaching Experience}
+
+\cvitem{Fall 2013 -- present}{\textbf{Virginia Commonwealth University}, Richmond, VA}
+
+\cventry{}{MATH 201: Calculus with Analytic Geometry II}{}{}{}{
+Taught multiple semesters: Fall 2013, Spring 2014, Fall 2014, Fall 2015, Fall 2020, Spring 2021, Spring 2022.
+}
+
+\cventry{}{MATH 300: Introduction to Mathematical Reasoning}{}{}{}{
+Taught Fall 2013, Fall 2015, Fall 2016, Fall 2023.
+}
+
+\cventry{}{MATH 301: Differential Equations}{}{}{}{
+Taught Spring 2019.
+}
+
+\cventry{}{MATH 310: Linear Algebra}{}{}{}{
+Taught Spring 2016, Spring 2019, Fall 2021, Spring 2022, Fall 2022.
+}
+
+\cventry{}{MATH 407: Advanced Calculus}{}{}{}{
+Taught Fall 2021.
+}
+
+\cventry{}{MATH 409: General Topology}{}{}{}{
+Taught Fall 2016, Fall 2017, Fall 2018, Fall 2019.
+}
+
+\cventry{}{MATH 490: Mathematical Expositions}{}{}{}{
+Taught multiple semesters between Fall 2014 and Spring 2021.
+}
+
+\cventry{}{MATH 492: Independent Study}{}{}{}{
+Topics included computability theory, Gödel's incompleteness theorems, forcing, and set theory.  
+Students: Philip White, Samuel Dworetzky; Ky-Quan Pham (Fall 2026, metric general position graph invariants).
+}
+
+\cventry{}{MATH 493: Mathematical Sciences Internship}{}{}{}{
+Supervised Lynh Tran (Spring 2016) and Tobechi Okoli (Spring 2018).
+}
+
+\cventry{}{MATH 502: Abstract Algebra I}{}{}{}{
+Taught Fall 2019, Fall 2023.
+}
+
+\cventry{}{MATH 556: Graph Theory}{}{}{}{
+Taught Fall 2026.
+}
+
+\cventry{}{MATH 591: Topics in Logic — Filters, Ultrafilters, and Applications}{}{}{}{
+Graduate seminar, Spring 2017.
+}
+
+\cventry{}{MATH 591: Topics in Logic — Logic and Mathematical Structures}{}{}{}{
+Graduate seminar, co-taught with Sean Cox, Spring 2014.
+}
+
+\cventry{}{MATH 602: Abstract Algebra II}{}{}{}{
+Taught Spring 2018, Spring 2020.
+}
+
+\cventry{}{MATH 697: Directed Research}{}{}{}{
+Directed research on forcing and large cardinals (student: Philip White).
+}
+
+\cventry{}{MATH 698: Thesis Supervision}{}{}{}{
+Supervised master's thesis of Philip White.
+}
+
+
+\subsection{Other Teaching}
+
+\cventry{July 2015}{Instructor, Graduate Summer School in Set Theory}{University of California, Irvine}{}{}{
+Delivered five graduate-level lectures and problem sessions on contemporary research in set theory.
+}
+
+\cventry{December 2012}{Guest Lecturer}{Fudan University}{Shanghai, China}{}{
+Gave four guest lectures on mathematical logic, covering ultrapowers and the compactness theorem.
+}
+
+\cventry{Summer 2008 -- Spring 2012}{Graduate Teaching Fellow}{City University of New York}{New York, NY}{}{
+Taught at Baruch College (Precalculus, Elements of Calculus, Fall 2009–Spring 2012)  
+and Brooklyn College (SEEK Math 100, Summer 2008–2009).
+}
+
+\cventry{Fall 2003 -- Spring 2004}{Graduate Teaching Fellow}{University of Virginia}{Charlottesville, VA}{}{
+Taught one section of Calculus I each semester.
+}
+
+
+
+\section{Advising and Mentoring}
+
+\subsection{Self Development}
+
+\cvitem{Oct 30, 2025}{Participant in VCU CHS Research Mentor Training Workshop}
+
+\subsection{Student Research Collaborators}
+\cvitem{2026}{Ky-Quan Pham (undergraduate) --- independent study on metric general position graph invariants}
+\cvitem{2025--2026}{Rose Detore (undergraduate) --- UROP (Summer 2025); Dean's Research Grant support (Summer 2026); paper submitted: [25]; paper in preparation}
+\cvitem{2024 \& 2026}{Garrett Moore (undergraduate) --- joint publication: [22]; Dean's Research Grant support (Summer 2026)}
+\cvitem{2024--2025}{Maya Tennant (PhD student, advisor: Glenn Hurlbert) --- joint project with Neal Bushaw; paper submitted: [24]}
+\cvitem{2024--2025}{Paul Fay (PhD student, advisor: Glenn Hurlbert) --- joint project with Neal Bushaw; paper submitted: [24]}
+\cvitem{2024--2025}{Viktoriya Bardenova (PhD student, advisor: Glenn Hurlbert) --- joint project with Neal Bushaw; paper submitted: [24]}
+\cvitem{2024}{Alex Johnson (graduate) --- project on $k$-general $d$-position subsets of theta graphs}
+\cvitem{2023--2024}{Chris Leffler (undergraduate) --- joint publication: [21]}
+\cvitem{2023--2024}{Luke Freeman (undergraduate) --- joint publication: [20]}
+\cvitem{2022}{Kayla Lee (undergraduate) --- joint publication: [16]}
+\cvitem{2020--2021}{Philip White (graduate) --- joint publication: [19]}
+
+\subsection{Master's Thesis Advised}
+\cvitem{2019}{Philip White, \emph{Some intuition behind large cardinal axioms, their characterization, and related results}. VCU.}
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%   SERVICE
+%----------------------------------------------------------------------------------------
+
+\section{Service}
+
+
+%==========================
+% PROFESSIONAL SERVICE
+%==========================
+\subsection{Professional Service}
+
+\cvitem{}{\textbf{Reviewer} for \emph{Mathematical Reviews (MathSciNet)}.}
+
+
+\cvitem{}{
+\begin{minipage}[t]{\linewidth}
+\textbf{Referee for journals}\\[0.3em]
+\emph{Bulletin of the London Mathematical Society}\\
+\emph{Proceedings of the American Mathematical Society}\\
+\emph{The Journal of Symbolic Logic}\\
+\emph{Fundamenta Mathematicae}\\
+\emph{Annals of Pure and Applied Logic}\\
+\emph{Bulletin of the Polish Academy of Sciences}\\
+\emph{Notre Dame Journal of Formal Logic}\\
+\emph{Archive for Mathematical Logic}\\
+\emph{Order}\\
+\emph{Pacific Journal of Mathematics}\\
+\emph{Discrete Applied Mathematics}\\
+\emph{Ars Mathematica Contemporanea}\\
+\emph{Bulletin of the Malaysian Mathematical Sciences Society}
+\end{minipage}
+}
+
+\cventry{Spring 2025}{NSF Review Panelist}{Division of Mathematical Sciences, Foundations Program}{}{}{}
+
+\cventry{Fall 2025}{External Reviewer}{Austrian Science Fund (FWF)}{}{}{}
+
+
+
+\cventry{2024}{Co-organizer}{\emph{Stationary Sets in Algebra Workshop}}{VCU}{}{May 20–22, 2024. \url{https://stationarysetsandalgebra2024.wordpress.com/}}
+\cventry{2017}{Organizer}{\emph{Mid-Atlantic Mathematical Logic Seminar (MAMLS)}}{VCU}{}{April 1–2, 2017. \url{https://brentcody.github.io/mamls/}}
+\cventry{2017}{Co-organizer (with Sean Cox)}{\emph{Idealfest}}{VCU}{}{April 28, 2017.}
+\cventry{2013--present}{Co-organizer}{\emph{Analysis, Logic, and Physics Seminar (ALPS)}}{VCU}{}{Department of Mathematics and Applied Mathematics.}
+\cventry{2012}{Organizing Committee Member}{\emph{Mid-Atlantic Mathematical Logic Seminar (MAMLS)}}{CUNY}{}{Spring 2012 Meeting.}
+\cventry{2011}{Organizer}{\emph{CUNY Set Theory Seminar}}{CUNY}{}{Fall 2011.}
+
+%==========================
+% DEPARTMENTAL SERVICE
+%==========================
+\subsection{Departmental Service}
+
+
+
+\cvitem{2025--2026}{
+\textbf{Committees:}
+\begin{itemize}
+\item Executive Committee
+\item Jamie Lovin's promotion committee (Chair: Aimee Ellington) --- secondary reviewer of Jamie Lovin's teaching
+\item Assessment Committee
+\end{itemize}
+}
+
+\cvitem{2024--2025}{
+\textbf{Committees:}
+\begin{itemize}
+\item Executive Committee
+\item Andy Bristow's promotion committee (Chair: Glenn Hurlbert) --- primary reviewer of Andy Bristow's teaching
+\item Assessment Committee --- chair
+\end{itemize}
+}
+
+
+\cvitem{2023--2024}{
+\textbf{Committees:}
+\begin{itemize}
+\item Executive Committee
+\item Allison Moore’s P\&T Committee (Chair: Suzanne Robertson)
+\item Kristina Anthony’s P\&T Committee (Chair: Ghidewon Abay-Asmerom)
+\item Assessment Committee (Chair: Suzanne Robertson)
+\item BRIDGES Committee (Chairs: Ihsan Topaloglu and Glenn Hurlbert)
+\end{itemize}
+}
+
+\cvitem{2022--2023}{
+\textbf{Committees:}
+\begin{itemize}
+\item Undergraduate Curriculum Committee
+\item Assessment Committee
+\item Awards Committee
+\item BRIDGES Committee
+\end{itemize}
+}
+
+\cvitem{2021--2022}{
+\textbf{Committees:}
+\begin{itemize}
+\item Undergraduate Curriculum Committee (Chair: Neal Bushaw)
+\item Chair, Assessment Committee
+\item Chair, Awards Committee
+\item Website Committee
+\item BRIDGES Committee
+\end{itemize}
+}
+
+\cvitem{2020--2021}{
+\textbf{Committees:}
+\begin{itemize}
+\item Undergraduate Affairs Committee (Chair: Aimee Ellington)
+\item Assessment Committee (Chair: Ghidewon Abay-Asmerom)
+  \begin{itemize}
+  \item Compiled Math 490 student presentation recordings for program review.
+  \item Drafted new learning outcomes for pure math concentration.
+  \end{itemize}
+\item Visitation Committee (Chair: Marlene Kustesky)
+\item Awards Committee (Chair: Neal Bushaw)
+  \begin{itemize}
+  \item Contributed to nominations for distinguished faculty awards.
+  \item Helped write the Reuben Farley Award description.
+  \end{itemize}
+\item BRIDGES Committee (Chair: Richard Hammack)
+\end{itemize}
+}
+
+\cvitem{2019--2020}{
+\textbf{Committees:}
+\begin{itemize}
+\item Undergraduate Affairs Committee (Chair: Aimee Ellington)
+  \begin{itemize}
+  \item Led outreach to local high schools.
+  \item Designed a math project using geometric series and the game of \emph{Escape}.
+  \item Presented at Thomas Jefferson High School.
+  \end{itemize}
+\item Assessment Committee (Chair: Ghidewon Abay-Asmerom)
+  \begin{itemize}
+  \item Developed new rubrics for assessing pure math courses.
+  \end{itemize}
+\end{itemize}
+}
+
+\cvitem{2018--2019}{
+\textbf{Search Committee (Chair: Marco Aldi)}:
+\begin{itemize}
+\item Evaluated 120 applications on \url{mathjobs.org}, conducted 20 video interviews and 9 on-campus interviews.
+\item Resulted in 4 tenure-track hires (2 geometry, 2 applied math).
+\end{itemize}
+}
+
+\cvitem{2017--2018}{
+\textbf{Committees:}
+\begin{itemize}
+\item Assessment Committee (Chair: David Chan)
+  \begin{itemize}
+  \item Developed assessment tools for SACS accreditation.
+  \end{itemize}
+\item Undergraduate Affairs Committee (Chair: Angela Reynolds)
+  \begin{itemize}
+  \item Served on Credentials Subcommittee; evaluated transfer requests.
+  \end{itemize}
+\end{itemize}
+}
+
+%==========================
+% ADDITIONAL DEPARTMENTAL ACTIVITIES
+%==========================
+\subsection{Additional Departmental Activities}
+
+\cventry{Spring 2021}{Outreach}{Office of Admissions Transfer STEM-H Fair}{VCU}{}{Created slides and staffed departmental table, February 10, 2021.}
+\cventry{Spring 2020}{Math Circle Leader}{VCU}{Richmond, VA}{}{Led a session on geometric series and the game of \emph{Escape}.}
+\cventry{Fall 2019}{Community Outreach}{Binford Middle School}{Richmond, VA}{}{Led a math club session on orthogonal projections with Kristina Anthony.}
+\cventry{Fall 2015--Fall 2018}{Co-organizer}{Math Subject GRE Workshop Series}{VCU}{}{With Marco Aldi and Dan Cranston.}
+\cventry{Fall 2013--present}{Co-organizer}{Analysis, Logic, and Physics Seminar (ALPS)}{VCU}{}{Department of Mathematics and Applied Mathematics.}
+
+%==========================
+% COLLEGE AND UNIVERSITY
+%==========================
+\subsection{College and University Service}
+
+\cventry{Spring 2021}{Proposal Reviewer}{VCU Presidential Research Quest (PeRQ) Fund}{VCU}{}{Reviewed two faculty research proposals.}
+
+
+
+
+
+
+
+
+
+%\section{References}
+%\cvitem{}{Available upon request.}
+
+
+
+
+\end{document}
+

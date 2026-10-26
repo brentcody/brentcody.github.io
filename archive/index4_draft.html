@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brent Cody</title>
+<meta name="description" content="Brent Cody, Associate Professor of Mathematics at Virginia Commonwealth University. Research in set theory, large cardinals, forcing, and graph theory.">
+<link rel="icon" type="image/png" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<!-- MathJax 3 -->
+<script>
+  window.MathJax = { tex: { inlineMath: [['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+
+<style>
+  :root {
+    --paper: #fdfdfb;
+    --ink: #17171a;
+    --muted: #5d5d66;
+    --rule: #d9d8d2;
+    --rule-dark: #9e9d96;
+    --link: #1a3fd0;          /* a calmer take on 1997's #0000EE */
+    --visited: #6a2c9e;       /* ...and on #551A8B */
+    --accent: #9a2fae;        /* orchid, borrowed from the vertex colors in the diagrams */
+    --mark: #f6dcfa;          /* highlighter for jumped-to papers */
+    --chip: #f1f0ea;
+    --shadow: #17171a;
+    --serif: "Source Serif 4", "Times New Roman", Times, serif;
+    --mono: "JetBrains Mono", "Courier New", Courier, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #121214;
+      --ink: #e9e8e3;
+      --muted: #a3a2a8;
+      --rule: #2c2c31;
+      --rule-dark: #4a4a52;
+      --link: #8fa8ff;
+      --visited: #c79cf2;
+      --accent: #e3a0f0;
+      --mark: #43254a;
+      --chip: #1c1c20;
+      --shadow: #e3a0f0;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #121214;
+    --ink: #e9e8e3;
+    --muted: #a3a2a8;
+    --rule: #2c2c31;
+    --rule-dark: #4a4a52;
+    --link: #8fa8ff;
+    --visited: #c79cf2;
+    --accent: #e3a0f0;
+    --mark: #43254a;
+    --chip: #1c1c20;
+    --shadow: #e3a0f0;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Links: underlined and blue/purple, the way the web intended */
+  a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:visited { color: var(--visited); }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 2px; }
+
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Top bar: [ bracketed ] nav ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: saturate(150%) blur(8px);
+    -webkit-backdrop-filter: saturate(150%) blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar .wrap {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    min-height: 56px; font-family: var(--mono); font-size: 14px;
+  }
+  .topbar .home { color: var(--ink); text-decoration: none; white-space: nowrap; font-family: "Press Start 2P", var(--mono); font-size: 11px; letter-spacing: 0; }
+  .topbar .home:visited { color: var(--ink); }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; color: var(--muted); }
+  nav li + li::before { content: "|"; margin: 0 10px; color: var(--rule-dark); }
+  nav ul::before { content: "["; margin-right: 10px; color: var(--rule-dark); }
+  nav ul::after { content: "]"; margin-left: 10px; color: var(--rule-dark); }
+  nav a, nav a:visited { color: var(--ink); text-decoration: none; display: inline-block; padding: 12px 0; }
+  nav a:hover, nav a.active { color: var(--link); text-decoration: underline; text-underline-offset: 4px; }
+  .theme-btn {
+    font: inherit; font-size: 13px; background: none; color: var(--muted);
+    border: 1px solid var(--rule-dark); border-radius: 0; padding: 4px 8px; cursor: pointer;
+    min-height: 32px;
+  }
+  .theme-btn:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* ---------- Header ---------- */
+  header.intro { padding: 64px 0 40px; }
+  .intro-grid { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: center; }
+  figure.portrait { margin: 0; }
+  figure.portrait img {
+    display: block; width: 200px; height: 240px; object-fit: cover; object-position: center 25%;
+    border: 1px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--shadow);      /* hard, un-blurred, 1999 drop shadow */
+    background: var(--chip);
+  }
+  figure.portrait figcaption { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 14px; }
+  h1 {
+    font-size: clamp(44px, 7vw, 64px); line-height: 1.02; letter-spacing: -0.02em;
+    font-weight: 700; margin: 0 0 16px;
+  }
+  .cursor {
+    display: inline-block; width: 0.42em; height: 0.8em; margin-left: 0.08em;
+    background: var(--accent); vertical-align: baseline; transform: translateY(0.06em);
+    animation: blink 1.1s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  .role { margin: 0; font-size: 19px; }
+  .role + .role { color: var(--muted); }
+  .contact { margin: 20px 0 0; font-family: var(--mono); font-size: 14px; display: flex; flex-wrap: wrap; gap: 8px 20px; color: var(--muted); }
+  .contact span b { font-weight: 500; color: var(--ink); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 8px 0 40px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 14px;
+    margin: 32px 0 24px; padding-bottom: 10px;
+    border-bottom: 3px double var(--rule-dark);   /* modern cousin of <hr> */
+  }
+  .sec-head .num { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+  h2 { margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -0.01em; }
+  .sec-head .meta { margin-left: auto; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  h3 { font-size: 15px; font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin: 28px 0 10px; color: var(--muted); }
+
+  .lede { font-size: 20px; line-height: 1.65; margin: 0; }
+  .ref { font-family: var(--mono); font-size: 0.82em; white-space: nowrap; }
+
+  /* ---------- Figures (old-school "fig. n" plates) ---------- */
+  figure.plate { margin: 32px 0; }
+  figure.plate .img { background: var(--paper); padding: 6px 0; }
+  /* Blend the diagrams' white backgrounds into the page color (no file edits) */
+  figure.plate img { display: block; width: 100%; height: auto; margin: 0 auto; mix-blend-mode: multiply; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) figure.plate img { mix-blend-mode: screen; filter: invert(1) hue-rotate(180deg); }
+  }
+  :root[data-theme="dark"] figure.plate img { mix-blend-mode: screen; filter: invert(1) hue-rotate(180deg); }
+  figure.plate.narrow img { max-width: 520px; }
+  figure.plate.mid img { max-width: 640px; }
+  .ptag.gallery { margin-top: 48px; }
+  figure.plate figcaption { font-size: 15px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+  figure.plate figcaption .fig { font-family: var(--mono); font-size: 12px; color: var(--accent); margin-right: 6px; }
+  figure.plate.side { float: right; width: 300px; margin: 6px 0 16px 32px; }
+  .clear { clear: both; }
+  .play {
+    font-family: var(--mono); font-size: 12px; color: var(--ink); background: var(--chip);
+    border: 1px solid var(--rule-dark); padding: 2px 8px; margin: 0 2px; cursor: pointer; min-height: 28px;
+  }
+  .play:hover { border-color: var(--ink); }
+  .play[aria-pressed="true"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+
+  .odds { list-style: none; padding: 0; margin: 24px 0 0; font-size: 16px; }
+  .odds li { padding: 8px 0 8px 22px; position: relative; border-top: 1px dotted var(--rule-dark); }
+  .odds li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-family: var(--mono); }
+
+  /* ---------- Papers ---------- */
+  .ptag { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 18px 0 4px; text-transform: uppercase; letter-spacing: .06em; }
+  ol.papers li.prep { border-bottom: 1px solid var(--rule); }
+
+  ol.papers { list-style: none; margin: 0; padding: 0; }
+  ol.papers li {
+    display: grid; grid-template-columns: 52px 1fr; gap: 12px;
+    padding: 14px 10px; margin: 0 -10px;
+    border-bottom: 1px solid var(--rule);
+    transition: background-color .6s ease;
+  }
+  ol.papers li:last-child { border-bottom: 0; }
+  ol.papers li[hidden] { display: none; }
+  ol.papers li:target { background: var(--mark); }
+  .pnum { font-family: var(--mono); font-size: 14px; color: var(--muted); padding-top: 3px; }
+  .ptitle { font-weight: 600; }
+  .pauth { color: var(--muted); }
+  .pvenue { font-style: italic; }
+  .pdf {
+    font-family: var(--mono); font-size: 12px; font-style: normal; white-space: nowrap;
+    margin-left: 6px;
+  }
+  .pdf a { text-decoration: none; }
+  .pdf a:hover { text-decoration: underline; }
+  .badge {
+    display: inline-block; font-family: var(--mono); font-style: normal; font-size: 11px;
+    letter-spacing: .04em; text-transform: uppercase;
+    padding: 1px 6px; margin-left: 4px; border: 1px solid var(--rule-dark); color: var(--muted);
+    vertical-align: 2px;
+  }
+
+  /* ---------- Students ---------- */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+  ul.plain { list-style: none; padding: 0; margin: 0; }
+  ul.plain li { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px dotted var(--rule-dark); }
+  ul.plain li .yr { font-family: var(--mono); font-size: 14px; color: var(--muted); white-space: nowrap; }
+  .thesis { margin: 0; }
+  ul.plain.twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-top: 16px; }
+
+  /* ---------- Teaching table ---------- */
+  table.courses { width: 100%; border-collapse: collapse; font-size: 17px; }
+  table.courses th {
+    text-align: left; font-family: var(--mono); font-weight: 500; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+    padding: 0 12px 8px 0; border-bottom: 1px solid var(--ink);
+  }
+  table.courses td { vertical-align: top; padding: 11px 12px 11px 0; border-bottom: 1px solid var(--rule); }
+  table.courses td.code { font-family: var(--mono); font-size: 14px; white-space: nowrap; padding-top: 14px; }
+  table.courses td.mat { font-size: 15px; color: var(--muted); }
+  table.courses tr:hover td { background: var(--chip); }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 3px double var(--rule-dark); margin-top: 24px; padding: 28px 0 56px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+  .button88 {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 88px; height: 31px; font-family: "Press Start 2P", var(--mono); font-size: 6px; line-height: 1.5; text-align: center; text-transform: uppercase;
+    letter-spacing: .03em; color: var(--ink); background: var(--chip);
+    border: 2px outset var(--rule-dark);
+  }
+  footer a, footer a:visited { color: var(--muted); }
+
+
+  /* ---------- Neon links (colors assigned at random on load) ---------- */
+  :root {
+    --n0: #c8008f; --n0u: #ff3fd8;
+    --n1: #b84a00; --n1u: #ff9a2e;
+    --n2: #7a6a00; --n2u: #f2ff4a;
+    --n3: #0b7d32; --n3u: #45ff7a;
+    --n4: #007a8c; --n4u: #2cf2ff;
+    --n5: #1f48e0; --n5u: #6e9bff;
+    --n6: #8a1fd6; --n6u: #c77dff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+    --n0: #ff3fd8; --n0u: #ff3fd8;
+    --n1: #ff9a2e; --n1u: #ff9a2e;
+    --n2: #f2ff4a; --n2u: #f2ff4a;
+    --n3: #45ff7a; --n3u: #45ff7a;
+    --n4: #2cf2ff; --n4u: #2cf2ff;
+    --n5: #6e9bff; --n5u: #6e9bff;
+    --n6: #c77dff; --n6u: #c77dff;
+    }
+  }
+  :root[data-theme="dark"] {
+    --n0: #ff3fd8; --n0u: #ff3fd8;
+    --n1: #ff9a2e; --n1u: #ff9a2e;
+    --n2: #f2ff4a; --n2u: #f2ff4a;
+    --n3: #45ff7a; --n3u: #45ff7a;
+    --n4: #2cf2ff; --n4u: #2cf2ff;
+    --n5: #6e9bff; --n5u: #6e9bff;
+    --n6: #c77dff; --n6u: #c77dff;
+  }
+  a.n0, a.n0:visited { color: var(--n0); text-decoration-color: var(--n0u); }
+  a.n1, a.n1:visited { color: var(--n1); text-decoration-color: var(--n1u); }
+  a.n2, a.n2:visited { color: var(--n2); text-decoration-color: var(--n2u); }
+  a.n3, a.n3:visited { color: var(--n3); text-decoration-color: var(--n3u); }
+  a.n4, a.n4:visited { color: var(--n4); text-decoration-color: var(--n4u); }
+  a.n5, a.n5:visited { color: var(--n5); text-decoration-color: var(--n5u); }
+  a.n6, a.n6:visited { color: var(--n6); text-decoration-color: var(--n6u); }
+  a.neon { text-decoration-thickness: 2px; transition: text-shadow .2s ease, text-decoration-thickness .2s ease; }
+  a.neon:hover { text-decoration-thickness: 3px; text-shadow: 0 0 10px var(--glow, transparent); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) a.neon { --glow: currentColor; } }
+  :root[data-theme="dark"] a.neon { --glow: currentColor; }
+
+  /* ---------- Gentle entrance ---------- */
+  .reveal { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .cursor { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ---------- Small screens ---------- */
+  @media (max-width: 720px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 16px; }
+    .topbar .home { display: none; }
+    nav ul { font-size: 12.5px; }
+    nav ul::before, nav ul::after { display: none; }
+    nav li + li::before { margin: 0 6px; }
+    header.intro { padding: 40px 0 24px; }
+    .intro-grid { grid-template-columns: 1fr; gap: 28px; }
+    figure.portrait img { width: 160px; height: 192px; }
+    .lede { font-size: 18px; }
+    .cols { grid-template-columns: 1fr; }
+    ul.plain.twocol { grid-template-columns: 1fr; }
+    figure.plate.side { float: none; width: 100%; margin: 24px 0; }
+    ol.papers li { grid-template-columns: 40px 1fr; }
+    table.courses thead { display: none; }
+    table.courses, table.courses tbody, table.courses tr, table.courses td { display: block; width: 100%; }
+    table.courses tr { border-bottom: 1px solid var(--rule); padding: 10px 0; }
+    table.courses td { border: 0; padding: 2px 0; }
+    table.courses td.code { padding-top: 0; }
+  }
+
+
+  /* ---------- DOS boot (first visit only, ~1.5s, click/any key skips) ---------- */
+  #boot {
+    position: fixed; inset: 0; z-index: 100; background: #000; color: #c0c0c0;
+    font-family: "JetBrains Mono", "Courier New", monospace; font-size: 15px; line-height: 1.6;
+    padding: 24px; white-space: pre-wrap; cursor: pointer; transition: opacity .25s ease;
+  }
+  #boot.out { opacity: 0; pointer-events: none; }
+  #boot .ok { color: #55ff55; } #boot .warn { color: #ffff55; }
+  #boot .caret { display: inline-block; width: .6em; height: 1em; background: #c0c0c0; vertical-align: -2px; animation: blinkc .5s steps(1) infinite; }
+  @keyframes blinkc { 50% { opacity: 0; } }
+
+  /* ---------- Hidden CRT mode (Konami code; Esc to leave) ---------- */
+  html:root.crt {
+    --paper: #040a05; --ink: #39ff6a; --muted: #22b44c; --rule: #0e3317; --rule-dark: #1d6b31;
+    --link: #8dffad; --visited: #8dffad; --accent: #39ff6a; --mark: #123d1c; --chip: #0a160c; --shadow: #39ff6a;
+    --n0: #39ff6a; --n1: #8dffad; --n2: #b6ff3b; --n3: #39ff6a; --n4: #5dffc0; --n5: #8dffad; --n6: #b6ff3b;
+    --n0u: #39ff6a; --n1u: #8dffad; --n2u: #b6ff3b; --n3u: #39ff6a; --n4u: #5dffc0; --n5u: #8dffad; --n6u: #b6ff3b;
+    --serif: "JetBrains Mono", "Courier New", monospace;
+  }
+  html.crt body { text-shadow: 0 0 3px rgba(57, 255, 106, .55); font-size: 16px; }
+  html.crt body::after {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50;
+    background: repeating-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 2px, rgba(0,0,0,.28) 3px);
+    box-shadow: inset 0 0 160px rgba(0,0,0,.85);
+  }
+  html.crt figure.plate img { filter: invert(1) sepia(1) hue-rotate(70deg) saturate(4) brightness(.95) !important; mix-blend-mode: screen !important; }
+  html.crt figure.portrait img { filter: grayscale(1) sepia(1) hue-rotate(70deg) saturate(3) brightness(.85); }
+  html.crt .cursor { background: #39ff6a; box-shadow: 0 0 6px #39ff6a; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="home" href="#top">~bcody/</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#papers">Papers</a></li>
+        <li><a href="#students">Students</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+      </ul>
+    </nav>
+    <button class="theme-btn" type="button" id="themeBtn" aria-label="Toggle dark mode">dark</button>
+  </div>
+</div>
+
+<main id="top">
+  <header class="intro">
+    <div class="wrap intro-grid">
+      <figure class="portrait">
+        <img src="../images/brent_2022_2_small.jpg" alt="Photo of Brent Cody">
+        <figcaption>fig. 1 &mdash; the author</figcaption>
+      </figure>
+      <div>
+        <h1>Brent Cody<span class="cursor" aria-hidden="true"></span></h1>
+        <p class="role">Associate Professor, Department of Mathematics and Applied Mathematics</p>
+        <p class="role">Virginia Commonwealth University</p>
+        <p class="contact">
+          <span>email: <a href="mailto:bmcody@vcu.edu">bmcody@vcu.edu</a></span>
+          <span>cv: <a href="../Cody_CV_2025.pdf" target="_blank">Cody_CV_2025.pdf</a></span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== Research ===================== -->
+  <section id="research" class="reveal">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&sect;1</span><h2>Research Overview</h2></div>
+      <p class="lede">
+        My primary research interests are in <a href="https://en.wikipedia.org/wiki/Set_theory" target="_blank" rel="noopener">set theory</a>, with emphasis on <a href="https://en.wikipedia.org/wiki/Large_cardinal" target="_blank" rel="noopener">large cardinals</a> and <a href="https://en.wikipedia.org/wiki/Forcing_(mathematics)" target="_blank" rel="noopener">forcing</a>. Alongside this work, I also work on problems in <a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank" rel="noopener">graph theory</a>, which stemmed from an interest in connections between mathematics and music theory, specifically, <a href="https://en.wikipedia.org/wiki/Maximal_evenness" target="_blank" rel="noopener">maximally even sets</a> and <a href="https://en.wikipedia.org/wiki/Euclidean_rhythm" target="_blank" rel="noopener">Euclidean rhythms</a>, as discussed in <a class="ref" href="#p20">[20]</a> and <a class="ref" href="#p21">[21]</a> below.
+      </p>
+      <ul class="odds">
+        <li>Sean Cox and I organized a <a href="../mamls/index.html">MAMLS meeting</a> at VCU (April 2017), thanks to Arthur Apter.</li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+  </section>
+
+  <!-- ===================== Papers ===================== -->
+  <section id="papers" class="reveal">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&sect;2</span><h2>Papers</h2><span class="meta">2012&ndash;present</span></div>
+
+      <p class="ptag">In preparation</p>
+      <ol class="papers">
+        <li id="pa" class="prep"><span class="pnum">[a]</span><div><span class="ptitle">Diagonal hypersquares.</span> <span class="pauth">(with Joan Bagaria)</span> <span class="pvenue">In preparation.</span></div></li>
+        <li id="pb" class="prep"><span class="pnum">[b]</span><div><span class="ptitle">Metric general position graph invariants and graph powers.</span> <span class="pauth">(with Rose Detore)</span> <span class="pvenue">In preparation.</span></div></li>
+      </ol>
+
+      <p class="ptag">Submitted &amp; published</p>
+      <ol class="papers" reversed>
+        <li id="p25" data-area="graph"><span class="pnum">[25]</span><div><span class="ptitle">Metric general position extensions of classical graph invariants and perfection.</span> <span class="pauth">(with Rose Detore)</span> <span class="pvenue">Submitted</span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2601.04351">[pdf]</a></span></div></li>
+
+        <li id="p24" data-area="graph"><span class="pnum">[24]</span><div><span class="ptitle">The Wiener index of vertex colorings.</span> <span class="pauth">(with Viktoriya Bardenova, Neal Bushaw, Paul Fay and Maya Tennant)</span> <span class="pvenue">Submitted</span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.18920">[pdf]</a></span></div></li>
+
+        <li id="p23" data-area="set"><span class="pnum">[23]</span><div><span class="ptitle">Two-cardinal derived topologies, indescribability and Ramseyness.</span> <span class="pauth">(with Chris Lambie-Hanson and Jing Zhang)</span> <span class="pvenue">Journal of Symbolic Logic</span>, 91 (3): 1260–1288, 2026. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1017/jsl.2024.16">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2401.00266.pdf">[pdf]</a></span></div></li>
+
+        <li id="p22" data-area="graph"><span class="pnum">[22]</span><div><span class="ptitle">The \(k\)-general \(d\)-position problem for graphs.</span> <span class="pauth">(with Garrett Moore)</span> <span class="pvenue">Discrete Applied Mathematics</span>, 366: 135–151, 2025. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2409.05644">[pdf]</a></span></div></li>
+
+        <li id="p21" data-area="graph"><span class="pnum">[21]</span><div><span class="ptitle">Sets of vertices with extremal energy.</span> <span class="pauth">(with Neal Bushaw and Chris Leffler)</span> <span class="pvenue">Discrete Mathematics</span>, 348 (7): Paper no. 114466, 2025. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2407.18785">[pdf]</a></span></div></li>
+
+        <li id="p20" data-area="graph"><span class="pnum">[20]</span><div><span class="ptitle">The Music and Mathematics of Maximally Even Sets.</span> <span class="pauth">(with Neal Bushaw, Luke Freeman and Tobias Whitaker)</span> <span class="pvenue">Proceedings of Bridges 2024: Mathematics, Art, Music, Architecture, Culture:</span> pp. 61-68. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2407.18768">[pdf]</a></span></div></li>
+
+        <li id="p19" data-area="set"><span class="pnum">[19]</span><div><span class="ptitle">Two-cardinal ideal operators and indescribability.</span> <span class="pauth">(with Philip White)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 175 (8): Paper No. 103463, 17 pp., 2024. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2206.06170.pdf">[pdf]</a></span></div></li>
+
+        <li id="p18" data-area="set"><span class="pnum">[18]</span><div><span class="ptitle">Higher indescribability and derived topologies.</span> <span class="pvenue">Journal of Mathematical Logic</span> 24 (1): Paper No. 2350001, 48 pp., 2024. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2102.09598.pdf">[pdf]</a></span></div></li>
+
+        <li id="p17" data-area="set"><span class="pnum">[17]</span><div><span class="ptitle">Large cardinal ideals.</span> <span class="pvenue">Accepted chapter for Research Trends in Contemporary Logic, 49 pages.</span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2102.09591.pdf">[pdf]</a></span></div></li>
+
+        <li id="p16" data-area="set"><span class="pnum">[16]</span><div><span class="ptitle">Sparse analytic systems.</span> <span class="pauth">(with Sean Cox and Kayla Lee)</span> <span class="pvenue">Forum of Mathematics, Sigma</span>, Paper No. e58, 9 pp., 2023. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2208.13725.pdf">[pdf]</a></span></div></li>
+
+        <li id="p15" data-area="set"><span class="pnum">[15]</span><div><span class="ptitle">Ideal operators and higher indescribability.</span> <span class="pauth">(with Peter Holy)</span> <span class="pvenue">Journal of Symbolic Logic</span>, 88 (2):835-873, 2023. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2105.01776.pdf">[pdf]</a></span></div></li>
+
+        <li id="p14" data-area="set"><span class="pnum">[14]</span><div><span class="ptitle">Forcing a \(\square(\kappa)\)-like principle to hold at a weakly compact cardinal.</span> <span class="pauth">(with Victoria Gitman and Chris Lambie-Hanson)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 172 (7):102960, 26 pp., 2021. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1902.04146.pdf">[pdf]</a></span></div></li>
+
+        <li id="p13" data-area="set"><span class="pnum">[13]</span><div><span class="ptitle">A refinement of the Ramsey hierarchy via indescribability.</span> <span class="pvenue">Journal of Symbolic Logic</span>, 85 (2):773-808, 2020. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1907.13540.pdf">[pdf]</a></span></div></li>
+
+        <li id="p12" data-area="set"><span class="pnum">[12]</span><div><span class="ptitle">Characterizations of the weakly compact ideal on \(P_\kappa\lambda\).</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 171 (6):23 pages, 2020. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1807.11896.pdf">[pdf]</a></span></div></li>
+
+        <li id="p11" data-area="set"><span class="pnum">[11]</span><div><span class="ptitle">The weakly compact reflection principle need not imply a high order of weak compactness.</span> <span class="pauth">(with Hiroshi Sakai)</span> <span class="pvenue">Archive for Mathematical Logic</span>, 59 (1):179-196, 2020. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1707.08506.pdf">[pdf]</a></span></div></li>
+
+        <li id="p10" data-area="set"><span class="pnum">[10]</span><div><span class="ptitle">Adding a non-reflecting weakly compact set.</span> <span class="pvenue">Notre Dame Journal of Formal Logic</span>, 60 (3):503-521, 2019. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1701.04358.pdf">[pdf]</a></span></div></li>
+
+        <!-- <li>(with Sean Cox, Joel Hamkins and Thomas Johnstone) The weakly compact embedding property. (<i>in preparation</i>)</li> -->
+
+        <li id="p9" data-area="set"><span class="pnum">[9]</span><div><span class="ptitle">Rigid ideals.</span> <span class="pauth">(with Monroe Eskew)</span> <span class="pvenue">Israel Journal of Mathematics</span>, 224 (1):343-366, 2018. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1606.00040.pdf">[pdf]</a></span></div></li>
+
+        <li id="p8" data-area="set"><span class="pnum">[8]</span><div><span class="ptitle">Indestructibility of generically strong cardinals.</span> <span class="pauth">(with Sean Cox)</span> <span class="pvenue">Fundamenta Mathematicae</span>, 232 (2):131-149, 2016. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1403.6398.pdf">[pdf]</a></span></div></li>
+
+        <li id="p7" data-area="set"><span class="pnum">[7]</span><div><span class="ptitle">The least weakly compact cardinal can be unfoldable, weakly measurable and nearly \(\theta\)-supercompact.</span> <span class="pauth">(with Moti Gitik, Joel David Hamkins, and Jason Schanker)</span> <span class="pvenue">Archive for Mathematical Logic</span>, 54 (5-6):491-510, 2015. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1305.5961.pdf">[pdf]</a></span></div></li>
+
+        <li id="p6" data-area="set"><span class="pnum">[6]</span><div><span class="ptitle">Easton's theorem for Ramsey and strongly Ramsey cardinals.</span> <span class="pauth">(with Victoria Gitman)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 166 (9):934-952, 2015. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1209.1133.pdf">[pdf]</a></span></div></li>
+
+        <li id="p5" data-area="set"><span class="pnum">[5]</span><div><span class="ptitle">Easton functions and supercompactness.</span> <span class="pauth">(with Sy Friedman and Radek Honzik)</span> <span class="pvenue">Fundamenta Mathematicae</span>, 226 (3):279-296, 2014. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1311.0303.pdf">[pdf]</a></span></div></li>
+
+        <li id="p4" data-area="set"><span class="pnum">[4]</span><div><span class="ptitle">On Supercompactness and the continuum function.</span> <span class="pauth">(with Menachem Magidor)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 165 (2):620-630, 2014. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1306.0449.pdf">[pdf]</a></span></div></li>
+
+        <li id="p3" data-area="set"><span class="pnum">[3]</span><div><span class="ptitle">Easton's Theorem in the presence of Woodin cardinals.</span> <span class="pvenue">Archive for Mathematical Logic</span>, 52 (5-6):569-591, 2013. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1207.5822.pdf">[pdf]</a></span></div></li>
+
+        <li id="p2" data-area="set"><span class="pnum">[2]</span><div><span class="ptitle">Consecutive singular cardinals and the continuum function.</span> <span class="pauth">(with A. W. Apter)</span> <span class="pvenue">Notre Dame Journal of Formal Logic</span>, 54 (2):125-136, 2013. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1112.1890.pdf">[pdf]</a></span></div></li>
+
+        <li id="p1" data-area="set"><span class="pnum">[1]</span><div><span class="ptitle">The failure of GCH at a degree of supercompactness.</span> <span class="pvenue">Mathematical Logic Quarterly</span>, 58 (1-2):83-94, 2012. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1110.5365.pdf">[pdf]</a></span></div></li>
+      </ol>
+
+      <p class="ptag gallery">Pictures from the papers</p>
+      <figure class="plate">
+        <div class="img"><img src="../images/modifying_generic_ultrafilters.png" style="max-width:340px" alt="Diagram with j(κ), κ, j(θ), the image j''H, a generic g and a set A, illustrating how a generic ultrafilter is modified to lift an elementary embedding"></div>
+        <figcaption><span class="fig">fig. 2</span>Modifying generic ultrafilters to lift elementary embeddings <a class="ref" href="#p1">[1]</a>, <a class="ref" href="#p4">[4]</a>, <a class="ref" href="#p5">[5]</a>, <a class="ref" href="#p8">[8]</a>.</figcaption>
+      </figure>
+      <figure class="plate">
+        <div class="img"><img src="../images/ramsey_higherarchy_transfinite_indescribability.png" style="max-width:760px" alt="Tree diagram comparing the Ramsey operator applied to two indescribability ideals, with height alpha equal to ot(beta_1 minus beta_0) times omega" loading="lazy"></div>
+        <figcaption><span class="fig">fig. 3</span>The Ramsey hierarchy and transfinite indescribability <a class="ref" href="#p13">[13]</a>, <a class="ref" href="#p15">[15]</a>, <a class="ref" href="#p19">[19]</a>, <a class="ref" href="#p23">[23]</a>.</figcaption>
+      </figure>
+      <figure class="plate">
+        <div class="img"><img src="../images/min_on_mobius.png" style="max-width:560px" alt="Three Möbius ladders with minimal energy vertex subsets shaded black" loading="lazy"></div>
+        <figcaption><span class="fig">fig. 4</span>Minimizers on M&ouml;bius ladders <a class="ref" href="#p21">[21]</a>.</figcaption>
+      </figure>
+      <figure class="plate">
+        <div class="img"><img src="../images/restriction.png" style="max-width:300px" alt="Formula defining the restriction of an infinitary formula phi to alpha as a conjunction of restrictions of formulas psi" loading="lazy"></div>
+        <figcaption><span class="fig">fig. 5</span>Restrictions of infinitary formulas <a class="ref" href="#p18">[18]</a>, <a class="ref" href="#p15">[15]</a>, <a class="ref" href="#pa">[a]</a>.</figcaption>
+      </figure>
+      <figure class="plate">
+        <div class="img"><img src="../images/scales.png" style="max-width:812px" alt="Diagram of heptatonic scales drawn as seven-vertex subsets of a 12-cycle, connected in order of increasing energy" loading="lazy"></div>
+        <figcaption><span class="fig">fig. 6</span>Heptatonic (seven-note) scales arranged in order of increasing energy from left to right, from <a class="ref" href="#p20">[20]</a>.</figcaption>
+      </figure>
+      <figure class="plate">
+        <div class="img"><img src="../images/triads.png" style="max-width:812px" alt="Diagram of triads drawn as three-vertex subsets of a 12-cycle, with their energies, in order of increasing energy" loading="lazy"></div>
+        <figcaption><span class="fig">fig. 7</span>Triads arranged in order of increasing energy from left to right, from <a class="ref" href="#p20">[20]</a>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== Students ===================== -->
+  <section id="students" class="reveal">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&sect;3</span><h2>Research With Students</h2></div>
+      <p>I've worked on many research projects with both undergraduate and graduate students. Names and references to the above publications are listed below.</p>
+
+      <ul class="plain twocol">
+        <li><span>Rose Detore <a class="ref" href="#p25">[25]</a> <a class="ref" href="#pb">[b]</a></span><span class="yr">2025</span></li>
+        <li><span>Maya Tennant <a class="ref" href="#p24">[24]</a></span><span class="yr">2024–2025</span></li>
+        <li><span>Paul Fay <a class="ref" href="#p24">[24]</a></span><span class="yr">2024–2025</span></li>
+        <li><span>Viktoriya Bardenova <a class="ref" href="#p24">[24]</a></span><span class="yr">2024–2025</span></li>
+        <li><span>Garrett Moore <a class="ref" href="#p22">[22]</a></span><span class="yr">2024</span></li>
+        <li><span>Alex Johnson</span><span class="yr">2024</span></li>
+        <li><span>Chris Leffler <a class="ref" href="#p21">[21]</a></span><span class="yr">2023–2024</span></li>
+        <li><span>Luke Freeman <a class="ref" href="#p20">[20]</a></span><span class="yr">2023–2024</span></li>
+        <li><span>Kayla Lee <a class="ref" href="#p16">[16]</a></span><span class="yr">2022</span></li>
+        <li><span>Philip White <a class="ref" href="#p19">[19]</a></span><span class="yr">2020–2021</span></li>
+      </ul>
+
+      <figure class="plate">
+        <div class="img"><img src="../images/22-perfect.png" style="max-width:540px" alt="A graph G on eight vertices, properly colored with four colors, and its square G squared" loading="lazy"></div>
+        <figcaption><span class="fig">fig. 8</span>A \((2,2)\)-perfect graph \(G\) (left) with \(G^2\) (right) not perfect <a class="ref" href="#p25">[25]</a>.</figcaption>
+      </figure>
+
+      <h3>Master's Thesis Advised</h3>
+      <p class="thesis">Philip White, <i><a href="https://scholarscompass.vcu.edu/etd/5860/" target="_blank" rel="noopener">Some intuition behind large cardinal axioms, their characterization, and related results</a></i>, 2019</p>
+    </div>
+  </section>
+
+  <!-- ===================== Teaching ===================== -->
+  <section id="teaching" class="reveal">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">&sect;4</span><h2>Teaching</h2></div>
+      <table class="courses">
+        <thead>
+          <tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col">Syllabi &amp; notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="code">MATH 201</td><td>Calculus with Analytic Geometry II</td><td class="mat"><a target="_blank" href="../syllabi/201_s22_os.pdf">spring 2022</a>, <a target="_blank" href="../syllabi/201_f20_ip.pdf">fall 2020</a></td></tr>
+          <tr><td class="code">MATH 300</td><td>Introduction to Mathematical Reasoning</td><td class="mat"><a target="_blank" href="../syllabi/300_f23_ip.pdf">fall 2023</a></td></tr>
+          <tr><td class="code">MATH 301</td><td>Differential Equations</td><td class="mat"><a target="_blank" href="../syllabi/301_s19_ip.pdf">spring 2019</a></td></tr>
+          <tr><td class="code">MATH 310</td><td>Linear Algebra</td><td class="mat"><a target="_blank" href="../syllabi/310_s22_os.pdf">spring 2022</a>, <a target="_blank" href="../syllabi/310_s19_ip.pdf">spring 2019</a></td></tr>
+          <tr><td class="code">MATH 407</td><td>Advanced Calculus</td><td class="mat"><a target="_blank" href="../syllabi/407_f21_os.pdf">fall 2021</a></td></tr>
+          <tr><td class="code">MATH 409</td><td>General Topology</td><td class="mat"><a target="_blank" href="../syllabi/409_f19_ip.pdf">fall 2019</a></td></tr>
+          <tr><td class="code">MATH 490</td><td>Mathematical Expositions</td><td class="mat"><a target="_blank" href="../syllabi/490_f20_os.pdf">fall 2020</a>, <a target="_blank" href="../syllabi/490_s18_ip.pdf">spring 2018</a></td></tr>
+          <tr><td class="code">MATH 492</td><td>Independent Study</td><td class="mat">Spring 2015 computability theory and G&ouml;del’s Incompleteness Theorems with Philip White; Fall 2014 forcing with Samuel Dworetzky; Spring 2014 set theory with Samuel Dworetzky</td></tr>
+          <tr><td class="code">MATH 493</td><td>Mathematical Sciences Internship</td><td class="mat">Spring 2016 with Lynh Tran, Spring 2018 with Tobechi Okoli</td></tr>
+          <tr><td class="code">MATH 502</td><td>Abstract Algebra I</td><td class="mat"><a target="_blank" href="../syllabi/502_f23_ip.pdf">fall 2023</a></td></tr>
+          <tr><td class="code">MATH 556</td><td>Graph Theory</td><td class="mat">fall 2026</td></tr>
+          <tr><td class="code">MATH 591</td><td>Topics &ndash; Filters, ultrafilters and application</td><td class="mat">spring 2017, taught jointly with Sean Cox and Monroe Eskew</td></tr>
+          <tr><td class="code">MATH 591</td><td>Topics &ndash; Logic and Mathematical Structures</td><td class="mat">spring 2014, taught jointly with Sean Cox, <a target="_blank" href="../syllabi/compactness_notes_4-8-2014.pdf">notes</a></td></tr>
+          <tr><td class="code">MATH 602</td><td>Abstract Algebra II</td><td class="mat"><a target="_blank" href="../syllabi/602_s20_ip.pdf">spring 2020</a></td></tr>
+          <tr><td class="code">MATH 697</td><td>Directed Research</td><td class="mat">forcing and large cardinals with Philip White</td></tr>
+          <tr><td class="code">MATH 698</td><td>Thesis</td><td class="mat">Philip White's <a target="_blank" href="../syllabi/white_thesis_2019.pdf">thesis</a> has been cited by <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1909.05474.pdf">Buhagiar and Dz̆amonja</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Brent Cody. All rights reserved.</span>
+    <span>Erd&#337;s number 2 (via Menachem Magidor <a href="#p4">[4]</a>)</span>
+    <span>last modified: <span id="lastmod">&mdash;</span></span>
+    <a href="#top">&uarr; back to top</a>
+    <span class="button88" title="A nod to the 1990s">best viewed with any browser</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Last-modified stamp, 1998 style
+  try {
+    var d = new Date(document.lastModified);
+    if (!isNaN(d)) document.getElementById('lastmod').textContent =
+      d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  } catch (e) {}
+
+  // Dark / light toggle (remembered per browser)
+  var root = document.documentElement, btn = document.getElementById('themeBtn');
+  function isDark() {
+    var t = root.getAttribute('data-theme');
+    return t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function sync() { btn.textContent = isDark() ? 'light' : 'dark'; }
+  try { var saved = localStorage.getItem('theme'); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+  sync();
+  btn.addEventListener('click', function () {
+    var next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    sync();
+  });
+
+  // Neon links: give each content link a random color, never the same twice in a row
+  (function () {
+    var prev = -1;
+    document.querySelectorAll('main a').forEach(function (a) {
+      var k; do { k = Math.floor(Math.random() * 7); } while (k === prev);
+      prev = k; a.classList.add('neon', 'n' + k);
+    });
+  })();
+
+  // DOS boot screen: first visit only, very short, skippable
+  (function () {
+    var seen = false;
+    try { seen = localStorage.getItem('booted') === '1'; localStorage.setItem('booted', '1'); } catch (e) { seen = true; }
+    if (seen || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var lines = [
+      'C:\\> BOOT CODY.SYS',
+      'LOADING ZFC ............ <span class="ok">OK</span>',
+      'CHECKING Con(ZFC) ...... <span class="warn">NOT PROVABLE IN ZFC</span>',
+      'C:\\CODY> <span class="caret"></span>'
+    ];
+    var el = document.createElement('div'); el.id = 'boot'; el.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(el);
+    var i = 0, done = false;
+    function finish() {
+      if (done) return; done = true;
+      el.classList.add('out'); setTimeout(function () { el.remove(); }, 300);
+      document.removeEventListener('keydown', finish);
+    }
+    (function step() {
+      if (done) return;
+      el.innerHTML += (i ? '\n' : '') + lines[i++];
+      if (i < lines.length) setTimeout(step, 260); else setTimeout(finish, 500);
+    })();
+    el.addEventListener('click', finish);
+    document.addEventListener('keydown', finish);
+  })();
+
+  // Konami code toggles CRT mode; Esc leaves it
+  (function () {
+    var code = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'], pos = 0;
+    document.addEventListener('keydown', function (e) {
+      var k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+      if (k === 'Escape') { root.classList.remove('crt'); pos = 0; return; }
+      pos = (k === code[pos]) ? pos + 1 : (k === code[0] ? 1 : 0);
+      if (pos === code.length) { root.classList.toggle('crt'); pos = 0; }
+    });
+  })();
+
+  // Gentle reveal + active nav link
+  var secs = document.querySelectorAll('section');
+  var links = document.querySelectorAll('nav a');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.05 });
+    secs.forEach(function (s) { io.observe(s); });
+    var nav = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) links.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    secs.forEach(function (s) { nav.observe(s); });
+  } else {
+    secs.forEach(function (s) { s.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>

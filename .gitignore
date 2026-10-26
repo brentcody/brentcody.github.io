@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# LaTeX build files (keep the .tex and .pdf)
+cv/*.aux
+cv/*.fdb_latexmk
+cv/*.fls
+cv/*.log
+cv/*.out
+cv/*.synctex.gz

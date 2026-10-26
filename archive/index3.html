@@ -6,7 +6,7 @@
 
     <title>Brent Cody</title>  
 
-    <link rel="icon" type="image/png" href="icon.png"/>
+    <link rel="icon" type="image/png" href="../icon.png"/>
     
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
@@ -40,41 +40,27 @@ a.visited {
 */
 
 .page {
-    max-width: 100em;
+    padding:2em;
+    max-width: 50em;
     font-size: 1em;
+    display: block;
+    overflow: auto;
 }
 
 
-.flex-parent-element {
-  display: flex;
+.top_child {
+    display:inline-block;
+    padding:1em;
 }
 
-.flex-child-element {
-  flex: 1;
-  margin: 10px;
+.top_parent {
+    padding:0em;
 }
-
-
-
-.flex-child-element:first-child {
-  margin-right: 20px;
-}
-
-.navbar {
-    overflow: hidden;
-    height: 100%;
-    background-color: #FFF;
-}
-
 
 .content{
-
+    clear:both;
 }
 
-
-.image_container {
-    float:left;
-}
 
 
 
@@ -88,63 +74,79 @@ a.visited {
 <div class="page">
 
 
-<div class="flex-parent-element">
 
 
 
-<div class="flex-child-element magenta" style="flex:0.2;">
-<div class="navbar">
 
-
-    <p>
-        <img style="width:8em;" src="brent_2022_2.JPG"><br>
-    
-        <b style="font-size:2em">Brent Cody</b> <br>
-
-<a href="#" class="list-group-item" id="research">Set theory publications</a> <br>
-<a href="#" class="list-group-item" id="maximal">Maximal evenness in graphs</a> <br>
-<a href="#" class="list-group-item" id="teaching">Teaching</a> <br>
-<a href="#" class="list-group-item" id="about">About</a> <br>
-
-Welcome to my website. I am an associate professor at Virginia Commonwealth University. 
-My main line of research is in set theory and involves large cardinals. I also have
-an emerging interest in problems involving graph theory, finite combinatorics, discrete
-optimization and connections with music via maximal evenness.
-
-
-
-</div>
+<div class="top_parent">
+    <div class="top_child">
+       <img width=200em src="brent_2022_2.JPG">
+    </div>
+    <div class="top_child">
+        BRENT CODY<br> 
+        Associate Professor<br>
+        Department of Mathematics and Applied Mathematics<br>
+        Virginia Commonwealth University<br>
+        bmcody@vcu.edu<br>
+        <!-- <b style="font-size:2em">Brent Cody</b> <br> -->
+    </div>
 </div>
 
 
 
 
-<div class="flex-child-element green">
+
+
+
+
+
+
+
 <div class="content">
 
-
-    
-<section class="research" style="display:none;">
-SET THEORY PUBLICATIONS
+<section class="welcome">
 
 <p>
-    My research is in the area of <a href="https://en.wikipedia.org/wiki/Set_theory">set theory</a>. 
-    Most of my recent work is on ideals associated to 
-    <a href="https://en.wikipedia.org/wiki/Large_cardinal">large cardinals</a>. 
-    For example, I've done work on combinatorial principles and 
-    <a href="https://en.wikipedia.org/wiki/Forcing_(mathematics)">forcing</a> 
-    constructions related to the large cardinal properties 
-    of <a href="https://en.wikipedia.org/wiki/Ramsey_cardinal">Ramseyness</a>, 
-    <a href="https://en.wikipedia.org/wiki/Ineffable_cardinal">ineffability</a> and 
-    <a href="https://en.wikipedia.org/wiki/Indescribable_cardinal">indescribability</a>. 
-    I've also worked on strong properties of successor cardinals that hold after collapsing 
-    large cardinals and on preserving large cardinals through Easton-support forcing iterations.
-    </p>
+Welcome to my website. I am an associate professor at Virginia Commonwealth University. 
+I do research in mathematics, teach math courses, serve on various math-related
+committees, referee and review math research articles and I organize conferences and workshops 
+(see MAMLS at VCU, Idealfest, Stationary sets in algebra).
+</p>
+
+<p>
+My main line of research is in <a href="https://en.wikipedia.org/wiki/Set_theory">set theory</a> 
+and involves <a href="https://en.wikipedia.org/wiki/Large_cardinal">large cardinals</a>. 
+I've done work on combinatorial principles and 
+<a href="https://en.wikipedia.org/wiki/Forcing_(mathematics)">forcing</a> 
+constructions related to the large cardinal properties 
+of <a href="https://en.wikipedia.org/wiki/Ramsey_cardinal">Ramseyness</a>, 
+<a href="https://en.wikipedia.org/wiki/Ineffable_cardinal">ineffability</a> and 
+<a href="https://en.wikipedia.org/wiki/Indescribable_cardinal">indescribability</a>. 
+I've also worked on strong properties of successor cardinals that hold after collapsing 
+large cardinals and on preserving large cardinals through Easton-support forcing iterations.
+</p>
+
+<p>
+I also have
+an emerging interest in problems involving graph theory, finite combinatorics, discrete
+optimization and connections with music via maximal evenness.
+</p>
+
+</section>
+
+
+    
+<section class="publications">
+PUBLICATIONS
+
+
 
     
     <p>
 
         <ol reversed class="o">
+
+            <li>Two-cardinal derived topologies, indescribability and Ramseyness. (with Chris Lambie-Hanson and Jing Zhang) <i>Submitted.</i></li>
 
             <li>Two-cardinal ideal operators and indescribability. (with Philip White) <i>Submitted.</i> (<a class="u" target="_blank" href="https://arxiv.org/pdf/2206.06170.pdf">pdf</a>)</li>
             
@@ -197,39 +199,37 @@ SET THEORY PUBLICATIONS
 </p>
 
 
-
-
-
-
-
-
-
-
 </section>
 
 
 
-<section class="maximal" style="display:none;">
+<section class="maximal">
     MAXIMAL EVENNESS IN GRAPHS
 </section>
 
 
-<section class="teaching" style="display:none;">
+<section class="teaching">
     TEACHING
 </section>
 
 
 
 
-<section class="about" style="display:none;">
+<section class="about">
     ABOUT
 </section>
 
 
 
-
-
 </div>
+
+
+
+
+
+
+
+
 </div>
 
 
@@ -258,7 +258,6 @@ $('section.' + $(this).attr('id')).css('display', '');
 </script>
 
 
-</div>
 </div>
 
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&Pi;&sup1;&#8321;</title>
+<link rel="icon" type="image/png" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root { --paper: #0b0a08; --ink: #e8dfcc; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; overflow-x: clip; }
+  body {
+    background: var(--paper); color: var(--ink); min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: "JetBrains Mono", Menlo, "DejaVu Sans Mono", Consolas, "Courier New", monospace;
+  }
+  nav { position: fixed; top: 14px; left: 16px; right: 16px; display: flex; justify-content: space-between; z-index: 2; }
+  nav a, nav span {
+    font-size: 18px; color: #8f8676; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border: 1px solid transparent;
+  }
+  nav a:hover { color: #ffb347; border-color: #3a352c; }
+  nav a:focus-visible { outline: 2px dashed #ffb347; outline-offset: 2px; }
+  nav span { color: #2e2a24; }
+  pre {
+    position: relative; margin: 72px 16px 56px; line-height: 1.25;
+    font-size: clamp(7px, calc((100vw - 32px) / 44.5), 15px);
+  }
+  .dim { color: #6f6858; }
+  .m { color: #6f6858; } .mbit { color: #8f8676; }
+  .g { color: #ffb347; text-shadow: 0 0 6px rgba(255,179,71,.55); }
+  .hit { color: #ffd27a; text-shadow: 0 0 8px rgba(255,190,90,.8); }
+  .band { color: #4a453c; }
+  .branch { color: #5f584b; }
+  .wall { color: #8f8676; }
+  .a { color: #e8dfcc; }
+  .forall { color: #7fd6ff; opacity: .75; } .forall2 { color: #7fd6ff; opacity: .45; }
+  .kappa { color: #ffb347; text-shadow: 0 0 8px rgba(255,179,71,.7); }
+  .r1 { color: #ffb347; opacity: .8; } .r2 { color: #ffb347; opacity: .6; } .r3 { color: #ffb347; opacity: .45; } .r4 { color: #ffb347; opacity: .32; }
+  .npink { color: #ff3fd8; text-shadow: 0 0 6px #ff3fd866; } .npinkd { color: #ff3fd8; opacity: .35; }
+  .norange { color: #ff9a2e; text-shadow: 0 0 6px #ff9a2e66; } .noranged { color: #ff9a2e; opacity: .35; }
+  .nyellow { color: #f2ff4a; text-shadow: 0 0 6px #f2ff4a66; } .nyellowd { color: #f2ff4a; opacity: .35; }
+  .ngreen { color: #45ff7a; text-shadow: 0 0 6px #45ff7a66; } .ngreend { color: #45ff7a; opacity: .35; }
+  .ncyan { color: #2cf2ff; text-shadow: 0 0 6px #2cf2ff66; } .ncyand { color: #2cf2ff; opacity: .35; }
+  .nblue { color: #6e9bff; text-shadow: 0 0 6px #6e9bff66; } .nblued { color: #6e9bff; opacity: .35; }
+  .nviolet { color: #c77dff; text-shadow: 0 0 6px #c77dff66; } .nvioletd { color: #c77dff; opacity: .35; }
+  .ndim { color: #5f584b; } .ndim2 { color: #3a362f; } .nlab { color: #a39a88; } .naxis { color: #3d3830; } .nedge { color: #6f6858; }
+  .new { color: #ffb347; } .fresh { color: #e8dfcc; } .bit { color: #a39a88; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="gallery.html" aria-label="Previous picture">&larr;</a>
+  <a href="../index.html" aria-label="Back to Brent Cody's home page" class="home">&#8962;</a>
+  <a href="gallery-3.html" aria-label="Next picture">&rarr;</a>
+</nav>
+<pre role="img" aria-label="ASCII art: the cumulative hierarchy drawn as a large V narrowing to the empty set. A bright line marks the level kappa, with a layer of universal quantifiers over all subsets just above it, and a scatter of stars, a predicate, below it. Fainter lines at lower levels alpha repeat the cut, each with its own thinner layer of quantifiers, and they crowd together just below kappa: the statement true at kappa reflects to many smaller levels.">
+<span class="wall">\</span>  <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>    <span class="wall">/</span>
+ <span class="wall">\</span>  <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>  <span class="wall">/</span>
+  <span class="wall">\</span>  <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>     <span class="dim">:</span>      <span class="wall">/</span>
+   <span class="wall">\</span>                                                                   <span class="wall">/</span>
+    <span class="wall">\</span>                                                                 <span class="wall">/</span>
+     <span class="wall">\</span>                                                               <span class="wall">/</span>
+      <span class="wall">\</span> <span class="forall">~  ∀ ~ ∀ ∀~  ~ ~ ~ ~    ~  ~ ~~~ ∀ ~ ~~~ ~    ~  ~      ~  </span> <span class="wall">/</span>
+       <span class="wall">\</span> <span class="forall"> ~~~  ~ ∀     ~ ~ ~ ~ ~~~∀~~~~  ~  ~ ∀~ ~~ ~~  ~    ~  ~ </span> <span class="wall">/</span>
+        <span class="wall">\</span><span class="kappa">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><span class="wall">/</span> <span class="kappa">κ</span>
+         <span class="wall">\</span><span class="r1">───────────────────────────────────────────────────────</span><span class="wall">/</span> <span class="r1">·</span>
+          <span class="wall">\</span><span class="r1">─────────────────────────────────────────────────────</span><span class="wall">/</span> <span class="r1">·</span>
+           <span class="wall">\</span>  <span class="forall2">~~</span>   <span class="forall2">~~</span>   <span class="forall2">∀</span>    <span class="a">*</span>      <span class="forall2">~</span>  <span class="a">*</span>     <span class="forall2">~</span> <span class="a">*</span>  <span class="a">*</span><span class="forall2">~</span> <span class="forall2">~∀</span>     <span class="forall2">~</span>  <span class="wall">/</span>
+            <span class="wall">\</span><span class="r2">─────────────────────────────────────────────────</span><span class="wall">/</span> <span class="r2">·</span>
+             <span class="wall">\</span>      <span class="a">*</span>                                    <span class="a">**</span>  <span class="wall">/</span>
+              <span class="wall">\</span> <span class="a">*</span>    <span class="a">*</span><span class="forall2">~</span> <span class="a">*</span>   <span class="a">*</span>        <span class="forall2">~</span> <span class="a">*</span>           <span class="forall2">~</span> <span class="forall2">~</span>      <span class="wall">/</span>
+               <span class="wall">\</span><span class="r2">───────────────────────────────────────────</span><span class="wall">/</span> <span class="r2">·</span>
+                <span class="wall">\</span>                         <span class="a">*</span>       <span class="a">*</span>       <span class="wall">/</span>
+                 <span class="wall">\</span>            <span class="a">*</span>                          <span class="wall">/</span>
+                  <span class="wall">\</span>    <span class="forall2">~</span>   <span class="forall2">~</span>    <span class="forall2">∀</span>       <span class="forall2">∀</span><span class="a">*</span>   <span class="forall2">~</span>   <span class="forall2">~</span> <span class="forall2">~</span><span class="a">*</span> <span class="a">*</span> <span class="wall">/</span>
+                   <span class="wall">\</span><span class="r3">───────────────────────────────────</span><span class="wall">/</span> <span class="r3">·</span>
+                    <span class="wall">\</span>                     <span class="a">*</span>  <span class="a">*</span>        <span class="wall">/</span>
+                     <span class="wall">\</span>          <span class="a">*</span>    <span class="a">*</span>            <span class="a">*</span>  <span class="wall">/</span>
+                      <span class="wall">\</span>  <span class="a">*</span>      <span class="a">*</span>           <span class="a">*</span> <span class="a">*</span>     <span class="wall">/</span>
+                       <span class="wall">\</span>  <span class="a">*</span>  <span class="a">*</span>                <span class="a">*</span>    <span class="wall">/</span>
+                        <span class="wall">\</span>   <span class="forall2">~</span>   <span class="forall2">~</span>  <span class="forall2">~</span>              <span class="wall">/</span>
+                         <span class="wall">\</span><span class="r3">───────────────────────</span><span class="wall">/</span> <span class="r3">·</span>
+                          <span class="wall">\</span>  <span class="a">*</span>                  <span class="wall">/</span>
+                           <span class="wall">\</span>   <span class="a">**</span>     <span class="a">*</span>  <span class="a">*</span>     <span class="wall">/</span>
+                            <span class="wall">\</span>                 <span class="wall">/</span>
+                             <span class="wall">\</span>               <span class="wall">/</span>
+                              <span class="wall">\</span>      <span class="a">*</span>      <span class="wall">/</span>
+                               <span class="wall">\</span>  <span class="a">*</span>  <span class="a">**</span> <span class="forall2">~</span><span class="a">*</span> <span class="wall">/</span>
+                                <span class="wall">\</span><span class="r4">─────────</span><span class="wall">/</span> <span class="r4">·</span>
+                                 <span class="wall">\</span>       <span class="wall">/</span>
+                                  <span class="wall">\</span>     <span class="wall">/</span>
+                                   <span class="wall">\</span>   <span class="wall">/</span>
+                                    <span class="wall">\</span> <span class="wall">/</span>
+                                     <span class="wall">V</span>
+                                     <span class="dim">∅</span>
+</pre>
+</body>
+</html>
