@@ -5,7 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brent Cody</title>
 <meta name="description" content="Brent Cody, Associate Professor of Mathematics at Virginia Commonwealth University. Research in set theory, large cardinals, forcing, and graph theory.">
-<link rel="icon" type="image/png" href="icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brentcody.github.io/">
+<meta property="og:title" content="Brent Cody">
+<meta property="og:description" content="Brent Cody, Associate Professor of Mathematics at Virginia Commonwealth University. Research in set theory, large cardinals, forcing, and graph theory.">
+<meta property="og:image" content="https://brentcody.github.io/images/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -154,6 +164,7 @@
   h3 { font-size: 15px; font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin: 28px 0 10px; color: var(--muted); }
 
   .lede { font-size: 20px; line-height: 1.65; margin: 0; }
+  .lede + .lede { margin-top: 16px; }
   .ref { font-family: var(--mono); font-size: 0.82em; white-space: nowrap; }
 
   /* ---------- Figures (old-school "fig. n" plates) ---------- */
@@ -179,19 +190,29 @@
   .play:hover { border-color: var(--ink); }
   .play[aria-pressed="true"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
 
-  .odds { list-style: none; padding: 0; margin: 24px 0 0; font-size: 16px; }
+  .odds { list-style: none; padding: 0; margin: 8px 0 0; font-size: 16px; }
+  .odds li.more { color: var(--muted); }
+  .odds li.more::before { content: ""; }
+  .cols.minor { margin-top: 32px; }
+  .callout { border: 1px solid var(--rule-dark); background: var(--chip); padding: 12px 16px; margin: 0 0 20px; font-size: 16px; line-height: 1.55; }
+  .callout b { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; }
+  .callout h3 { margin: 0 0 8px; color: var(--accent); }
+  .callout p { margin: 0; }
+  .callout p + p { margin-top: 10px; }
+  .highlight { font-size: 16px; border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin: 0 0 24px; }
+  .highlight b { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; margin-right: 4px; }
   .odds li { padding: 8px 0 8px 22px; position: relative; border-top: 1px dotted var(--rule-dark); }
   .odds li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-family: var(--mono); }
 
   /* ---------- Papers ---------- */
   .ptag { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 18px 0 4px; text-transform: uppercase; letter-spacing: .06em; }
-  ol.papers li.prep { border-bottom: 1px solid var(--rule); }
+  .stukey { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: -8px 0 4px; }
+  sup.stu { color: var(--accent); font-family: var(--mono); font-size: .7em; margin-left: 1px; }
 
   ol.papers { list-style: none; margin: 0; padding: 0; }
   ol.papers li {
     display: grid; grid-template-columns: 52px 1fr; gap: 12px;
-    padding: 14px 10px; margin: 0 -10px;
-    border-bottom: 1px solid var(--rule);
+    padding: 5px 10px; margin: 0 -10px;
     transition: background-color .6s ease;
   }
   ol.papers li:last-child { border-bottom: 0; }
@@ -375,16 +396,17 @@
     <div class="wrap intro-grid">
       <figure class="portrait">
         <div class="frame" id="portrait">
-          <img class="on" src="images/brent_2022_2_small.jpg" style="object-position: center 25%" data-cap="the author" alt="Photo of Brent Cody">
-          <img src="images/brent_by_amanda.jpg" style="object-position: 52% center" data-cap="painting by Amanda Blackmon" alt="Painting of Brent Cody by Amanda Blackmon: he stands on a pink planet under a starry sky, surrounded by surreal companions" aria-hidden="true">
-          <img src="images/brent_headshot.jpg" style="object-position: center 30%" data-cap="the author" alt="Black-and-white headshot of Brent Cody" aria-hidden="true">
-          <img src="images/brent_lights.jpg" style="object-position: center 12%" data-cap="the author" alt="Brent Cody, seen from behind in silhouette, walking into a burst of blue laser light" aria-hidden="true">
+          <img class="on" src="images/web/brent_2022_2_small.jpg" style="object-position: center 25%" data-cap="Brent" alt="Photo of Brent Cody">
+          <img data-src="images/web/brent_by_amanda.jpg" style="object-position: 52% center" data-cap="painting by Amanda Blackmon" alt="Painting of Brent Cody by Amanda Blackmon: he stands on a pink planet under a starry sky, surrounded by surreal companions" aria-hidden="true">
+          <img data-src="images/web/brent_lights_2.jpg" style="object-position: center 30%" data-cap="Brent" alt="Close-up of Brent Cody smiling, his face dappled with colored light" aria-hidden="true">
+          <img data-src="images/web/brent_lights.jpg" style="object-position: center 12%" data-cap="Brent" alt="Brent Cody, seen from behind in silhouette, walking into a burst of blue laser light" aria-hidden="true">
         </div>
         <figcaption>fig. 1 &mdash; <span id="portraitCap">the author</span></figcaption>
         <script>
           (function () { /* pick a random starting image before the page first paints */
             var f = document.getElementById('portrait'), im = f.querySelectorAll('img'), j = Math.floor(Math.random() * im.length);
             f.classList.add('instant');
+            if (!im[j].getAttribute('src')) im[j].src = im[j].getAttribute('data-src');
             im.forEach(function (x, k) { x.classList.toggle('on', k === j); if (k === j) x.removeAttribute('aria-hidden'); else x.setAttribute('aria-hidden', 'true'); });
             document.getElementById('portraitCap').textContent = im[j].getAttribute('data-cap');
           })();
@@ -392,7 +414,7 @@
       </figure>
       <div>
         <h1>Brent Cody<span class="cursor" aria-hidden="true"></span></h1>
-        <p class="role">Associate Professor, Department of Mathematics and Applied Mathematics</p>
+        <p class="role">Associate Professor, Department of Mathematics and Statistics</p>
         <p class="role">Virginia Commonwealth University</p>
         <p class="contact">
           <span>email: <a href="mailto:bmcody@vcu.edu">bmcody@vcu.edu</a></span>
@@ -408,11 +430,33 @@
     <div class="wrap">
       <div class="sec-head"><span class="num">&sect;1</span><h2>Research Overview</h2></div>
       <p class="lede">
-        My primary research interests are in <a href="https://en.wikipedia.org/wiki/Set_theory" target="_blank" rel="noopener">set theory</a>, with emphasis on <a href="https://en.wikipedia.org/wiki/Large_cardinal" target="_blank" rel="noopener">large cardinals</a> and <a href="https://en.wikipedia.org/wiki/Forcing_(mathematics)" target="_blank" rel="noopener">forcing</a>. Alongside this work, I also work on problems in <a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank" rel="noopener">graph theory</a>, which stemmed from an interest in connections between mathematics and music theory, specifically, <a href="https://en.wikipedia.org/wiki/Maximal_evenness" target="_blank" rel="noopener">maximally even sets</a> and <a href="https://en.wikipedia.org/wiki/Euclidean_rhythm" target="_blank" rel="noopener">Euclidean rhythms</a>, as discussed in <a class="ref" href="#p20">[20]</a> and <a class="ref" href="#p21">[21]</a> below.
+        My primary research is in <a href="https://en.wikipedia.org/wiki/Set_theory" target="_blank" rel="noopener">set theory</a>, especially <a href="https://en.wikipedia.org/wiki/Large_cardinal" target="_blank" rel="noopener">large cardinals</a> and <a href="https://en.wikipedia.org/wiki/Forcing_(mathematics)" target="_blank" rel="noopener">forcing</a>. Much of my recent work centers on <i>higher</i> (or <i>diagonal</i>) indescribability and its connections to the Ramsey and ineffability hierarchies <a class="ref" href="#p13">[13]</a>, <a class="ref" href="#p15">[15]</a> and to derived topologies on ordinals <a class="ref" href="#p18">[18]</a>, <a class="ref" href="#p23">[23]</a>. Current work with Joan Bagaria studies diagonal versions of these spaces <a class="ref" href="#pa">[a]</a>. I have also written set theory papers with students <a class="ref" href="#p16">[16]</a>, <a class="ref" href="#p19">[19]</a>.
       </p>
-      <ul class="odds">
-        <li>Sean Cox and I organized a <a href="mamls/">MAMLS meeting</a> at VCU (April 2017), thanks to Arthur Apter.</li>
-      </ul>
+      <p class="lede">
+        I also work in <a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank" rel="noopener">graph theory</a>. This work grew out of my interest in connections between mathematics and music theory, specifically <a href="https://en.wikipedia.org/wiki/Maximal_evenness" target="_blank" rel="noopener">maximally even sets</a> and <a href="https://en.wikipedia.org/wiki/Euclidean_rhythm" target="_blank" rel="noopener">Euclidean rhythms</a> <a class="ref" href="#p20">[20]</a>, <a class="ref" href="#p21">[21]</a>. Much of my graph theory research, on extremal vertex sets and metric general position problems, is joint with students <a class="ref" href="#p20">[20]</a>&ndash;<a class="ref" href="#p22">[22]</a>, <a class="ref" href="#p24">[24]</a>, <a class="ref" href="#p25">[25]</a>, <a class="ref" href="#pb">[b]</a>.
+      </p>
+      <div class="cols minor">
+        <div>
+          <h3>Recent talks</h3>
+          <ul class="odds">
+            <li><i>Diagonal indescribability, reflection and squares in \(L\)</i>. AMS Western Sectional Meeting, Boise State University, Mar 2026 (invited).</li>
+            <li><i>Two-cardinal derived topologies</i>. AMS Eastern Sectional Meeting (virtual), Oct 2025.</li>
+            <li><i>Some connections between music theory and graph theory</i>. Virginia Academy of Science Annual Meeting, May 2025.</li>
+            <li><i>The Wiener index of vertex colorings</i>. Discrete Mathematics Seminar, Open University, Feb 2025.</li>
+            <li><i>Two-cardinal derived topologies</i>. Rutgers Logic Seminar, Nov 2024.</li>
+            <li class="more">More in my <a href="cv/Cody_CV_2026.pdf" target="_blank">CV</a>.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Meetings organized</h3>
+          <ul class="odds">
+            <li>Virginia Academy of Science Annual Meeting, VCU, May 2027 (local organizer).</li>
+            <li><a href="https://mathstat.vcu.edu/events/past-events/workshop-on-stationary-sets-and-algebra-2024.html" target="_blank" rel="noopener">Workshop on Stationary Sets and Algebra</a>, VCU, May 2024 (co-organizer).</li>
+            <li>Idealfest, VCU, April 2017, with Sean Cox. Work begun there with Hiroshi Sakai led to <a class="ref" href="#p11">[11]</a>.</li>
+            <li><a href="mamls/">Mid-Atlantic Mathematical Logic Seminar (MAMLS)</a>, VCU, April 2017, with Sean Cox, thanks to Arthur Apter.</li>
+          </ul>
+        </div>
+      </div>
       <div class="clear"></div>
     </div>
   </section>
@@ -422,65 +466,66 @@
     <div class="wrap">
       <div class="sec-head"><span class="num">&sect;2</span><h2>Papers</h2><span class="meta">2012&ndash;present</span></div>
 
+      <p class="stukey"><sup class="stu">*</sup>&thinsp;undergraduate and <sup class="stu">&dagger;</sup>&thinsp;graduate student coauthors</p>
       <p class="ptag">In preparation</p>
       <ol class="papers">
         <li id="pa" class="prep"><span class="pnum">[a]</span><div><span class="ptitle">Diagonal hypersquares.</span> <span class="pauth">(with Joan Bagaria)</span> <span class="pvenue">In preparation.</span></div></li>
-        <li id="pb" class="prep"><span class="pnum">[b]</span><div><span class="ptitle">Metric general position graph invariants and graph powers.</span> <span class="pauth">(with Rose Detore)</span> <span class="pvenue">In preparation.</span></div></li>
+        <li id="pb" class="prep"><span class="pnum">[b]</span><div><span class="ptitle">Metric general position graph invariants and graph powers.</span> <span class="pauth">(with Rose Detore<sup class="stu" title="undergraduate student coauthor">*</sup>)</span> <span class="pvenue">In preparation.</span></div></li>
       </ol>
 
       <p class="ptag">Submitted &amp; published</p>
       <ol class="papers" reversed>
-        <li id="p25" data-area="graph"><span class="pnum">[25]</span><div><span class="ptitle">Metric general position extensions of classical graph invariants and perfection.</span> <span class="pauth">(with Rose Detore)</span> <span class="pvenue">Submitted</span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2601.04351">[pdf]</a></span></div></li>
+        <li id="p25" data-area="graph"><span class="pnum">[25]</span><div><span class="ptitle">Metric general position extensions of classical graph invariants and perfection.</span> <span class="pauth">(with Rose Detore<sup class="stu" title="undergraduate student coauthor">*</sup>)</span> <span class="pvenue">Submitted</span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2601.04351">[pdf]</a></span></div></li>
 
-        <li id="p24" data-area="graph"><span class="pnum">[24]</span><div><span class="ptitle">The Wiener index of vertex colorings.</span> <span class="pauth">(with Viktoriya Bardenova, Neal Bushaw, Paul Fay and Maya Tennant)</span> <span class="pvenue">Submitted</span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.18920">[pdf]</a></span></div></li>
+        <li id="p24" data-area="graph"><span class="pnum">[24]</span><div><span class="ptitle">The Wiener index of vertex colorings.</span> <span class="pauth">(with Viktoriya Bardenova<sup class="stu" title="graduate student coauthor">&dagger;</sup>, Neal Bushaw, Paul Fay<sup class="stu" title="graduate student coauthor">&dagger;</sup> and Maya Tennant<sup class="stu" title="graduate student coauthor">&dagger;</sup>)</span> <span class="pvenue">Submitted</span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.18920">[pdf]</a></span></div></li>
 
         <li id="p23" data-area="set"><span class="pnum">[23]</span><div><span class="ptitle">Two-cardinal derived topologies, indescribability and Ramseyness.</span> <span class="pauth">(with Chris Lambie-Hanson and Jing Zhang)</span> <span class="pvenue">Journal of Symbolic Logic</span>, 91 (3): 1260–1288, 2026. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1017/jsl.2024.16">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2401.00266.pdf">[pdf]</a></span></div></li>
 
-        <li id="p22" data-area="graph"><span class="pnum">[22]</span><div><span class="ptitle">The \(k\)-general \(d\)-position problem for graphs.</span> <span class="pauth">(with Garrett Moore)</span> <span class="pvenue">Discrete Applied Mathematics</span>, 366: 135–151, 2025. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2409.05644">[pdf]</a></span></div></li>
+        <li id="p22" data-area="graph"><span class="pnum">[22]</span><div><span class="ptitle">The \(k\)-general \(d\)-position problem for graphs.</span> <span class="pauth">(with Garrett Moore<sup class="stu" title="undergraduate student coauthor">*</sup>)</span> <span class="pvenue">Discrete Applied Mathematics</span>, 366: 135–151, 2025. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.dam.2025.01.025">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2409.05644">[pdf]</a></span></div></li>
 
-        <li id="p21" data-area="graph"><span class="pnum">[21]</span><div><span class="ptitle">Sets of vertices with extremal energy.</span> <span class="pauth">(with Neal Bushaw and Chris Leffler)</span> <span class="pvenue">Discrete Mathematics</span>, 348 (7): Paper no. 114466, 2025. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2407.18785">[pdf]</a></span></div></li>
+        <li id="p21" data-area="graph"><span class="pnum">[21]</span><div><span class="ptitle">Sets of vertices with extremal energy.</span> <span class="pauth">(with Neal Bushaw and Chris Leffler<sup class="stu" title="undergraduate student coauthor">*</sup>)</span> <span class="pvenue">Discrete Mathematics</span>, 348 (7): Paper No. 114466, 17 pp., 2025. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.disc.2025.114466">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2407.18785">[pdf]</a></span></div></li>
 
-        <li id="p20" data-area="graph"><span class="pnum">[20]</span><div><span class="ptitle">The Music and Mathematics of Maximally Even Sets.</span> <span class="pauth">(with Neal Bushaw, Luke Freeman and Tobias Whitaker)</span> <span class="pvenue">Proceedings of Bridges 2024: Mathematics, Art, Music, Architecture, Culture:</span> pp. 61-68. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2407.18768">[pdf]</a></span></div></li>
+        <li id="p20" data-area="graph"><span class="pnum">[20]</span><div><span class="ptitle">The Music and Mathematics of Maximally Even Sets.</span> <span class="pauth">(with Neal Bushaw, Luke Freeman<sup class="stu" title="undergraduate student coauthor">*</sup> and Tobias Whitaker)</span> <span class="pvenue">Proceedings of Bridges 2024: Mathematics, Art, Music, Architecture, Culture</span>, pp. 61–68, 2024. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2407.18768">[pdf]</a></span></div></li>
 
-        <li id="p19" data-area="set"><span class="pnum">[19]</span><div><span class="ptitle">Two-cardinal ideal operators and indescribability.</span> <span class="pauth">(with Philip White)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 175 (8): Paper No. 103463, 17 pp., 2024. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2206.06170.pdf">[pdf]</a></span></div></li>
+        <li id="p19" data-area="set"><span class="pnum">[19]</span><div><span class="ptitle">Two-cardinal ideal operators and indescribability.</span> <span class="pauth">(with Philip White<sup class="stu" title="graduate student coauthor">&dagger;</sup>)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 175 (8): Paper No. 103463, 17 pp., 2024. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.apal.2024.103463">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2206.06170.pdf">[pdf]</a></span></div></li>
 
-        <li id="p18" data-area="set"><span class="pnum">[18]</span><div><span class="ptitle">Higher indescribability and derived topologies.</span> <span class="pvenue">Journal of Mathematical Logic</span> 24 (1): Paper No. 2350001, 48 pp., 2024. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2102.09598.pdf">[pdf]</a></span></div></li>
+        <li id="p18" data-area="set"><span class="pnum">[18]</span><div><span class="ptitle">Higher indescribability and derived topologies.</span> <span class="pvenue">Journal of Mathematical Logic</span>, 24 (1): Paper No. 2350001, 48 pp., 2024. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1142/S0219061323500010">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2102.09598.pdf">[pdf]</a></span></div></li>
 
-        <li id="p17" data-area="set"><span class="pnum">[17]</span><div><span class="ptitle">Large cardinal ideals.</span> <span class="pvenue">Accepted chapter for Research Trends in Contemporary Logic, 49 pages.</span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2102.09591.pdf">[pdf]</a></span></div></li>
+        <li id="p17" data-area="set"><span class="pnum">[17]</span><div><span class="ptitle">Large cardinal ideals.</span> <span class="pvenue">Research Trends in Contemporary Logic</span> (College Publications), accepted 2020; volume forthcoming. 49 pp. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2102.09591.pdf">[pdf]</a></span></div></li>
 
-        <li id="p16" data-area="set"><span class="pnum">[16]</span><div><span class="ptitle">Sparse analytic systems.</span> <span class="pauth">(with Sean Cox and Kayla Lee)</span> <span class="pvenue">Forum of Mathematics, Sigma</span>, Paper No. e58, 9 pp., 2023. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2208.13725.pdf">[pdf]</a></span></div></li>
+        <li id="p16" data-area="set"><span class="pnum">[16]</span><div><span class="ptitle">Sparse analytic systems.</span> <span class="pauth">(with Sean Cox and Kayla Lee<sup class="stu" title="undergraduate student coauthor">*</sup>)</span> <span class="pvenue">Forum of Mathematics, Sigma</span>, 11: Paper No. e58, 9 pp., 2023. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1017/fms.2023.54">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2208.13725.pdf">[pdf]</a></span></div></li>
 
-        <li id="p15" data-area="set"><span class="pnum">[15]</span><div><span class="ptitle">Ideal operators and higher indescribability.</span> <span class="pauth">(with Peter Holy)</span> <span class="pvenue">Journal of Symbolic Logic</span>, 88 (2):835-873, 2023. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2105.01776.pdf">[pdf]</a></span></div></li>
+        <li id="p15" data-area="set"><span class="pnum">[15]</span><div><span class="ptitle">Ideal operators and higher indescribability.</span> <span class="pauth">(with Peter Holy)</span> <span class="pvenue">Journal of Symbolic Logic</span>, 88 (2): 835–873, 2023. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1017/jsl.2022.59">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2105.01776.pdf">[pdf]</a></span></div></li>
 
-        <li id="p14" data-area="set"><span class="pnum">[14]</span><div><span class="ptitle">Forcing a \(\square(\kappa)\)-like principle to hold at a weakly compact cardinal.</span> <span class="pauth">(with Victoria Gitman and Chris Lambie-Hanson)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 172 (7):102960, 26 pp., 2021. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1902.04146.pdf">[pdf]</a></span></div></li>
+        <li id="p14" data-area="set"><span class="pnum">[14]</span><div><span class="ptitle">Forcing a \(\square(\kappa)\)-like principle to hold at a weakly compact cardinal.</span> <span class="pauth">(with Victoria Gitman and Chris Lambie-Hanson)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 172 (7): 102960, 26 pp., 2021. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.apal.2021.102960">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1902.04146.pdf">[pdf]</a></span></div></li>
 
-        <li id="p13" data-area="set"><span class="pnum">[13]</span><div><span class="ptitle">A refinement of the Ramsey hierarchy via indescribability.</span> <span class="pvenue">Journal of Symbolic Logic</span>, 85 (2):773-808, 2020. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1907.13540.pdf">[pdf]</a></span></div></li>
+        <li id="p13" data-area="set"><span class="pnum">[13]</span><div><span class="ptitle">A refinement of the Ramsey hierarchy via indescribability.</span> <span class="pvenue">Journal of Symbolic Logic</span>, 85 (2): 773–808, 2020. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1017/jsl.2019.94">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1907.13540.pdf">[pdf]</a></span></div></li>
 
-        <li id="p12" data-area="set"><span class="pnum">[12]</span><div><span class="ptitle">Characterizations of the weakly compact ideal on \(P_\kappa\lambda\).</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 171 (6):23 pages, 2020. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1807.11896.pdf">[pdf]</a></span></div></li>
+        <li id="p12" data-area="set"><span class="pnum">[12]</span><div><span class="ptitle">Characterizations of the weakly compact ideal on \(P_\kappa\lambda\).</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 171 (6): Paper No. 102791, 23 pp., 2020. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.apal.2020.102791">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1807.11896.pdf">[pdf]</a></span></div></li>
 
-        <li id="p11" data-area="set"><span class="pnum">[11]</span><div><span class="ptitle">The weakly compact reflection principle need not imply a high order of weak compactness.</span> <span class="pauth">(with Hiroshi Sakai)</span> <span class="pvenue">Archive for Mathematical Logic</span>, 59 (1):179-196, 2020. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1707.08506.pdf">[pdf]</a></span></div></li>
+        <li id="p11" data-area="set"><span class="pnum">[11]</span><div><span class="ptitle">The weakly compact reflection principle need not imply a high order of weak compactness.</span> <span class="pauth">(with Hiroshi Sakai)</span> <span class="pvenue">Archive for Mathematical Logic</span>, 59 (1): 179–196, 2020. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1007/s00153-019-00686-7">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1707.08506.pdf">[pdf]</a></span></div></li>
 
-        <li id="p10" data-area="set"><span class="pnum">[10]</span><div><span class="ptitle">Adding a non-reflecting weakly compact set.</span> <span class="pvenue">Notre Dame Journal of Formal Logic</span>, 60 (3):503-521, 2019. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1701.04358.pdf">[pdf]</a></span></div></li>
+        <li id="p10" data-area="set"><span class="pnum">[10]</span><div><span class="ptitle">Adding a non-reflecting weakly compact set.</span> <span class="pvenue">Notre Dame Journal of Formal Logic</span>, 60 (3): 503–521, 2019. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1215/00294527-2019-0014">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1701.04358.pdf">[pdf]</a></span></div></li>
 
         <!-- <li>(with Sean Cox, Joel Hamkins and Thomas Johnstone) The weakly compact embedding property. (<i>in preparation</i>)</li> -->
 
-        <li id="p9" data-area="set"><span class="pnum">[9]</span><div><span class="ptitle">Rigid ideals.</span> <span class="pauth">(with Monroe Eskew)</span> <span class="pvenue">Israel Journal of Mathematics</span>, 224 (1):343-366, 2018. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1606.00040.pdf">[pdf]</a></span></div></li>
+        <li id="p9" data-area="set"><span class="pnum">[9]</span><div><span class="ptitle">Rigid ideals.</span> <span class="pauth">(with Monroe Eskew)</span> <span class="pvenue">Israel Journal of Mathematics</span>, 224 (1): 343–366, 2018. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1007/s11856-018-1650-z">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1606.00040.pdf">[pdf]</a></span></div></li>
 
-        <li id="p8" data-area="set"><span class="pnum">[8]</span><div><span class="ptitle">Indestructibility of generically strong cardinals.</span> <span class="pauth">(with Sean Cox)</span> <span class="pvenue">Fundamenta Mathematicae</span>, 232 (2):131-149, 2016. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1403.6398.pdf">[pdf]</a></span></div></li>
+        <li id="p8" data-area="set"><span class="pnum">[8]</span><div><span class="ptitle">Indestructibility of generically strong cardinals.</span> <span class="pauth">(with Sean Cox)</span> <span class="pvenue">Fundamenta Mathematicae</span>, 232 (2): 131–149, 2016. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.4064/fm232-2-3">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1403.6398.pdf">[pdf]</a></span></div></li>
 
-        <li id="p7" data-area="set"><span class="pnum">[7]</span><div><span class="ptitle">The least weakly compact cardinal can be unfoldable, weakly measurable and nearly \(\theta\)-supercompact.</span> <span class="pauth">(with Moti Gitik, Joel David Hamkins, and Jason Schanker)</span> <span class="pvenue">Archive for Mathematical Logic</span>, 54 (5-6):491-510, 2015. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1305.5961.pdf">[pdf]</a></span></div></li>
+        <li id="p7" data-area="set"><span class="pnum">[7]</span><div><span class="ptitle">The least weakly compact cardinal can be unfoldable, weakly measurable and nearly \(\theta\)-supercompact.</span> <span class="pauth">(with Moti Gitik, Joel David Hamkins, and Jason Schanker)</span> <span class="pvenue">Archive for Mathematical Logic</span>, 54 (5–6): 491–510, 2015. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1007/s00153-015-0423-1">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1305.5961.pdf">[pdf]</a></span></div></li>
 
-        <li id="p6" data-area="set"><span class="pnum">[6]</span><div><span class="ptitle">Easton's theorem for Ramsey and strongly Ramsey cardinals.</span> <span class="pauth">(with Victoria Gitman)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 166 (9):934-952, 2015. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1209.1133.pdf">[pdf]</a></span></div></li>
+        <li id="p6" data-area="set"><span class="pnum">[6]</span><div><span class="ptitle">Easton's theorem for Ramsey and strongly Ramsey cardinals.</span> <span class="pauth">(with Victoria Gitman)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 166 (9): 934–952, 2015. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.apal.2015.04.006">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1209.1133.pdf">[pdf]</a></span></div></li>
 
-        <li id="p5" data-area="set"><span class="pnum">[5]</span><div><span class="ptitle">Easton functions and supercompactness.</span> <span class="pauth">(with Sy Friedman and Radek Honzik)</span> <span class="pvenue">Fundamenta Mathematicae</span>, 226 (3):279-296, 2014. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1311.0303.pdf">[pdf]</a></span></div></li>
+        <li id="p5" data-area="set"><span class="pnum">[5]</span><div><span class="ptitle">Easton functions and supercompactness.</span> <span class="pauth">(with Sy Friedman and Radek Honzik)</span> <span class="pvenue">Fundamenta Mathematicae</span>, 226 (3): 279–296, 2014. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.4064/fm226-3-6">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1311.0303.pdf">[pdf]</a></span></div></li>
 
-        <li id="p4" data-area="set"><span class="pnum">[4]</span><div><span class="ptitle">On Supercompactness and the continuum function.</span> <span class="pauth">(with Menachem Magidor)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 165 (2):620-630, 2014. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1306.0449.pdf">[pdf]</a></span></div></li>
+        <li id="p4" data-area="set"><span class="pnum">[4]</span><div><span class="ptitle">On Supercompactness and the continuum function.</span> <span class="pauth">(with Menachem Magidor)</span> <span class="pvenue">Annals of Pure and Applied Logic</span>, 165 (2): 620–630, 2014. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.apal.2013.09.001">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1306.0449.pdf">[pdf]</a></span></div></li>
 
-        <li id="p3" data-area="set"><span class="pnum">[3]</span><div><span class="ptitle">Easton's Theorem in the presence of Woodin cardinals.</span> <span class="pvenue">Archive for Mathematical Logic</span>, 52 (5-6):569-591, 2013. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1207.5822.pdf">[pdf]</a></span></div></li>
+        <li id="p3" data-area="set"><span class="pnum">[3]</span><div><span class="ptitle">Easton's Theorem in the presence of Woodin cardinals.</span> <span class="pvenue">Archive for Mathematical Logic</span>, 52 (5–6): 569–591, 2013. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1007/s00153-013-0332-0">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1207.5822.pdf">[pdf]</a></span></div></li>
 
-        <li id="p2" data-area="set"><span class="pnum">[2]</span><div><span class="ptitle">Consecutive singular cardinals and the continuum function.</span> <span class="pauth">(with A. W. Apter)</span> <span class="pvenue">Notre Dame Journal of Formal Logic</span>, 54 (2):125-136, 2013. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1112.1890.pdf">[pdf]</a></span></div></li>
+        <li id="p2" data-area="set"><span class="pnum">[2]</span><div><span class="ptitle">Consecutive singular cardinals and the continuum function.</span> <span class="pauth">(with A. W. Apter)</span> <span class="pvenue">Notre Dame Journal of Formal Logic</span>, 54 (2): 125–136, 2013. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1215/00294527-1960434">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1112.1890.pdf">[pdf]</a></span></div></li>
 
-        <li id="p1" data-area="set"><span class="pnum">[1]</span><div><span class="ptitle">The failure of GCH at a degree of supercompactness.</span> <span class="pvenue">Mathematical Logic Quarterly</span>, 58 (1-2):83-94, 2012. <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1110.5365.pdf">[pdf]</a></span></div></li>
+        <li id="p1" data-area="set"><span class="pnum">[1]</span><div><span class="ptitle">The failure of GCH at a degree of supercompactness.</span> <span class="pvenue">Mathematical Logic Quarterly</span>, 58 (1–2): 83–94, 2012. <span class="pdf"><a target="_blank" rel="noopener" href="https://doi.org/10.1002/malq.201020078">[doi]</a></span> <span class="pdf"><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1110.5365.pdf">[pdf]</a></span></div></li>
       </ol>
 
       <p class="ptag gallery">Pictures from the papers</p>
@@ -515,9 +560,16 @@
   <section id="students" class="reveal">
     <div class="wrap">
       <div class="sec-head"><span class="num">&sect;3</span><h2>Research With Students</h2></div>
-      <p>I've worked on many research projects with both undergraduate and graduate students. Names and references to the above publications are listed below.</p>
+      <div class="callout" id="prospective">
+        <p><b>Students interested in research:</b> I supervise undergraduate and graduate projects in graph theory and set theory, and several students have co-authored papers with me. Projects can be an independent study, directed research, or a funded summer UROP project (contact me by December). <a href="mailto:bmcody@vcu.edu">Email me</a> with a bit about your background and interests.</p>
+      </div>
+
+      <p class="highlight"><b>Student highlight:</b> Rose Detore won the Best Poster Award at the Virginia Academy of Science Annual Meeting in May 2026, chosen from roughly 75 student posters across all areas of science. See <a class="ref" href="#p25">[25]</a>, <a class="ref" href="#pb">[b]</a>.</p>
+
+      <p>I've worked on many research projects in set theory and graph theory with both undergraduate and graduate students. Their names, with references to our joint papers above, are listed below.</p>
 
       <ul class="plain twocol">
+        <li><span>Ky-Quan Pham</span><span class="yr">2026</span></li>
         <li><span>Rose Detore <a class="ref" href="#p25">[25]</a> <a class="ref" href="#pb">[b]</a></span><span class="yr">2025–2026</span></li>
         <li><span>Maya Tennant <a class="ref" href="#p24">[24]</a></span><span class="yr">2024–2025</span></li>
         <li><span>Paul Fay <a class="ref" href="#p24">[24]</a></span><span class="yr">2024–2025</span></li>
@@ -549,17 +601,17 @@
           <tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col">Syllabi &amp; notes</th></tr>
         </thead>
         <tbody>
-          <tr><td class="code">MATH 201</td><td>Calculus with Analytic Geometry II</td><td class="mat"><a target="_blank" href="syllabi/201_s22_os.pdf">spring 2022</a>, <a target="_blank" href="syllabi/201_f20_ip.pdf">fall 2020</a></td></tr>
-          <tr><td class="code">MATH 300</td><td>Introduction to Mathematical Reasoning</td><td class="mat"><a target="_blank" href="syllabi/300_f23_ip.pdf">fall 2023</a></td></tr>
+          <tr><td class="code">MATH 201</td><td>Calculus with Analytic Geometry II</td><td class="mat"><a target="_blank" href="syllabi/201_s26_ip.pdf">spring 2026</a>, <a target="_blank" href="syllabi/201_s22_os.pdf">spring 2022</a>, <a target="_blank" href="syllabi/201_f20_ip.pdf">fall 2020</a></td></tr>
+          <tr><td class="code">MATH 300</td><td>Introduction to Mathematical Reasoning</td><td class="mat"><a target="_blank" href="syllabi/300_s25_ip.pdf">spring 2025</a>, <a target="_blank" href="syllabi/300_f23_ip.pdf">fall 2023</a>, <a target="_blank" href="syllabi/300_f16_ip.pdf">fall 2016</a></td></tr>
           <tr><td class="code">MATH 301</td><td>Differential Equations</td><td class="mat"><a target="_blank" href="syllabi/301_s19_ip.pdf">spring 2019</a></td></tr>
-          <tr><td class="code">MATH 310</td><td>Linear Algebra</td><td class="mat"><a target="_blank" href="syllabi/310_s22_os.pdf">spring 2022</a>, <a target="_blank" href="syllabi/310_s19_ip.pdf">spring 2019</a></td></tr>
+          <tr><td class="code">MATH 310</td><td>Linear Algebra</td><td class="mat"><a target="_blank" href="syllabi/310_f26_ip.pdf">fall 2026</a>, <a target="_blank" href="syllabi/310_s22_os.pdf">spring 2022</a>, <a target="_blank" href="syllabi/310_s19_ip.pdf">spring 2019</a></td></tr>
           <tr><td class="code">MATH 407</td><td>Advanced Calculus</td><td class="mat"><a target="_blank" href="syllabi/407_f21_os.pdf">fall 2021</a></td></tr>
           <tr><td class="code">MATH 409</td><td>General Topology</td><td class="mat"><a target="_blank" href="syllabi/409_f19_ip.pdf">fall 2019</a></td></tr>
-          <tr><td class="code">MATH 490</td><td>Mathematical Expositions</td><td class="mat"><a target="_blank" href="syllabi/490_f20_os.pdf">fall 2020</a>, <a target="_blank" href="syllabi/490_s18_ip.pdf">spring 2018</a></td></tr>
+          <tr><td class="code">MATH 490</td><td>Mathematical Expositions</td><td class="mat"><a target="_blank" href="syllabi/490_s21_os.pdf">spring 2021</a>, <a target="_blank" href="syllabi/490_f20_os.pdf">fall 2020</a>, <a target="_blank" href="syllabi/490_s18_ip.pdf">spring 2018</a></td></tr>
           <tr><td class="code">MATH 492</td><td>Independent Study</td><td class="mat">Spring 2015 computability theory and G&ouml;del’s Incompleteness Theorems with Philip White; Fall 2014 forcing with Samuel Dworetzky; Spring 2014 set theory with Samuel Dworetzky</td></tr>
           <tr><td class="code">MATH 493</td><td>Mathematical Sciences Internship</td><td class="mat">Spring 2016 with Lynh Tran, Spring 2018 with Tobechi Okoli</td></tr>
           <tr><td class="code">MATH 502</td><td>Abstract Algebra I</td><td class="mat"><a target="_blank" href="syllabi/502_f23_ip.pdf">fall 2023</a></td></tr>
-          <tr><td class="code">MATH 556</td><td>Graph Theory</td><td class="mat">fall 2026</td></tr>
+          <tr><td class="code">MATH 556</td><td>Graph Theory</td><td class="mat"><a target="_blank" href="syllabi/556_f26_ip.pdf">fall 2026</a></td></tr>
           <tr><td class="code">MATH 591</td><td>Topics &ndash; Filters, ultrafilters and application</td><td class="mat">spring 2017, taught jointly with Sean Cox and Monroe Eskew</td></tr>
           <tr><td class="code">MATH 591</td><td>Topics &ndash; Logic and Mathematical Structures</td><td class="mat">spring 2014, taught jointly with Sean Cox, <a target="_blank" href="syllabi/compactness_notes_4-8-2014.pdf">notes</a></td></tr>
           <tr><td class="code">MATH 602</td><td>Abstract Algebra II</td><td class="mat"><a target="_blank" href="syllabi/602_s20_ip.pdf">spring 2020</a></td></tr>
@@ -617,6 +669,8 @@
 
   // DOS boot screen: first visit only, very short, skippable
   (function () {
+    var BOOT_ON = false;   // set to true to bring back the DOS boot screen
+    if (!BOOT_ON) return;
     var seen = false;
     try { seen = localStorage.getItem('booted') === '1'; localStorage.setItem('booted', '1'); } catch (e) { seen = true; }
     if (seen || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -667,6 +721,9 @@
     }
     var i = Math.max(0, Array.prototype.findIndex.call(imgs, function (im) { return im.classList.contains('on'); }));
     void frame.offsetWidth; frame.classList.remove('instant');
+    window.addEventListener('load', function () {
+      imgs.forEach(function (im) { if (!im.getAttribute('src')) im.src = im.getAttribute('data-src'); });
+    });
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     setInterval(function () {
       if (document.hidden) return;
