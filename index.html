@@ -141,9 +141,9 @@
     font-weight: 700; margin: 0 0 16px;
   }
   .cursor {
-    display: inline-block; width: 0.42em; height: 0.8em; margin-left: 0.08em;
-    background: var(--accent); vertical-align: baseline; transform: translateY(0.06em);
-    animation: blink 1.1s step-end infinite;
+    display: inline-block; width: 0.42em; height: 0.07em; margin-left: 0.1em;
+    background: var(--accent); vertical-align: baseline;
+    animation: blink 1.1s step-end 3;
   }
   @keyframes blink { 50% { opacity: 0; } }
   .role { margin: 0; font-size: 19px; }
@@ -193,7 +193,12 @@
   .odds { list-style: none; padding: 0; margin: 8px 0 0; font-size: 16px; }
   .odds li.more { color: var(--muted); }
   .odds li.more::before { content: ""; }
-  .cols.minor { margin-top: 32px; }
+  .recent { margin: 28px 0 0; padding: 12px 16px; border: 1px solid var(--rule-dark); font-size: 15px; line-height: 1.5; }
+  .recent h3 { margin: 0 0 6px; }
+  .recent ul { list-style: none; margin: 0; padding: 0; }
+  .recent li { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding: 3px 0; }
+  .recent .when { font-family: var(--mono); font-size: 12px; color: var(--accent); padding-top: 2px; }
+  @media (max-width: 720px) { .recent li { grid-template-columns: 1fr; gap: 0; } }
   .callout { border: 1px solid var(--rule-dark); background: var(--chip); padding: 12px 16px; margin: 0 0 20px; font-size: 16px; line-height: 1.55; }
   .callout b { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; }
   .callout h3 { margin: 0 0 8px; color: var(--accent); }
@@ -279,23 +284,23 @@
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-    --n0: #ff3fd8; --n0u: #ff3fd8;
-    --n1: #ff9a2e; --n1u: #ff9a2e;
-    --n2: #f2ff4a; --n2u: #f2ff4a;
-    --n3: #45ff7a; --n3u: #45ff7a;
-    --n4: #2cf2ff; --n4u: #2cf2ff;
-    --n5: #6e9bff; --n5u: #6e9bff;
-    --n6: #c77dff; --n6u: #c77dff;
+    --n0: #ddb8ce; --n0u: #ff3fd8;
+    --n1: #ddc9b0; --n1u: #ff9a2e;
+    --n2: #dbdbb5; --n2u: #f2ff4a;
+    --n3: #bcdbbd; --n3u: #45ff7a;
+    --n4: #b7d9d5; --n4u: #2cf2ff;
+    --n5: #c3c9d5; --n5u: #6e9bff;
+    --n6: #d3c4d5; --n6u: #c77dff;
     }
   }
   :root[data-theme="dark"] {
-    --n0: #ff3fd8; --n0u: #ff3fd8;
-    --n1: #ff9a2e; --n1u: #ff9a2e;
-    --n2: #f2ff4a; --n2u: #f2ff4a;
-    --n3: #45ff7a; --n3u: #45ff7a;
-    --n4: #2cf2ff; --n4u: #2cf2ff;
-    --n5: #6e9bff; --n5u: #6e9bff;
-    --n6: #c77dff; --n6u: #c77dff;
+    --n0: #ddb8ce; --n0u: #ff3fd8;
+    --n1: #ddc9b0; --n1u: #ff9a2e;
+    --n2: #dbdbb5; --n2u: #f2ff4a;
+    --n3: #bcdbbd; --n3u: #45ff7a;
+    --n4: #b7d9d5; --n4u: #2cf2ff;
+    --n5: #c3c9d5; --n5u: #6e9bff;
+    --n6: #d3c4d5; --n6u: #c77dff;
   }
   a.n0, a.n0:visited { color: var(--n0); text-decoration-color: var(--n0u); }
   a.n1, a.n1:visited { color: var(--n1); text-decoration-color: var(--n1u); }
@@ -306,8 +311,6 @@
   a.n6, a.n6:visited { color: var(--n6); text-decoration-color: var(--n6u); }
   a.neon { text-decoration-thickness: 2px; transition: text-shadow .2s ease, text-decoration-thickness .2s ease; }
   a.neon:hover { text-decoration-thickness: 3px; text-shadow: 0 0 10px var(--glow, transparent); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) a.neon { --glow: currentColor; } }
-  :root[data-theme="dark"] a.neon { --glow: currentColor; }
 
   /* ---------- Gentle entrance ---------- */
   .reveal { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
@@ -435,27 +438,15 @@
       <p class="lede">
         I also work in <a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank" rel="noopener">graph theory</a>. This work grew out of my interest in connections between mathematics and music theory, specifically <a href="https://en.wikipedia.org/wiki/Maximal_evenness" target="_blank" rel="noopener">maximally even sets</a> and <a href="https://en.wikipedia.org/wiki/Euclidean_rhythm" target="_blank" rel="noopener">Euclidean rhythms</a> <a class="ref" href="#p20">[20]</a>, <a class="ref" href="#p21">[21]</a>. Much of my graph theory research, on extremal vertex sets and metric general position problems, is joint with students <a class="ref" href="#p20">[20]</a>&ndash;<a class="ref" href="#p22">[22]</a>, <a class="ref" href="#p24">[24]</a>, <a class="ref" href="#p25">[25]</a>, <a class="ref" href="#pb">[b]</a>.
       </p>
-      <div class="cols minor">
-        <div>
-          <h3>Recent talks</h3>
-          <ul class="odds">
-            <li><i>Diagonal indescribability, reflection and squares in \(L\)</i>. AMS Western Sectional Meeting, Boise State University, Mar 2026 (invited).</li>
-            <li><i>Two-cardinal derived topologies</i>. AMS Eastern Sectional Meeting (virtual), Oct 2025.</li>
-            <li><i>Some connections between music theory and graph theory</i>. Virginia Academy of Science Annual Meeting, May 2025.</li>
-            <li><i>The Wiener index of vertex colorings</i>. Discrete Mathematics Seminar, Open University, Feb 2025.</li>
-            <li><i>Two-cardinal derived topologies</i>. Rutgers Logic Seminar, Nov 2024.</li>
-            <li class="more">More in my <a href="cv/Cody_CV_2026.pdf" target="_blank">CV</a>.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Meetings organized</h3>
-          <ul class="odds">
-            <li>Virginia Academy of Science Annual Meeting, VCU, May 2027 (local organizer).</li>
-            <li><a href="https://mathstat.vcu.edu/events/past-events/workshop-on-stationary-sets-and-algebra-2024.html" target="_blank" rel="noopener">Workshop on Stationary Sets and Algebra</a>, VCU, May 2024 (co-organizer).</li>
-            <li>Idealfest, VCU, April 2017, with Sean Cox. Work begun there with Hiroshi Sakai led to <a class="ref" href="#p11">[11]</a>.</li>
-            <li><a href="mamls/">Mid-Atlantic Mathematical Logic Seminar (MAMLS)</a>, VCU, April 2017, with Sean Cox, thanks to Arthur Apter.</li>
-          </ul>
-        </div>
+      <div class="recent">
+        <h3>Recent activity</h3>
+        <ul>
+          <li><span class="when">May 2027</span><span>Local organizer, Virginia Academy of Science Annual Meeting at VCU.</span></li>
+          <li><span class="when">Summer 2026</span><span>Dean&rsquo;s Research Grant funding summer research with undergraduates Rose Detore and Garrett Moore.</span></li>
+          <li><span class="when">May 2026</span><span>Rose Detore won the Best Poster Award at the Virginia Academy of Science Annual Meeting for our joint work <a class="ref" href="#p25">[25]</a>, <a class="ref" href="#pb">[b]</a>.</span></li>
+          <li><span class="when">Mar 2026</span><span>Invited talk, AMS Western Sectional Meeting, Boise State University.</span></li>
+          <li><span class="when">2026</span><span>&ldquo;Two-cardinal derived topologies, indescribability and Ramseyness&rdquo; (with Lambie-Hanson and Zhang) appeared in the <i>Journal of Symbolic Logic</i> <a class="ref" href="#p23">[23]</a>.</span></li>
+        </ul>
       </div>
       <div class="clear"></div>
     </div>
